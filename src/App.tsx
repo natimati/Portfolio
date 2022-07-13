@@ -1,11 +1,11 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import MainPage from './pages/MainPage';
+import { GlobalStyle } from './styles';
 
 function App() {
   return (
     <div className="App">
+      <GlobalStyle />
       <MainPage />
     </div>
   );

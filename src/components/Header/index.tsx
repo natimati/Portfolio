@@ -1,5 +1,7 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { ModalContext } from "../../context/ModalContextProvider";
 import { Button, SubtierButton } from "../../styles"
+import Contact from "../ContactForm";
 import { BArrow, BDiv, BTextArea, ButtonContainer, Container, ImageContainer, Img, Name, NArrow, NDiv, NTextArea, Role } from "./style"
 
 function Header() {
@@ -7,6 +9,10 @@ function Header() {
 
     const handleClick = () => {
         setIsShown(current => !current)
+    }
+    const modalContextValue = useContext(ModalContext);
+    const handleContactUsButtonClick = (content: React.ReactChild) => {
+    modalContextValue.setDisplayedComponent(content)
     }
 
      return (
@@ -31,14 +37,14 @@ function Header() {
                 <BDiv>
                     <BArrow src="assets/arrow.svg" />
                     <BTextArea>
-                        <Name>beti</Name>
+                        <Name>Beti</Name>
                         <Role>UX/UI designer</Role>
                     </BTextArea>
                 </BDiv>
                 <Img src="assets/girls.jpg" alt="Us" />
             </ImageContainer>
              <ButtonContainer>
-                 <Button>Contact us</Button>
+                 <Button onClick={() => handleContactUsButtonClick(<Contact />)}>Contact us</Button>
             </ButtonContainer>
 
         </Container>

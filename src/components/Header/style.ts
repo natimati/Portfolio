@@ -5,21 +5,22 @@ export const Container = styled.div`
 background-color: ${(props) => props.theme.colors.primaryUi};
 width: 100%;
 max-height: 100%;
-height: 700px;
+height: 600px;
+margin-bottom: 10px;
 display: flex;
 align-items: flex-start;
 justify-content: space-around;
 `;
 
 export const ButtonContainer = styled.div`
-margin-top: 50px;
+padding-top: 15px;
 `
 
 export const ImageContainer = styled.div`
 position: relative;
 align-self: center;
 height: 500px;
-margin-top: 50px;
+margin-top: 20px;
 cursor: pointer;
 `
 
@@ -27,7 +28,7 @@ export const Img = styled.img`
 height: 100%;
 `;
 
-export const NDiv = styled.div`
+export const BDiv = styled.div`
 position: absolute;
 opacity: 0;
 height: 100%;
@@ -37,15 +38,15 @@ width: 50%;
 }
 `;
 
-export const NArrow = styled.img`
+export const BArrow = styled.img`
 height: 50%;
-transform: translate(-120px, 80%) rotate(0.6turn);
+transform: translate(-150px,80%) rotate(0.6turn);
 `;
-export const NTextArea = styled.div`
-transform: translateX(-250px) translateY(100px);
+export const BTextArea = styled.div`
+transform: translateX(-250px) translateY(120px);
 `;
 
-export const BDiv = styled.div`
+export const NDiv = styled.div`
 position: absolute;
 opacity: 0;
 height: 100%;
@@ -57,12 +58,12 @@ right: 0;
 }
 `;
 
-export const BArrow = styled.img`
+export const NArrow = styled.img`
 height: 50%;
-transform: translate(110px, 40%) rotate(0.1turn);
+transform: translate(190px, 40%) rotate(0.1turn);
 `;
-export const BTextArea = styled.div`
-transform: translateX(250px) translateY(-40px);
+export const NTextArea = styled.div`
+transform: translateX(350px) translateY(-40px);
 `;
 
 export const Name = styled.h3`

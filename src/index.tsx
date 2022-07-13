@@ -5,6 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ThemeProvider } from 'styled-components';
 import { theme } from "./styles";
+import { ModalContextProvider } from './context/ModalContextProvider';
+import Modal from './components/Modal';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -12,7 +14,10 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <App />
+      <ModalContextProvider>
+        <App />
+        <Modal />
+      </ModalContextProvider>
     </ThemeProvider>
   </React.StrictMode>
 );

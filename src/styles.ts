@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from "styled-components";
+import img from "./highlighter.png";
 
 export const GlobalStyle = createGlobalStyle`
     body {
@@ -9,7 +10,7 @@ export const GlobalStyle = createGlobalStyle`
 
     h1 {
         font-weight: 700;
-        font-size: 40px;
+        font-size: 45px;
     };
 
     h2 {
@@ -27,10 +28,11 @@ export const theme = {
     colors: {
         white: "#fff",
         primaryUi: "#EBEBEB",
-        secondaryUi: "#BAD3D2",
+        secondaryUi: "rgba(200, 214, 213, .9)",
         tertiaryUi: "#9AB0AF",
-        fourthUi: "#345C4E",
+        fourthUi: "rgba(52, 92, 78, 1)",
         fifthUi: "#FAFF05",
+
     },
     
     fontFamily: {
@@ -46,17 +48,59 @@ export const Button = styled.button`
     font-size: 15px;
     font-weight: 600;
     text-transform : uppercase;
-    border: none;
+    border: 2px solid ${(props) => props.theme.colors.tertiaryUi};
     margin-top: 20px;
     padding: 10px 50px;
     height: 40px;
-    width: 200px;
+    width: 210px;
     cursor: pointer;
+    position: relative;
+    z-index: 1;
 
-    &:hover {
-        background-color: ${(props) => props.theme.colors.secondaryUi};
+    &::before {
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        width: 150%;
+        height: 100%;
+        content: "";
+        background-image: url(${img});
+        background-size: cover;
+        display: none;
+        background-position: center;
+        z-index: -1;
+    }
+
+    &:hover {        
+        &::before{
+            display: block;
+        }
     }
 `
 export const SubtierButton = styled(Button)`
     background-color: ${(props) => props.theme.colors.secondaryUi};
+    text-transform: capitalize;
+`;
+
+export const SmallButton = styled(Button)`
+    justify-content: flex-start;
+    background-color: white;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: none;
+    margin-top: 0;
+    padding: 0;
+    border: none;
+    
+    &:hover {
+        background-color: white;
+        font-weight: 1000;
+        &::before {
+            top: 50%;
+            left: 50%;
+            width: 80%;
+            height: 80%;
+        }
+    }
 `;

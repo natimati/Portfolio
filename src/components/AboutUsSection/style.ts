@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { SmallButton } from "../../styles";
 
 export const Container = styled.div`
 display: flex;
@@ -10,7 +11,25 @@ align-items: center;
 export const TextArea = styled.div`
 display: flex;
 flex-direction: column;
-max-width: 1000px;
+max-width: 750px;
+`;
+
+export const ParagrathContainer = styled.div`
+display: flex;
+flex-direction: row;
+`;
+
+export const Button = styled(SmallButton)`
+margin: 0;
+height: 19px;
+padding-left: 5px;
+
+&:hover {
+        &::before {
+            transform: translate(-115%, -50%);
+            width: 100px;
+        }
+    }
 `;
 
 export const DownButton = styled.button`

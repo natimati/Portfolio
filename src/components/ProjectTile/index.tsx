@@ -1,10 +1,11 @@
 
 import React, { useContext } from 'react';
-import { Description, EachSlide, ProjectContainer, SlideContainer, SmallButton, Subtitle, Text, Title } from "./style";
+import { Description, EachSlide, ProjectContainer, SlideContainer, Subtitle, Text, Title } from "./style";
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
 import { ModalContext } from '../../context/ModalContextProvider';
 import FirstProjectModalContent from './FirstProjectModalContent';
+import { SmallButton } from '../../styles';
 
 interface SlideShowProps {
 images: string[],

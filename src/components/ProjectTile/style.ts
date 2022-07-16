@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Button } from "../../styles";
+import { SmallButton } from "../../styles";
 
 interface ProjectContainerProps {
   isSlideFirst: boolean;
@@ -29,22 +29,6 @@ margin: 0;
 padding-bottom: 10px;
 `;
 
-export const SmallButton = styled(Button)`
-justify-content: flex-start;
-background-color: white;
-font-size: 15px;
-font-weight: 500;
-text-transform: none;
-margin-top: 0;
-padding: 0 0;
-cursor: pointer;
-
-&:hover {
-    background-color: white;
-    font-weight: 1000;
-}
-`;
-
 export const ProjectContainer = styled.div<ProjectContainerProps>`
 display: grid;
 grid-template-columns: 1fr 1fr;
@@ -58,7 +42,11 @@ align-items: ${(props) => (props.isSlideFirst ? 'flex-start' : 'flex-end')};
 
 ${SmallButton} {
 justify-content: ${(props) => (props.isSlideFirst ? 'flex-start' : 'flex-end')};
-}
+
+    &::before {
+        transform: ${(props) => (props.isSlideFirst ? 'translate(-90%, -60%)' : 'translate(-5%, -60%)')};
+    }
+  }
 `;
 
 export const SlideContainer = styled.div`
@@ -96,5 +84,6 @@ export const Photo = styled.img`
 `;
 
 export const Paragraph = styled.p`
+margin-top: 0;
 `;
 

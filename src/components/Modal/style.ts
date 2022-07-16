@@ -21,11 +21,12 @@ export const StyledModal = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: ${(props) => props.theme.colors.primaryUi};
+  background-color: ${(props) => props.theme.colors.secondaryUi};
   border: 0px;
   animation: ${slideIn} 0.8s both ease-in-out;
   z-index: 98;
-  border: 5px solid ${(props) => props.theme.colors.white};
+  border: 5px solid ${(props) => props.theme.colors.secondaryUi};
+  padding: 5px;
 `;
 
 export const ModalContent = styled.div`

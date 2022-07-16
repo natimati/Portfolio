@@ -40,7 +40,7 @@ const FirstProjectModalContent = () => {
                     ad dolore et sunt mollit in qui velit irure. Labore dolor nulla labore laboris magna labore amet culpa. Aute enim
                     cillum duis ea cillum. 
                 </Paragraph>
-                <Photo src="/assets/images/slide_1_1.jpg" alt="first project"/>
+                <Photo src="/assets/highlighter.png" alt="first project"/>
             </ProjectDetails>
         </Container>
 )

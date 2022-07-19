@@ -31,8 +31,9 @@ export const theme = {
         primaryUi: "#EBEBEB",
         secondaryUi: "rgba(200, 214, 213, .9)",
         tertiaryUi: "#9AB0AF",
-        fourthUi: "rgba(52, 92, 78, 1)",
-        fifthUi: "#FAFF05",
+        fourthUi: "#23362F",
+        fifthUi: "#D9D9D9",
+        sixthUi: "#FAFF05",
 
     },
     
@@ -44,13 +45,13 @@ export const Button = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: ${(props) => props.theme.colors.tertiaryUi};
+    background-color: ${(props) => props.theme.colors.fifthUi};
     font-family: ${(props) => props.theme.fontFamily.primaryFont};
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 700;
     text-transform : uppercase;
-    border: 2px solid ${(props) => props.theme.colors.tertiaryUi};
-    margin-top: 20px;
+    border: 0px;
+    margin-top: 20px;   
     padding: 10px 50px;
     height: 40px;
     width: 210px;
@@ -61,10 +62,10 @@ export const Button = styled.button`
     &::before {
         position: absolute;
         top: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%,-45%);
         left: 50%;
-        width: 150%;
-        height: 100%;
+        width: 190%;
+        height: 80%;
         content: "";
         background-image: url(${img});
         background-size: cover;
@@ -93,15 +94,10 @@ export const SmallButton = styled(Button)`
     margin-top: 0;
     padding: 0;
     border: none;
+    width: initial;
     
     &:hover {
         background-color: white;
         font-weight: 1000;
-        &::before {
-            top: 50%;
-            left: 50%;
-            width: 80%;
-            height: 80%;
-        }
-    }
+   }
 `;

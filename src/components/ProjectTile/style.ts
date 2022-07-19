@@ -44,7 +44,7 @@ ${SmallButton} {
 justify-content: ${(props) => (props.isSlideFirst ? 'flex-start' : 'flex-end')};
 
     &::before {
-        transform: ${(props) => (props.isSlideFirst ? 'translate(-90%, -60%)' : 'translate(-5%, -60%)')};
+        transform: translate(-50%,-40%);
     }
   }
 `;

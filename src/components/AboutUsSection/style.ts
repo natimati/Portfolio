@@ -26,8 +26,7 @@ padding-left: 5px;
 
 &:hover {
         &::before {
-            transform: translate(-115%, -50%);
-            width: 100px;
+            
         }
     }
 `;

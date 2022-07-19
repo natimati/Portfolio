@@ -34,14 +34,14 @@ function Header() {
             </ButtonContainer>
             <ImageContainer>
                 <NDiv>
-                    <NArrow src="assets/arrow.svg"/>
+                    <NArrow src="assets/arrow.png"/>
                     <NTextArea>
                         <Name>Naśka</Name>
                         <Role>frontend developer</Role>
                     </NTextArea>
                  </NDiv>
                 <BDiv>
-                    <BArrow src="assets/arrow.svg" />
+                    <BArrow src="assets/arrow.png" />
                     <BTextArea>
                         <Name>Beti</Name>
                         <Role>UX/UI designer</Role>

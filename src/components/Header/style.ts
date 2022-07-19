@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 
 export const Container = styled.div`
-background-color: ${(props) => props.theme.colors.primaryUi};
+background-color: ${(props) => props.theme.colors.fourthUi};
 width: 100%;
 max-height: 100%;
 height: 600px;
@@ -40,10 +40,11 @@ width: 50%;
 
 export const BArrow = styled.img`
 height: 50%;
-transform: translate(-150px,80%) rotate(0.6turn);
+transform: translate(-150px,70%) rotate(0.1turn);
 `;
 export const BTextArea = styled.div`
 transform: translateX(-250px) translateY(120px);
+color: ${(props) => props.theme.colors.white}
 `;
 
 export const NDiv = styled.div`
@@ -60,10 +61,11 @@ right: 0;
 
 export const NArrow = styled.img`
 height: 50%;
-transform: translate(190px, 40%) rotate(0.1turn);
+transform: translate(180px,55%) rotate(0.65turn);
 `;
 export const NTextArea = styled.div`
 transform: translateX(350px) translateY(-40px);
+color: ${(props) => props.theme.colors.white}
 `;
 
 export const Name = styled.h3`

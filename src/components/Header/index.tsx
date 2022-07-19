@@ -4,12 +4,18 @@ import { Button, SubtierButton } from "../../styles"
 import Contact from "../ContactForm";
 import { BArrow, BDiv, BTextArea, ButtonContainer, Container, ImageContainer, Img, Name, NArrow, NDiv, NTextArea, Role } from "./style"
 
+
 function Header() {
     const [isShown, setIsShown] = useState(false);
 
-    const handleClick = () => {
+    const handlePortfolioButtonClick = () => {
         setIsShown(current => !current)
-    }
+    };
+
+    const handleGithubButtonClick = () => {
+        window.location.href = 'https://github.com/natimati/Portfolio';
+    };
+
     const modalContextValue = useContext(ModalContext);
     const handleContactUsButtonClick = (content: React.ReactChild) => {
     modalContextValue.setDisplayedComponent(content)
@@ -18,11 +24,11 @@ function Header() {
      return (
          <Container>
              <ButtonContainer>
-                 <Button onClick={handleClick}>Portfolio</Button>
+                 <Button onClick={handlePortfolioButtonClick}>Portfolio</Button>
                  {isShown && (
                      <>
                          <SubtierButton>Case study</SubtierButton>
-                         <SubtierButton>github</SubtierButton>
+                         <SubtierButton onClick={handleGithubButtonClick}>github</SubtierButton>
                      </>
                  )}
             </ButtonContainer>

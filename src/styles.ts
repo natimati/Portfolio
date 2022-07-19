@@ -11,6 +11,7 @@ export const GlobalStyle = createGlobalStyle`
     h1 {
         font-weight: 700;
         font-size: 45px;
+        text-shadow: 4px 4px 5px #9ab0af;
     };
 
     h2 {

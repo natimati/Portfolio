@@ -20,7 +20,7 @@ export const ImageContainer = styled.div`
 position: relative;
 align-self: center;
 height: 500px;
-margin-top: 20px;
+margin-top: 50px;
 cursor: pointer;
 `
 

@@ -12,7 +12,7 @@ function MainPage() {
 
     return (
         <>
-            <Header heatherSectionRef={heatherSection}/>
+            <Header headerSectionRef={heatherSection}/>
             <AboutUs projectTileSectionRef={projectTileSection}  />
             <ProjectTile projectTileSectionRef={projectTileSection} />
             <Footer heatherSectionRef={heatherSection} />

@@ -1,13 +1,19 @@
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import Contact from "./components/ContactForm";
 import MainPage from './pages/MainPage';
-import { GlobalStyle } from './styles';
 
 function App() {
   return (
-    <div className="App">
-      <GlobalStyle />
-      <MainPage />
-    </div>
+    <Routes>
+      <Route index element={(
+        <MainPage />
+      )}
+      />
+      <Route path="contact" element={(
+        <Contact />
+      )}
+      />
+    </Routes>
   );
 }
 

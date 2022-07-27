@@ -12,6 +12,7 @@ export const GlobalStyle = createGlobalStyle`
         font-weight: 700;
         font-size: 45px;
         text-shadow: 4px 4px 5px #9ab0af;
+        align-self: center;
     };
 
     h2 {

@@ -6,17 +6,22 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+justify-items: center;
 `;
 
 export const TextArea = styled.div`
 display: flex;
 flex-direction: column;
 max-width: 750px;
+text-align: center;
+
 `;
 
 export const ParagrathContainer = styled.div`
 display: flex;
 flex-direction: row;
+text-align: center;
+justify-content: center;
 `;
 
 export const Button = styled(SmallButton)`

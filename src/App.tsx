@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import Contact from "./components/ContactForm";
+import ContactPage from "./pages/ContactPage";
 import MainPage from './pages/MainPage';
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
       )}
       />
       <Route path="contact" element={(
-        <Contact />
+        <ContactPage />
       )}
       />
     </Routes>

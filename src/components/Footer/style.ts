@@ -5,8 +5,8 @@ export const Container = styled.div`
     width: 100%;
     max-height: 100%;
     height: 250px;
+    max-width: 100%;
     padding-top: 35px;
-    padding-left: 55px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -18,7 +18,7 @@ export const GoUpButton = styled.button`
     color: ${(props) => props.theme.colors.white};
     position: absolute;
     align-self: flex-end;
-    margin-right: 100px;
+    margin-right: 50px;
     margin-bottom: 50px;
     text-transform: uppercase;
     font-size: 20px;
@@ -31,6 +31,7 @@ export const MainText = styled.p`
     text-transform: uppercase;
     font-weight: 700;
     font-size: 20px;
+    padding-left: 50px;
 `;
 
 export const InContainer = styled.div`
@@ -38,6 +39,7 @@ export const InContainer = styled.div`
     flex-direction: row;
     gap: 15px;
     padding-bottom: 10px;
+    padding-left: 60px;
 `;
 
 export const InButton = styled.button`

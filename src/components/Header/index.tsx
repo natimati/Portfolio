@@ -79,7 +79,7 @@ function Header(props: HeaderProps) {
                     <BTextArea>
                         <Name>Beti</Name>
                          <Role>UX/UI designer</Role>
-                         
+                         <SkillsHeather>Skills:</SkillsHeather>
                          <BSkills />
                     </BTextArea>
                 </BDiv>

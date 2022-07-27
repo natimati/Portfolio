@@ -40,13 +40,15 @@ width: 50%;
 
 export const BArrow = styled.img`
 height: 50%;
-transform: translate(-150px,89%) rotate(0.07turn);
+transform: translate(-80px,90%) rotate(0.07turn);
 `;
 export const BTextArea = styled.div`
 transform: translateX(-350px) translateY(-200px);
 color: ${(props) => props.theme.colors.white};
-width: fit-content;
-line-height: 30px;
+margin-right: 50px;
+display: flex;
+flex-direction: column;
+align-items: center;
 `;
 
 export const NDiv = styled.div`
@@ -63,12 +65,15 @@ right: 0;
 
 export const NArrow = styled.img`
 height: 50%;
-transform: translate(180px,25%) rotate(0.55turn);
+transform: translate(250px,10%) rotate(0.55turn);
 `;
 export const NTextArea = styled.div`
 transform: translateX(350px) translateY(-200px);
 color: ${(props) => props.theme.colors.white};
-margin-left: 100px;
+margin-left: 50px;
+display: flex;
+flex-direction: column;
+align-items: center;
 `;
 
 export const Name = styled.h3`
@@ -87,7 +92,7 @@ margin: 10px;
 export const SkillsHeather = styled.p`
 margin-top: 20px;
 margin-bottom: 0;
-padding-left: 20px;
+padding-left: 50px;
 font-weight: 400;
 display: flex;
 align-self: flex-start;

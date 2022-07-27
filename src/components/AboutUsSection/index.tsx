@@ -24,7 +24,7 @@ function AboutUs(props: scrollProps) {
                 <br /> A year ago we discover a new passion - designing mobile apps.
                 <br />That's how we started our jouney with UX/UI design and coding. We're glad that you visit us!
                 <br /> <ParagrathContainer>Do you want to know more about our creative work process?
-                    <Button>clik here</Button></ParagrathContainer></p>
+                <Button>clik here</Button></ParagrathContainer></p>
         </TextArea>
         <DownButton onClick={scrollDown}>
                 <GoDownIcon />

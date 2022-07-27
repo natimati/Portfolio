@@ -1,9 +1,11 @@
 
-import { InButton, Container, InContainer, InIcon, MainText, Text, NormalText } from "./style";
+import { InButton, Container, InContainer, InIcon, MainText, Text, NormalText, GoUpButton } from "./style";
 
+interface scrollProps{
+        heatherSectionRef: React.RefObject<HTMLDivElement> 
+};
 
-
-const Footer = () => {
+const Footer = (props: scrollProps) => {
     const  handleInBeataClick = () => {
         window.location.href = 'https://www.linkedin.com/in/beatasuscicka/';
     };
@@ -11,9 +13,18 @@ const Footer = () => {
         window.location.href = 'https://www.linkedin.com/in/natalia-mateusiak/  ';
     };
 
+    const scrollUp = () => {
+        if (props.heatherSectionRef.current !== null) {
+            window.scrollTo({
+                top: props.heatherSectionRef.current.offsetTop,
+                behavior: 'smooth',
+        })}
+    }
+
     return (
         <Container>
-             <MainText>Find us</MainText>
+            <GoUpButton onClick={scrollUp}>go up!</GoUpButton>
+            <MainText>Find us</MainText>
             <InContainer>
                 <InButton>
                     <InIcon src="assets/in_icon.png" alt="linkedlin logo" onClick={handleInBeataClick} />

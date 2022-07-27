@@ -12,6 +12,20 @@ export const Container = styled.div`
     align-items: flex-start;
 `;
 
+export const GoUpButton = styled.button`
+    background: none;
+    border: none;
+    color: ${(props) => props.theme.colors.white};
+    position: absolute;
+    align-self: flex-end;
+    margin-right: 100px;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+`;
+
 export const MainText = styled.p`
     color: ${(props) => props.theme.colors.white};
     text-transform: uppercase;

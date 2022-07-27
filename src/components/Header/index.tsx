@@ -4,8 +4,11 @@ import { Button, SubtierButton } from "../../styles"
 import Contact from "../ContactForm";
 import { BArrow, BDiv, BTextArea, ButtonContainer, Container, ImageContainer, Img, Name, NArrow, NDiv, NTextArea, Role, SkillsHeather, SkillsList } from "./style"
 
-
-function Header() {
+interface HeatherProps {
+  heatherSectionRef: React.RefObject<HTMLDivElement>
+};
+ 
+function Header(props: HeatherProps) {
     const [isShown, setIsShown] = useState(false);
 
     const handlePortfolioButtonClick = () => {
@@ -51,7 +54,7 @@ function Header() {
     }
 
      return (
-         <Container>
+         <Container ref={props.heatherSectionRef}>
              <ButtonContainer>
                  <Button onClick={handlePortfolioButtonClick}>Portfolio</Button>
                  {isShown && (

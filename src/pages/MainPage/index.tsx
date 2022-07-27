@@ -7,14 +7,15 @@ import ProjectTile from "../../components/ProjectTile";
 
 function MainPage() {
 
-    const projectTileSection = useRef(null) 
+    const projectTileSection = useRef(null);
+    const heatherSection = useRef(null);
 
     return (
         <>
-            <Header />
-            <AboutUs projectTileSectionRef={projectTileSection} />
+            <Header heatherSectionRef={heatherSection}/>
+            <AboutUs projectTileSectionRef={projectTileSection}  />
             <ProjectTile projectTileSectionRef={projectTileSection} />
-            <Footer />
+            <Footer heatherSectionRef={heatherSection} />
         </>
     )
 };

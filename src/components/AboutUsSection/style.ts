@@ -23,12 +23,6 @@ export const Button = styled(SmallButton)`
 margin: 0;
 height: 19px;
 padding-left: 5px;
-
-&:hover {
-        &::before {
-            
-        }
-    }
 `;
 
 export const DownButton = styled.button`

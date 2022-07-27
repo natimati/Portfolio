@@ -61,11 +61,11 @@ export const Button = styled.button`
 
     &::before {
         position: absolute;
-        top: 50%;
-        transform: translate(-50%,-45%);
+        top: 55%;
+        transform: translate(-50%,-50%);
         left: 50%;
-        width: 190%;
-        height: 80%;
+        width: 110%;
+        height: 180%;
         content: "";
         background-image: url(${img});
         background-size: cover;
@@ -99,5 +99,11 @@ export const SmallButton = styled(Button)`
     &:hover {
         background-color: white;
         font-weight: 1000;
+
+         &::before{
+            width: 140%;
+            height: 100%;
+            top: 45%
+        }
    }
 `;

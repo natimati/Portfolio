@@ -40,11 +40,13 @@ width: 50%;
 
 export const BArrow = styled.img`
 height: 50%;
-transform: translate(-150px,70%) rotate(0.1turn);
+transform: translate(-150px,89%) rotate(0.07turn);
 `;
 export const BTextArea = styled.div`
-transform: translateX(-250px) translateY(120px);
-color: ${(props) => props.theme.colors.white}
+transform: translateX(-350px) translateY(-200px);
+color: ${(props) => props.theme.colors.white};
+width: fit-content;
+line-height: 30px;
 `;
 
 export const NDiv = styled.div`
@@ -61,22 +63,41 @@ right: 0;
 
 export const NArrow = styled.img`
 height: 50%;
-transform: translate(180px,55%) rotate(0.65turn);
+transform: translate(180px,25%) rotate(0.55turn);
 `;
 export const NTextArea = styled.div`
-transform: translateX(350px) translateY(-40px);
-color: ${(props) => props.theme.colors.white}
+transform: translateX(350px) translateY(-200px);
+color: ${(props) => props.theme.colors.white};
+margin-left: 100px;
 `;
 
 export const Name = styled.h3`
-font-size: 25px;
+font-size: 40px;
 text-transform : uppercase;
 text-shadow: 4px 4px 5px ${(props) => props.theme.colors.tertiaryUi};
 margin: 0;
 `;
 
 export const Role = styled.p`
-font-size: 15px;
-font-weight: 500;
-margin: 1px;
+font-size: 20px;
+font-weight: 200;
+margin: 10px;
+`;
+
+export const SkillsHeather = styled.p`
+margin-top: 20px;
+margin-bottom: 0;
+padding-left: 20px;
+font-weight: 400;
+display: flex;
+align-self: flex-start;
+`;
+
+export const SkillsList = styled.ul`
+    list-style: circle inside;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 40px;
+    margin-top: 0;
 `;

@@ -2,7 +2,7 @@ import { useContext, useState } from "react"
 import { ModalContext } from "../../context/ModalContextProvider";
 import { Button, SubtierButton } from "../../styles"
 import Contact from "../ContactForm";
-import { BArrow, BDiv, BTextArea, ButtonContainer, Container, ImageContainer, Img, Name, NArrow, NDiv, NTextArea, Role } from "./style"
+import { BArrow, BDiv, BTextArea, ButtonContainer, Container, ImageContainer, Img, Name, NArrow, NDiv, NTextArea, Role, SkillsHeather, SkillsList } from "./style"
 
 
 function Header() {
@@ -21,6 +21,35 @@ function Header() {
     modalContextValue.setDisplayedComponent(content)
     }
 
+    function BSkills() {
+
+        return (
+            <SkillsList>
+                    <li>User reserch & analysis</li>
+                    <li>Problems solving</li>
+                    <li>Prototyping & wirframing</li>
+                    <li>Graphic design</li>
+                    <li>Testing and iteration</li>
+                    <li>Presentation Skills</li>
+                    <li>Creativity</li>
+            </SkillsList>
+        )
+    }
+    function NSkills() {
+
+        return (
+            <SkillsList>
+                    <li>HTML</li>
+                    <li>CSS, Styled Components</li>
+                    <li>JavaScript</li>
+                    <li>ReactJS</li>
+                    <li>TypeScript</li>
+                    <li>WebSockets and Rest API</li>
+                    <li>GitHub</li>
+            </SkillsList>
+        )
+    }
+
      return (
          <Container>
              <ButtonContainer>
@@ -37,14 +66,18 @@ function Header() {
                     <NArrow src="assets/arrow.png"/>
                     <NTextArea>
                         <Name>Naśka</Name>
-                        <Role>frontend developer</Role>
+                         <Role>frontend developer</Role>
+                         <SkillsHeather>Skills:</SkillsHeather>
+                         <NSkills />
                     </NTextArea>
                  </NDiv>
                 <BDiv>
                     <BArrow src="assets/arrow.png" />
                     <BTextArea>
                         <Name>Beti</Name>
-                        <Role>UX/UI designer</Role>
+                         <Role>UX/UI designer</Role>
+                         
+                         <BSkills />
                     </BTextArea>
                 </BDiv>
                 <Img src="assets/girls.jpg" alt="Us" />
@@ -57,4 +90,4 @@ function Header() {
     )
 };
 
-export default Header
+export default Header;

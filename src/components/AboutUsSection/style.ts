@@ -39,4 +39,13 @@ margin-right: 50px;
 margin-bottom: 50px;
 border: none;
 background-color: ${(props) => props.theme.colors.fourthUi};
+cursor: pointer;
+
+&:hover {
+        box-shadow: 4px 4px 5px ${(props) => props.theme.colors.tertiaryUi};
+        height: 60px;
+        width: 60px;
+        margin-right: 40px;
+        margin-bottom: 40px;
+    }
 `;

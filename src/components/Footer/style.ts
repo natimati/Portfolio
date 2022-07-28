@@ -24,6 +24,10 @@ export const GoUpButton = styled.button`
     font-size: 20px;
     font-weight: 700;
     cursor: pointer;
+
+    &:hover {
+        text-shadow: 4px 4px 5px ${(props) => props.theme.colors.primaryUi};
+    }
 `;
 
 export const MainText = styled.p`

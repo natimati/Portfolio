@@ -1,5 +1,5 @@
-import { useContext, useState } from "react"
-import { ModalContext } from "../../context/ModalContextProvider";
+import { useState } from "react"
+import { useNavigate } from "react-router-dom";
 import { Button, SubtierButton } from "../../styles"
 import Contact from "../ContactForm";
 import { BArrow, BDiv, BTextArea, ButtonContainer, Container, ImageContainer, Img, Name, NArrow, NDiv, NTextArea, Role, SkillsHeather, SkillsList } from "./style"
@@ -9,6 +9,7 @@ interface HeaderProps {
 };
  
 function Header(props: HeaderProps) {
+    const navigate = useNavigate()
     const [isShown, setIsShown] = useState(false);
 
     const handlePortfolioButtonClick = () => {
@@ -16,12 +17,11 @@ function Header(props: HeaderProps) {
     };
 
     const handleGithubButtonClick = () => {
-        window.location.href = 'https://github.com/natimati/Portfolio';
+        window.open('https://github.com/natimati/Portfolio', '_blank')
     };
 
-    const modalContextValue = useContext(ModalContext);
-    const handleContactUsButtonClick = (content: React.ReactChild) => {
-    modalContextValue.setDisplayedComponent(content)
+    const handleContactUsButtonClick = () => {
+        navigate("/contact")
     }
 
     function BSkills() {
@@ -86,7 +86,7 @@ function Header(props: HeaderProps) {
                 <Img src="assets/girls.jpg" alt="Us" />
             </ImageContainer>
              <ButtonContainer>
-                 <Button onClick={() => handleContactUsButtonClick(<Contact />)}>Contact us</Button>
+                 <Button onClick={handleContactUsButtonClick}>Contact us</Button>
             </ButtonContainer>
 
         </Container>

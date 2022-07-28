@@ -40,6 +40,7 @@ export const theme = {
     
     fontFamily: {
         primaryFont: "'Josefin Sans', sans-serif ",
+        secondaryFont: "'Tiro Devanagari Hindi'",
     },    
 };
 export const Button = styled.button`

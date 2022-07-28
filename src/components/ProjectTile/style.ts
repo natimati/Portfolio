@@ -30,10 +30,10 @@ padding-bottom: 10px;
 `;
 
 export const ProjectContainer = styled.div<ProjectContainerProps>`
-display: grid;
-grid-template-columns: 1fr 1fr;
-grid-template-areas: ${(props) => (props.isSlideFirst === true ? "'slide text'" : "'text slide'")};
-padding: 50px 120px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: ${(props) => (props.isSlideFirst === true ? "'slide text'" : "'text slide'")};
+  padding: 50px 120px;
 
 ${Description} {
 text-align: ${(props) => (props.isSlideFirst ? 'start' : 'end')};

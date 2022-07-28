@@ -1,5 +1,5 @@
 
-import { InButton, Container, InContainer, InIcon, MainText, Text, NormalText, GoUpButton } from "./style";
+import { InButton, Container, InIcon, FindUsText, Text, NormalText, GoUpButton } from "./style";
 
 interface scrollProps{
         heatherSectionRef: React.RefObject<HTMLDivElement> 
@@ -7,10 +7,10 @@ interface scrollProps{
 
 const Footer = (props: scrollProps) => {
     const  handleInBeataClick = () => {
-        window.location.href = 'https://www.linkedin.com/in/beatasuscicka/';
+        window.open('https://www.linkedin.com/in/beatasuscicka/', '_blank')
     };
     const  handleInNataliaClick = () => {
-        window.location.href = 'https://www.linkedin.com/in/natalia-mateusiak/  ';
+        window.open('https://www.linkedin.com/in/natalia-mateusiak/', '_blank')
     };
 
     const scrollUp = () => {
@@ -22,23 +22,21 @@ const Footer = (props: scrollProps) => {
     }
 
     return (
-        <Container>
-            <GoUpButton onClick={scrollUp}>go up!</GoUpButton>
-            <MainText>Find us</MainText>
-            <InContainer>
-                <InButton>
-                    <InIcon src="assets/in_icon.png" alt="linkedlin logo" onClick={handleInBeataClick} />
-                </InButton>
-                <Text>Beata Suścicka</Text>
-            </InContainer>
-            <InContainer>
-                <InButton>
-                    <InIcon src="assets/in_icon.png" alt="linkedlin logo" onClick={handleInNataliaClick} />
-                </InButton>
-                <Text>Natalia Mateusiak</Text>  
-            </InContainer>
-            <NormalText>©2022 Natalia Mateusiak, Beata Suścicka. All Rights Reserved.</NormalText>
-        </Container>
+        <>
+            <Container>
+                <GoUpButton onClick={scrollUp}>go up!</GoUpButton>
+                <FindUsText>Find us</FindUsText>
+                    <InButton onClick={handleInBeataClick}>
+                        <InIcon src="assets/in_icon.png" alt="linkedlin logo" />
+                        <Text>Beata Suścicka</Text>
+                    </InButton>
+                    <InButton onClick={handleInNataliaClick}>
+                        <InIcon src="assets/in_icon.png" alt="linkedlin logo" />
+                        <Text>Natalia Mateusiak</Text>
+                    </InButton>
+                <NormalText>©2022 Natalia Mateusiak, Beata Suścicka. All Rights Reserved.</NormalText>
+                </Container>
+           </> 
 )
 }
 

@@ -1,11 +1,18 @@
 import styled from "styled-components";
 
+export const Container = styled.div`
+display: flex;
+justify-content: center;
+flex-direction: column;
+`;
+
 export const Form = styled.form`
 display: flex;
 flex-direction: column;
 margin: 20px;
 gap: 20px;
 max-width: 900px;
+align-self: center;
 `;
 
 export const FormContainer = styled.form`
@@ -60,3 +67,8 @@ padding: 10px;
     border: 2px solid ${(props) => props.theme.colors.tertiaryUi};
 }
 `;
+
+export const RodoInformation = styled.span`
+margin-top: 25px;
+text-align: center;
+`

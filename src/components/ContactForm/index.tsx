@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com'
-import { EmailFormInput, Form, FormContainer, FormInput, InputContainer, InputError, Textarea } from './style';
+import { Container, EmailFormInput, Form, FormContainer, FormInput, InputContainer, InputError, RodoInformation, Textarea } from './style';
 import { Button } from '../../styles';
 import { useForm } from 'react-hook-form';
 
@@ -33,15 +33,15 @@ const Contact = () => {
             setEmail('');
             setMessage('');
             setEmailSent(true);
-        } else {
-            // alert('Please fill in all fields')
-        }
+        } 
     }
 
     const { register, handleSubmit, formState: { errors } } = useForm<FormValues>();
     const onSubmit = handleSubmit((data) => console.log(data));
 
     return (
+        <Container>
+            <h1>Write to us</h1>
             <Form onSubmit={onSubmit}>
                 <FormContainer>
                     <InputContainer>
@@ -75,8 +75,16 @@ const Contact = () => {
                     </FormContainer>
                 <Textarea placeholder='Your message' value={message} onChange={e => setMessage(e.target.value)} />
                 <Button onClick={submit}>send</Button>
-                <span className={emailSent ? 'visible' : undefined}>Thank you for your message, we will be in touch</span>
+                <RodoInformation>
+                    Personal data contained in the above form will be processed by the authors of the website
+                    https://bnportfolio.netlify.app (e-mail: beti.i.naska@gmail.com). <br />Personal data provided via the
+                    contact form will be processed only for the purpose of responding to your message. <br />You have
+                    the right to withdraw consent at any time and request access, rectification, deletion
+                    and limitation of your data. Providing personal data is voluntary, however, without providing it,
+                    we will not be able to respond to the message.
+                </RodoInformation>
             </Form>
+        </Container>
     )
 }
 

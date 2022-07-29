@@ -27,7 +27,10 @@ const DescriptionContainer = (data: any) => {
   const modalContextValue = useContext(ModalContext);
   const handleReadMoreClick = (content: React.ReactChild) => {
     modalContextValue.setDisplayedComponent(content)
-  }
+  };
+  const handleSeeCaseStudyClick = (link: string) => {
+      window.open(link, '_blank')
+  };
   
      return (
       <Description>
@@ -35,7 +38,8 @@ const DescriptionContainer = (data: any) => {
         <Subtitle>{data.category}</Subtitle>
         <Text>{data.text}</Text>
         <SmallButton onClick={() => {}}>see repo</SmallButton>
-        <SmallButton onClick={() => handleReadMoreClick(<FirstProjectModalContent />)}>read more</SmallButton>
+         <SmallButton onClick={() => { handleReadMoreClick(<FirstProjectModalContent />) }}>read more</SmallButton>
+         <SmallButton onClick={() => {handleSeeCaseStudyClick('https://www.figma.com/file/Zzj9Cmao5lVfDsrJsqsMEk/portfolio?node-id=157%3A5')}}>see case study</SmallButton>
       </Description>
     )
 }

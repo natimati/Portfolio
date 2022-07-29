@@ -42,9 +42,13 @@ align-items: ${(props) => (props.isSlideFirst ? 'flex-start' : 'flex-end')};
 
 ${SmallButton} {
 justify-content: ${(props) => (props.isSlideFirst ? 'flex-start' : 'flex-end')};
+height: fit-content;
+padding: 10px;
 
+  &:hover{
     &::before {
-        transform: translate(-50%,-40%);
+        transform: translate(-50%,-45%);
+    }
     }
   }
 `;

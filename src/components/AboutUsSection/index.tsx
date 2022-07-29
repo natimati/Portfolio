@@ -20,18 +20,20 @@ function AboutUs(props: scrollProps) {
         <TextArea>
             <h1>Hi!</h1>
                 <p>We are Beata & Natalia, and this is our portfolio web!
-                <br />We've been friends since hight school. We've always loved creating projects together.
-                <br /> A year ago we discover a new passion - designing mobile apps.
-                <br />That's how we started our jouney with UX/UI design and coding. We're glad that you visit us!
-                <br /> <ParagrathContainer>Do you want to know more about our creative work process?
-                <Button>clik here</Button></ParagrathContainer></p>
+                    <br />We've been friends since hight school. We've always loved creating projects together.
+                    <br /> A year ago we discover a new passion - designing mobile apps.
+                    <br />That's how we started our jouney with UX/UI design and coding. We're glad that you visit us!
+                    <br />
+                        <ParagrathContainer>Do you want to know more about our creative work process?
+                            <Button>clik here</Button>
+                        </ParagrathContainer>
+                </p>
         </TextArea>
         <DownButton onClick={scrollDown}>
                 <GoDownIcon />
         </DownButton>
     </Container>
- 
-)    
+ )    
 };
 
 export default AboutUs;

@@ -13,6 +13,7 @@ export const GlobalStyle = createGlobalStyle`
         font-size: 45px;
         text-shadow: 4px 4px 5px #9ab0af;
         align-self: center;
+        margin-bottom: 5px;
     };
 
     h2 {
@@ -49,13 +50,13 @@ export const Button = styled.button`
     justify-content: center;
     background-color: ${(props) => props.theme.colors.fifthUi};
     font-family: ${(props) => props.theme.fontFamily.primaryFont};
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 700;
     text-transform : uppercase;
     border: 0px;
     margin-top: 20px;   
     padding: 10px 50px;
-    height: 40px;
+    height: 50px;
     width: 210px;
     cursor: pointer;
     position: relative;
@@ -66,8 +67,8 @@ export const Button = styled.button`
         top: 55%;
         transform: translate(-50%,-50%);
         left: 50%;
-        width: 110%;
-        height: 180%;
+        width: 100%;
+        height: 150%;
         content: "";
         background-image: url(${img});
         background-size: cover;

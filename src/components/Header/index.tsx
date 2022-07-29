@@ -1,7 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
 import { Button, SubtierButton } from "../../styles"
-import Contact from "../ContactForm";
 import { BArrow, BDiv, BTextArea, ButtonContainer, Container, ImageContainer, Img, Name, NArrow, NDiv, NTextArea, Role, SkillsHeather, SkillsList } from "./style"
 
 interface HeaderProps {

@@ -5,7 +5,7 @@ export const Container = styled.div`
     background-color: ${(props) => props.theme.colors.fourthUi};
     width: 100%;
     max-height: 100%;
-    height: 600px;
+    height: 700px;
     margin-bottom: 10px;
     display: flex;
     align-items: flex-start;
@@ -19,7 +19,7 @@ export const ButtonContainer = styled.div`
 export const ImageContainer = styled.div`
     position: relative;
     align-self: center;
-    height: 500px;
+    height: 550px;
     margin-top: 50px;
     cursor: pointer;
 `;
@@ -39,12 +39,13 @@ export const BDiv = styled.div`
 `;
 
 export const BArrow = styled.img`
-    height: 50%;
-    transform: translate(-80px,90%) rotate(0.07turn);
+    height: 70%;
+    width: 60%;
+    transform: translate(-150px, 50%) rotate(0.09turn);
 `;
 
 export const BTextArea = styled.div`
-    transform: translateX(-350px) translateY(-200px);
+    transform: translateX(-500px) translateY(-200px);
     color: ${(props) => props.theme.colors.white};
     margin-right: 50px;
     display: flex;
@@ -61,16 +62,16 @@ export const NDiv = styled.div`
 
     &:hover {
         opacity: 100%;
-}
+    }
 `;
 
 export const NArrow = styled.img`
-    height: 50%;
-    transform: translate(250px,10%) rotate(0.55turn);
+    width: 60%;
+    transform: translate(300px,-10%) rotate(0.6turn);
 `;
 
 export const NTextArea = styled.div`
-    transform: translateX(350px) translateY(-200px);
+    transform: translateX(450px) translateY(-280px);
     color: ${(props) => props.theme.colors.white};
     margin-left: 50px;
     display: flex;
@@ -93,8 +94,8 @@ export const Role = styled.p`
 
 export const SkillsHeather = styled.p`
     margin-top: 20px;
-    margin-bottom: 0;
-    padding-left: 50px;
+    margin-bottom: 5px;
+    padding-left: 100px;
     font-weight: 400;
     display: flex;
     align-self: flex-start;
@@ -105,6 +106,7 @@ export const SkillsList = styled.ul`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    line-height: 40px;
+    line-height: 30px;
     margin-top: 0;
+    font-size: 14px;
 `;

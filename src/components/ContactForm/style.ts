@@ -1,74 +1,96 @@
 import styled from "styled-components";
+import { Button } from "../../styles";
 
 export const Container = styled.div`
+margin-top: 50px;
 display: flex;
 justify-content: center;
+align-items: center;
 flex-direction: column;
 `;
 
 export const Form = styled.form`
-display: flex;
-flex-direction: column;
-margin: 20px;
-gap: 20px;
-max-width: 900px;
-align-self: center;
-`;
-
-export const FormContainer = styled.form`
-display: flex;
-flex-direction: row;
-gap: 20px;
-max-width: 900px;
-`;
-
-export const InputContainer = styled.div`
-display: flex;
-flex-direction: column;
-max-width: 100%;
+    margin-top: 50px;
+    display: grid;
+    width: 100%;
+    max-width: 1000px;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 25px;
+    grid-template-areas:
+        "name email"
+        "nameError emailError"
+        "message message"
+        "messageError messageError"
+        "sendButton sendButton";
 `;
 
 export const FormInput = styled.input`
-height: 30px;
-font-family: ${(props) => props.theme.fontFamily.primaryFont};
-font-size: 16px;
-border: 2px solid ${(props) => props.theme.colors.primaryUi};
-padding: 5px;
-min-width: 30%;
-width: 200px;
-
-&:focus {
-    outline: none;
-    border: 2px solid ${(props) => props.theme.colors.tertiaryUi};
-}
+    grid-area: name;
+    height: 30px;
+    background-color: ${(props) => props.theme.colors.primaryUi};
+    border: 2px solid ${(props) => props.theme.colors.primaryUi};
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: ${(props) => props.theme.fontFamily.primaryFont};
+    
+    &:focus {
+        outline: none;
+        border: 2px solid ${(props) => props.theme.colors.tertiaryUi};
+    }
+    &::placeholder {
+        color: black;
+    }
 `;
 
 export const EmailFormInput = styled(FormInput)`
-min-width: 60%;
-width: 650px;
+    grid-area: email;
+    `;
+
+export const Message = styled.textarea`
+    grid-area: message;
+    height: 380px;
+    background-color: ${(props) => props.theme.colors.primaryUi};
+    border: 2px solid ${(props) => props.theme.colors.primaryUi};
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: ${(props) => props.theme.fontFamily.primaryFont};
+
+    &:focus {
+        outline: none;
+        border: 2px solid ${(props) => props.theme.colors.tertiaryUi};
+    }
+
+    &::placeholder {
+        color: black;
+    }
 `;
 
 export const InputError = styled.span`
-align-self: flex-start;
-padding: 3px;
-font-size: 14px;
+    grid-area: nameError;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    color: red;
+`;
+
+export const EmailInputError = styled(InputError)`
+    grid-area: emailError;
+`;
+
+
+export const SendButton = styled(Button)`
+    grid-area: sendButton;
+    justify-self: center;
+    background-color: ${(props) => props.theme.colors.secondaryUi};
 `
 
-export const Message = styled(FormInput)`
-height: 100px;
-resize: vertical;
-font-family: ${(props) => props.theme.fontFamily.primaryFont};
-font-size: 16px;
-border: 2px solid ${(props) => props.theme.colors.primaryUi};
-padding: 10px;
-
-&:focus {
-    outline: none;
-    border: 2px solid ${(props) => props.theme.colors.tertiaryUi};
-}
+export const MessageInputError = styled(InputError)`
+    grid-area: messageError;
 `;
 
 export const RodoInformation = styled.span`
-margin-top: 25px;
-text-align: center;
-`
+     max-width: 1000px;
+     text-align: center;
+     margin: 50px;
+`;

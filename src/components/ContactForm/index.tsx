@@ -44,8 +44,6 @@ const Contact = () => {
         console.log('Captcha value:', value)
     }
 
-    console.log(process.env.REACT_APP_SITE_KEY)
-
     return (
         <Container>
             <h1>Want to connect? Let's talk!</h1>

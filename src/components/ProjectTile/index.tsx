@@ -25,6 +25,10 @@ const Slideshow = (props: SlideShowProps) => {
   }
 const DescriptionContainer = (data: any) => {
   const modalContextValue = useContext(ModalContext);
+  
+  const handleSeeRepoClick = (link: string) => {
+      window.open(link, '_blank')
+  };
   const handleReadMoreClick = (content: React.ReactChild) => {
     modalContextValue.setDisplayedComponent(content)
   };
@@ -37,7 +41,7 @@ const DescriptionContainer = (data: any) => {
         <Title>{data.title}</Title>
         <Subtitle>{data.category}</Subtitle>
         <Text>{data.text}</Text>
-        <SmallButton onClick={() => {}}>see repo</SmallButton>
+        <SmallButton onClick={() => { handleSeeRepoClick('https://github.com/natimati/Portfolio') }}>see repo</SmallButton>
          <SmallButton onClick={() => { handleReadMoreClick(<FirstProjectModalContent />) }}>read more</SmallButton>
          <SmallButton onClick={() => {handleSeeCaseStudyClick('https://www.figma.com/file/Zzj9Cmao5lVfDsrJsqsMEk/portfolio?node-id=157%3A5')}}>see case study</SmallButton>
       </Description>

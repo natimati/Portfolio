@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com'
-import { Container, EmailFormInput, Form, FormContainer, FormInput, InputContainer, InputError, RodoInformation, Textarea } from './style';
+import { Container, EmailFormInput, Form, FormContainer, FormInput, InputContainer, InputError, RodoInformation, Message } from './style';
 import { Button } from '../../styles';
 import { useForm } from 'react-hook-form';
 
 type FormValues = {
-  name: string;
-  email: string;
+    name: string;
+    email: string;
+    message: string;
 };
 
 const Contact = () => {
@@ -71,9 +72,20 @@ const Contact = () => {
                         <InputError>
                             {errors.email?.type === "required" && "Please enter your email"}
                         </InputError>
-                        </InputContainer>
-                    </FormContainer>
-                <Textarea placeholder='Your message' value={message} onChange={e => setMessage(e.target.value)} />
+                    </InputContainer>
+                </FormContainer>
+                <InputContainer>
+                        <Message
+                            type='message'
+                            {...register("message", {  required: true })}
+                            placeholder='Your message'
+                            value={message}
+                            onChange={e => setMessage(e.target.value)}
+                        />
+                        <InputError>
+                            {errors.message?.type === "required" && "Please enter your message"}
+                        </InputError>
+                    </InputContainer>
                 <Button onClick={submit}>send</Button>
                 <RodoInformation>
                     Personal data contained in the above form will be processed by the authors of the website

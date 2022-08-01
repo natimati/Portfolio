@@ -54,7 +54,7 @@ padding: 3px;
 font-size: 14px;
 `
 
-export const Textarea = styled.textarea`
+export const Message = styled(FormInput)`
 height: 100px;
 resize: vertical;
 font-family: ${(props) => props.theme.fontFamily.primaryFont};

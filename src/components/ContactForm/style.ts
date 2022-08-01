@@ -4,16 +4,15 @@ import { Button } from "../../styles";
 export const Container = styled.div`
 margin-top: 50px;
 display: flex;
-justify-content: center;
-align-items: center;
 flex-direction: column;
+width: 100%;
+max-width: 1000px;
+margin: 0 auto;
 `;
 
 export const Form = styled.form`
     margin-top: 50px;
     display: grid;
-    width: 100%;
-    max-width: 1000px;
     grid-template-columns: 1fr 2fr;
     column-gap: 25px;
     grid-template-areas:
@@ -53,9 +52,12 @@ export const Message = styled.textarea`
     background-color: ${(props) => props.theme.colors.primaryUi};
     border: 2px solid ${(props) => props.theme.colors.primaryUi};
     padding: 10px;
+    padding-top: 20px;
+    box-sizing: border-box;
     font-size: 16px;
     font-weight: 500;
     font-family: ${(props) => props.theme.fontFamily.primaryFont};
+    resize: vertical;
 
     &:focus {
         outline: none;
@@ -90,7 +92,6 @@ export const MessageInputError = styled(InputError)`
 `;
 
 export const RodoInformation = styled.span`
-     max-width: 1000px;
      text-align: center;
      margin: 50px;
 `;

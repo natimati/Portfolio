@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import emailjs from 'emailjs-com'
 import { Container, EmailFormInput, Form, FormInput, InputError, RodoInformation, Message, EmailInputError, MessageInputError, SendButton } from './style';
 import { useForm } from 'react-hook-form';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 type FormValues = {
     name: string;
@@ -39,6 +40,12 @@ const Contact = () => {
     const { register, handleSubmit, formState: { errors } } = useForm<FormValues>();
     const onSubmit = handleSubmit((data) => console.log(data));
 
+    const onChange = (value: any) => {
+        console.log('Captcha value:', value)
+    }
+
+    console.log(process.env.REACT_APP_SITE_KEY)
+
     return (
         <Container>
             <h1>Want to connect? Let's talk!</h1>
@@ -46,7 +53,7 @@ const Contact = () => {
                 <FormInput
                     type='text'
                     {...register("name", { required: true, minLength: 3, maxLength: 15 })}
-                    placeholder='Your Name'
+                    placeholder='Your name'
                     value={name}
                     onChange={e => setName(e.target.value)} /> 
                 <InputError>
@@ -56,7 +63,7 @@ const Contact = () => {
                 </InputError>
                 <EmailFormInput
                     type='email'
-                    {...register("email", {  required: true,
+                    {...register("email", {  required: true, minLength: 3, maxLength: 320,
                         pattern: {
                             value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                             message: "invalid email address",
@@ -66,16 +73,21 @@ const Contact = () => {
                     onChange={e => setEmail(e.target.value)} />
                 <EmailInputError>
                     {errors.email?.type === "required" && "Please enter your email"}
+                    {errors.email?.type === "minLength" && "Use at least 3 characters"}
+                    {errors.email?.type === "maxLength" && "You can use 320 characters at most"}
                 </EmailInputError>
                 <Message
-                    {...register("message", {  required: true })}
+                    {...register("message", {  required: true, minLength: 10, maxLength: 320 })}
                     placeholder='Your message'
                     value={message}
                     onChange={e => setMessage(e.target.value)}
                 />
                 <MessageInputError>
                     {errors.message?.type === "required" && "Please enter your message"}
+                    {errors.message?.type === "minLength" && "Use at least 10 characters"}
+                    {errors.message?.type === "maxLength" && "You can use 2000 characters at most"}
                 </MessageInputError>
+                <ReCAPTCHA sitekey={process.env.REACT_APP_SITE_KEY as string} onChange={onChange} />
                 <SendButton onClick={submit}>send</SendButton>
             </Form>
             <RodoInformation>

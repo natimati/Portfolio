@@ -1,5 +1,5 @@
 import { ReactComponent as GoDownIcon } from "./go_down_icon.svg";
-import { Button, Container, DownButton, ParagrathContainer, TextArea } from "./style";
+import { Button, Container, DownButton, TextArea } from "./style";
 
  interface scrollProps{
         projectTileSectionRef: React.RefObject<HTMLDivElement> 
@@ -23,10 +23,6 @@ function AboutUs(props: scrollProps) {
                     <br />We've been friends since hight school. We've always loved creating projects together.
                     <br /> A year ago we discover a new passion - designing mobile apps.
                     <br />That's how we started our jouney with UX/UI design and coding. We're glad that you visit us!
-                    <br />
-                        <ParagrathContainer>Do you want to know more about our creative work process?
-                            <Button>clik here</Button>
-                        </ParagrathContainer>
                 </p>
         </TextArea>
         <DownButton onClick={scrollDown}>

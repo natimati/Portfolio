@@ -18,13 +18,6 @@ export const TextArea = styled.div`
     margin: 0;
 `;
 
-export const ParagrathContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    justify-content: center;
-    margin-bottom: 100px;
-`; 
 
 export const Button = styled(SmallButton)`
     margin: 0;

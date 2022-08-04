@@ -12,16 +12,11 @@ export const Container = styled.div`
     justify-content: space-around;
 `;
 
-export const ButtonContainer = styled.div`
-    padding-top: 15px;
-`;
-
 export const ImageContainer = styled.div`
     position: relative;
     align-self: center;
     height: 550px;
     margin-top: 50px;
-    cursor: pointer;
 `;
 
 export const Img = styled.img`
@@ -33,6 +28,8 @@ export const BDiv = styled.div`
     opacity: 0;
     height: 100%;
     width: 50%;
+    cursor: pointer;
+
     &:hover {
         opacity: 100%;
     }
@@ -69,6 +66,7 @@ export const NDiv = styled.div`
     height: 100%;
     width: 50%;
     right: 0;
+    cursor: pointer;
 
     &:hover {
         opacity: 100%;

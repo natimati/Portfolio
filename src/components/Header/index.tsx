@@ -6,7 +6,6 @@ import {
     BArrow,
     BDiv,
     BTextArea,
-    ButtonContainer,
     ContactBDiv,
     ContactNDiv,
     Container,
@@ -26,11 +25,46 @@ interface HeaderProps {
     onMainPage: boolean
 };
 
-interface PersonalInformation {
+interface WhichPageProps {
     onMainPage: boolean
 }
- 
-const BetiInformation = (props: PersonalInformation) => {
+
+const ButtonContainer = (props: WhichPageProps) => {
+    const navigate = useNavigate();
+    const handleGoBackButtonClick = () => {
+        navigate("/")
+    }
+    const [isShown, setIsShown] = useState(false);
+
+    const handlePortfolioButtonClick = () => {
+        setIsShown(current => !current)
+    };
+
+    const handleGithubButtonClick = () => {
+        window.open('https://github.com/natimati/Portfolio', '_blank')
+    };
+
+        if (props.onMainPage) {
+            return (
+            <>
+                <Button onClick={handlePortfolioButtonClick}>Portfolio</Button>
+                            {isShown && (
+                                <>
+                                    <SubtierButton>Case study</SubtierButton>
+                                    <SubtierButton onClick={handleGithubButtonClick}>github</SubtierButton>
+                                </>
+                )}
+            </>
+            )
+    }
+    return (
+        <>
+            <Button onClick={handleGoBackButtonClick}>go back</Button>
+        </>
+    );
+    }
+
+const BetiInformation = (props: WhichPageProps) => {
     if (!props.onMainPage) {
         return (
             <ContactBDiv>
@@ -53,7 +87,7 @@ const BetiInformation = (props: PersonalInformation) => {
     )
 };
 
-const NatiInformation = (props: PersonalInformation) => {
+const NatiInformation = (props: WhichPageProps) => {
     if (!props.onMainPage) {
         return (
             <ContactNDiv>
@@ -75,41 +109,22 @@ const NatiInformation = (props: PersonalInformation) => {
     )
 };
 
+
 const Header = (props: HeaderProps) => {
-    const navigate = useNavigate()
-    const [isShown, setIsShown] = useState(false);
-
-    const handlePortfolioButtonClick = () => {
-        setIsShown(current => !current)
-    };
-
-    const handleGithubButtonClick = () => {
-        window.open('https://github.com/natimati/Portfolio', '_blank')
-    };
-
+    const navigate = useNavigate();
     const handleContactUsButtonClick = () => {
         navigate("/contact")
     }
-
+        
      return (
          <Container ref={props.headerSectionRef}>
-             <ButtonContainer>
-                 <Button onClick={handlePortfolioButtonClick}>Portfolio</Button>
-                    {isShown && (
-                        <>
-                            <SubtierButton>Case study</SubtierButton>
-                            <SubtierButton onClick={handleGithubButtonClick}>github</SubtierButton>
-                        </>
-                    )}
-            </ButtonContainer>
+            <ButtonContainer onMainPage={props.onMainPage} />
             <ImageContainer>
                 <BetiInformation onMainPage={props.onMainPage} />
                 <NatiInformation onMainPage={props.onMainPage} />               
                 <Img src="assets/girls.jpg" alt="Us" />
-            </ImageContainer>
-             <ButtonContainer>
-                 <Button onClick={handleContactUsButtonClick}>Contact us</Button>
-            </ButtonContainer>
+             </ImageContainer>
+            <Button onClick={handleContactUsButtonClick}>Contact us</Button>
         </Container>
     )
 };

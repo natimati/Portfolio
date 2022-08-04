@@ -23,9 +23,30 @@ export const Form = styled.form`
         "notARobot notARobot"
         "sendButton sendButton";
 `;
+export const NameInputContainer = styled.div`
+    grid-area: name;
+    display: flex;
+    flex-direction: column;
+`;
+
+export const EmailInputContainer = styled(NameInputContainer)`
+    grid-area: email;
+`;
+
+export const MessageInputContainer = styled(NameInputContainer)`
+    grid-area: message;
+`;
+
+export const ReCAPTCHAContainer = styled.div`
+    grid-area: notARobot;
+`;
+
+export const Label = styled.label`
+    font-weight: 500;
+    padding: 5px;
+`;
 
 export const FormInput = styled.input`
-    grid-area: name;
     height: 30px;
     background-color: ${(props) => props.theme.colors.primaryUi};
     border: 2px solid ${(props) => props.theme.colors.primaryUi};
@@ -43,12 +64,7 @@ export const FormInput = styled.input`
     }
 `;
 
-export const EmailFormInput = styled(FormInput)`
-    grid-area: email;
-    `;
-
 export const Message = styled.textarea`
-    grid-area: message;
     height: 380px;
     background-color: ${(props) => props.theme.colors.primaryUi};
     border: 2px solid ${(props) => props.theme.colors.primaryUi};
@@ -77,23 +93,10 @@ export const InputError = styled.span`
     color: red;
 `;
 
-export const EmailInputError = styled(InputError)`
-    grid-area: emailError;
-`;
-
-
 export const SendButton = styled(Button)`
     grid-area: sendButton;
     justify-self: center;
     background-color: ${(props) => props.theme.colors.secondaryUi};
-`;
-
-export const ReCAPTCHAContainer = styled.div`
-    grid-area: notARobot;
-`;
-
-export const MessageInputError = styled(InputError)`
-    grid-area: messageError;
 `;
 
 export const RodoInformation = styled.span`

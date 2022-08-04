@@ -9,7 +9,7 @@ function ContactPage() {
 
     return (
         <>
-            <Header headerSectionRef={heatherSection} />
+            <Header headerSectionRef={heatherSection} onMainPage={false} />
             <Contact />
             <Footer heatherSectionRef={heatherSection} />
        </>

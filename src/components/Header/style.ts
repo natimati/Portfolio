@@ -38,6 +38,16 @@ export const BDiv = styled.div`
     }
 `;
 
+export const ContactBDiv = styled.div`  
+    color: ${(props) => props.theme.colors.white};
+    transform: translateX(-300px) translateY(100px);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: flex-start;
+`;
+
 export const BArrow = styled.img`
     height: 70%;
     width: 60%;
@@ -65,6 +75,16 @@ export const NDiv = styled.div`
     }
 `;
 
+export const ContactNDiv = styled.div`
+    color: ${(props) => props.theme.colors.white};
+    transform: translateX(1000px) translateY(100px);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: flex-start;
+`;
+
 export const NArrow = styled.img`
     width: 60%;
     transform: translate(300px,-10%) rotate(0.6turn);
@@ -84,6 +104,11 @@ export const Name = styled.h3`
     text-transform : uppercase;
     text-shadow: 4px 4px 5px ${(props) => props.theme.colors.tertiaryUi};
     margin: 0;
+`;
+
+export const FullName = styled.h4`
+    margin-top: 5px;
+    margin-bottom: 15px;
 `;
 
 export const Role = styled.p`

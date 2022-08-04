@@ -24,6 +24,11 @@ export const GlobalStyle = createGlobalStyle`
     h3 {
         font-weight: 400;
         font-size: 18px;
+    };
+    
+    h4 {
+        font-weight: 400;
+        font-size: 20px;
     }
 `
 

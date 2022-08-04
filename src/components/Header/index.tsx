@@ -1,13 +1,81 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
 import { Button, SubtierButton } from "../../styles"
-import { BArrow, BDiv, BTextArea, ButtonContainer, Container, ImageContainer, Img, Name, NArrow, NDiv, NTextArea, Role, SkillsHeather, SkillsList } from "./style"
+import { BSkills, NSkills } from "./skills_list";
+import {
+    BArrow,
+    BDiv,
+    BTextArea,
+    ButtonContainer,
+    ContactBDiv,
+    ContactNDiv,
+    Container,
+    FullName,
+    ImageContainer,
+    Img,
+    Name,
+    NArrow,
+    NDiv,
+    NTextArea,
+    Role,
+    SkillsHeather
+} from "./style"
 
 interface HeaderProps {
-  headerSectionRef: React.RefObject<HTMLDivElement>
+    headerSectionRef: React.RefObject<HTMLDivElement>
+    onMainPage: boolean
 };
+
+interface PersonalInformation {
+    onMainPage: boolean
+}
  
-function Header(props: HeaderProps) {
+const BetiInformation = (props: PersonalInformation) => {
+    if (!props.onMainPage) {
+        return (
+            <ContactBDiv>
+                    <Name>Beti</Name>
+                    <FullName>Beata Suścicka</FullName>
+                    <Role>UX/UI designer</Role>
+            </ContactBDiv>
+        )
+    }
+    return (
+        <BDiv>
+            <BArrow src="assets/arrow.png" />
+            <BTextArea>
+                <Name>Beti</Name>
+                <Role>UX/UI designer</Role>
+                <SkillsHeather>Skills:</SkillsHeather>
+                <BSkills />
+            </BTextArea>
+        </BDiv>
+    )
+};
+
+const NatiInformation = (props: PersonalInformation) => {
+    if (!props.onMainPage) {
+        return (
+            <ContactNDiv>
+                    <Name>Naśka</Name>
+                    <FullName>Natalia Mateusiak</FullName>
+                    <Role>frontend developer</Role>
+            </ContactNDiv>)
+    }
+    return (
+        <NDiv>
+            <NArrow src="assets/arrow.png"/>
+            <NTextArea>
+                 <Name>Naśka</Name>
+                 <Role>frontend developer</Role>
+                 <SkillsHeather>Skills:</SkillsHeather>
+                 <NSkills />
+            </NTextArea>
+          </NDiv>
+    )
+};
+
+const Header = (props: HeaderProps) => {
     const navigate = useNavigate()
     const [isShown, setIsShown] = useState(false);
 
@@ -23,71 +91,25 @@ function Header(props: HeaderProps) {
         navigate("/contact")
     }
 
-    function BSkills() {
-
-        return (
-            <SkillsList>
-                    <li>User reserch & analysis</li>
-                    <li>Problems solving</li>
-                    <li>Prototyping & wirframing</li>
-                    <li>Graphic design</li>
-                    <li>Testing and iteration</li>
-                    <li>Presentation Skills</li>
-                    <li>Creativity</li>
-            </SkillsList>
-        )
-    }
-    function NSkills() {
-
-        return (
-            <SkillsList>
-                    <li>HTML</li>
-                    <li>CSS, Styled Components</li>
-                    <li>JavaScript</li>
-                    <li>ReactJS</li>
-                    <li>TypeScript</li>
-                    <li>WebSockets and Rest API</li>
-                    <li>GitHub</li>
-            </SkillsList>
-        )
-    }
-
      return (
          <Container ref={props.headerSectionRef}>
              <ButtonContainer>
                  <Button onClick={handlePortfolioButtonClick}>Portfolio</Button>
-                 {isShown && (
-                     <>
-                         <SubtierButton>Case study</SubtierButton>
-                         <SubtierButton onClick={handleGithubButtonClick}>github</SubtierButton>
-                     </>
-                 )}
+                    {isShown && (
+                        <>
+                            <SubtierButton>Case study</SubtierButton>
+                            <SubtierButton onClick={handleGithubButtonClick}>github</SubtierButton>
+                        </>
+                    )}
             </ButtonContainer>
             <ImageContainer>
-                <NDiv>
-                    <NArrow src="assets/arrow.png"/>
-                    <NTextArea>
-                        <Name>Naśka</Name>
-                         <Role>frontend developer</Role>
-                         <SkillsHeather>Skills:</SkillsHeather>
-                         <NSkills />
-                    </NTextArea>
-                 </NDiv>
-                <BDiv>
-                    <BArrow src="assets/arrow.png" />
-                    <BTextArea>
-                        <Name>Beti</Name>
-                         <Role>UX/UI designer</Role>
-                         <SkillsHeather>Skills:</SkillsHeather>
-                         <BSkills />
-                    </BTextArea>
-                </BDiv>
+                <BetiInformation onMainPage={props.onMainPage} />
+                <NatiInformation onMainPage={props.onMainPage} />               
                 <Img src="assets/girls.jpg" alt="Us" />
             </ImageContainer>
              <ButtonContainer>
                  <Button onClick={handleContactUsButtonClick}>Contact us</Button>
             </ButtonContainer>
-
         </Container>
     )
 };

@@ -9,7 +9,9 @@ import {
     ContactBDiv,
     ContactNDiv,
     Container,
+    FakeButton,
     FullName,
+    Icon,
     ImageContainer,
     Img,
     Name,
@@ -65,12 +67,21 @@ const ButtonContainer = (props: WhichPageProps) => {
     }
 
 const BetiInformation = (props: WhichPageProps) => {
+    const  handleInIconClick = () => {
+        window.open('https://www.linkedin.com/in/beatasuscicka/', '_blank')
+    };
+    const  handleBeIconClick = () => {
+        window.open('https://www.linkedin.com/in/beatasuscicka/', '_blank')
+    };
+
     if (!props.onMainPage) {
         return (
             <ContactBDiv>
-                    <Name>Beti</Name>
-                    <FullName>Beata Suścicka</FullName>
-                    <Role>UX/UI designer</Role>
+                <Name>Beti</Name>
+                <FullName>Beata Suścicka</FullName>
+                <Role>UX/UI designer</Role>
+                <Icon src="assets/in_icon.png" alt="linkedlin logo" onClick={handleInIconClick} />
+                <Icon src="assets/be_icon.png" alt="behance logo" onClick={handleBeIconClick} />
             </ContactBDiv>
         )
     }
@@ -88,12 +99,21 @@ const BetiInformation = (props: WhichPageProps) => {
 };
 
 const NatiInformation = (props: WhichPageProps) => {
+    const handleInIconClick = () => {
+        window.open('https://www.linkedin.com/in/natalia-mateusiak/', '_blank')
+    }
+    const handleGithubIconClick = () => {
+        window.open('https://github.com/natimati', '_blank')
+    };
+
     if (!props.onMainPage) {
         return (
             <ContactNDiv>
-                    <Name>Naśka</Name>
-                    <FullName>Natalia Mateusiak</FullName>
-                    <Role>frontend developer</Role>
+                <Name>Naśka</Name>
+                <FullName>Natalia Mateusiak</FullName>
+                <Role>frontend developer</Role>
+                <Icon src="assets/in_icon.png" alt="linkedlin logo" onClick={handleInIconClick} />
+                <Icon src="assets/git_icon.png" alt="github logo" onClick={handleGithubIconClick} />
             </ContactNDiv>)
     }
     return (
@@ -109,13 +129,25 @@ const NatiInformation = (props: WhichPageProps) => {
     )
 };
 
-
-const Header = (props: HeaderProps) => {
+const ContactButton = (props: WhichPageProps) => {
     const navigate = useNavigate();
     const handleContactUsButtonClick = () => {
         navigate("/contact")
     }
-        
+
+    if (!props.onMainPage) {
+        return (
+            <FakeButton />
+        )
+    }
+    return (
+        <Button onClick={handleContactUsButtonClick}>Contact us</Button>
+    )
+};
+
+
+const Header = (props: HeaderProps) => {
+    
      return (
          <Container ref={props.headerSectionRef}>
             <ButtonContainer onMainPage={props.onMainPage} />
@@ -124,7 +156,7 @@ const Header = (props: HeaderProps) => {
                 <NatiInformation onMainPage={props.onMainPage} />               
                 <Img src="assets/girls.jpg" alt="Us" />
              </ImageContainer>
-            <Button onClick={handleContactUsButtonClick}>Contact us</Button>
+             <ContactButton onMainPage={props.onMainPage} />
         </Container>
     )
 };

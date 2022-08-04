@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Button } from "../../styles";
 
 
 export const Container = styled.div`
@@ -132,4 +133,20 @@ export const SkillsList = styled.ul`
     line-height: 30px;
     margin-top: 0;
     font-size: 14px;
+`;
+
+export const FakeButton = styled(Button)`
+    background-color: ${(props) => props.theme.colors.fourthUi};
+    &:hover {        
+        &::before{
+            display: none;
+        }
+    }
+`;
+
+export const Icon = styled.img`
+    margin: 20px;   
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
 `;

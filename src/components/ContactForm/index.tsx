@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import emailjs from 'emailjs-com'
-import { Container, EmailFormInput, Form, FormInput, InputError, RodoInformation, Message, EmailInputError, MessageInputError, SendButton } from './style';
+import { Container, EmailFormInput, Form, FormInput, InputError, RodoInformation, Message, EmailInputError, MessageInputError, SendButton, ReCAPTCHAContainer } from './style';
 import { useForm } from 'react-hook-form';
 import ReCAPTCHA from 'react-google-recaptcha';
 
@@ -11,13 +11,18 @@ type FormValues = {
 };
 
 const Contact = () => {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [message, setMessage] = useState('');
     const [emailSent, setEmailSent] = useState(false);
-
-    const submit = () => {
-        if (name && email && message) {
+    const [isNotRobot, setIsNotRobot] = useState(false);
+    const captchaRef = useRef<ReCAPTCHA | null>(null)
+    // {
+    //     current: null
+    // }
+    
+    const { register, handleSubmit, formState: { errors }, setValue } = useForm<FormValues>();
+    const onSubmit = handleSubmit((data) => {
+        const { name, email, message } = data;
+        console.log(data);
+        if (isNotRobot && name && email && message) {
             const serviceId = process.env.REACT_APP_SERVICE_ID as string;
             const templateId = process.env.REACT_APP_TEMPLATE_ID as string;
             const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY as string;
@@ -27,23 +32,23 @@ const Contact = () => {
                 message
             };
             emailjs.send(serviceId, templateId, templateParams, publicKey)
-                .then(response => console.log(response))
-                .then(error => console.log(error));
-
-            setName('');
-            setEmail('');
-            setMessage('');
-            setEmailSent(true);
-        } 
+                .then(response => {
+                    setEmailSent(true);
+                    console.log(response)
+                    setValue('name', '')
+                    setValue('email', '')
+                    setValue('message', '')
+                    if (captchaRef.current) {
+                        captchaRef.current.reset();
+                    }
+                })
+                .catch(error => console.log(error));
+             }
+    });
+    const onChange = () => { 
+        setIsNotRobot(true);
     }
-
-    const { register, handleSubmit, formState: { errors } } = useForm<FormValues>();
-    const onSubmit = handleSubmit((data) => console.log(data));
-
-    const onChange = (value: any) => {
-        console.log('Captcha value:', value)
-    }
-
+    
     return (
         <Container>
             <h1>Want to connect? Let's talk!</h1>
@@ -52,8 +57,7 @@ const Contact = () => {
                     type='text'
                     {...register("name", { required: true, minLength: 3, maxLength: 15 })}
                     placeholder='Your name'
-                    value={name}
-                    onChange={e => setName(e.target.value)} /> 
+                /> 
                 <InputError>
                     {errors.name?.type === "required" && "Please enter your name"}
                     {errors.name?.type === "minLength" && "Use at least 3 characters"}
@@ -66,9 +70,7 @@ const Contact = () => {
                             value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                             message: "invalid email address",
                     }})}
-                    placeholder='Your email adress'
-                    value={email}
-                    onChange={e => setEmail(e.target.value)} />
+                    placeholder='Your email adress' />
                 <EmailInputError>
                     {errors.email?.type === "required" && "Please enter your email"}
                     {errors.email?.type === "minLength" && "Use at least 3 characters"}
@@ -77,16 +79,19 @@ const Contact = () => {
                 <Message
                     {...register("message", {  required: true, minLength: 10, maxLength: 320 })}
                     placeholder='Your message'
-                    value={message}
-                    onChange={e => setMessage(e.target.value)}
                 />
                 <MessageInputError>
                     {errors.message?.type === "required" && "Please enter your message"}
                     {errors.message?.type === "minLength" && "Use at least 10 characters"}
                     {errors.message?.type === "maxLength" && "You can use 2000 characters at most"}
                 </MessageInputError>
-                <ReCAPTCHA sitekey={process.env.REACT_APP_SITE_KEY as string} onChange={onChange} />
-                <SendButton onClick={submit}>send</SendButton>
+                <ReCAPTCHAContainer>
+                    <ReCAPTCHA
+                        sitekey={process.env.REACT_APP_SITE_KEY as string}
+                        ref={ref => captchaRef.current = ref}
+                        onChange={onChange} />
+                </ReCAPTCHAContainer>
+                <SendButton type="submit">send</SendButton>
             </Form>
             <RodoInformation>
                     Personal data contained in the above form will be processed by the authors of the website

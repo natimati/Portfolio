@@ -20,6 +20,7 @@ export const Form = styled.form`
         "nameError emailError"
         "message message"
         "messageError messageError"
+        "notARobot notARobot"
         "sendButton sendButton";
 `;
 
@@ -85,7 +86,11 @@ export const SendButton = styled(Button)`
     grid-area: sendButton;
     justify-self: center;
     background-color: ${(props) => props.theme.colors.secondaryUi};
-`
+`;
+
+export const ReCAPTCHAContainer = styled.div`
+    grid-area: notARobot;
+`;
 
 export const MessageInputError = styled(InputError)`
     grid-area: messageError;

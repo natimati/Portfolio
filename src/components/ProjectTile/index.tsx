@@ -41,9 +41,9 @@ const DescriptionContainer = (data: any) => {
         <Title>{data.title}</Title>
         <Subtitle>{data.category}</Subtitle>
         <Text>{data.text}</Text>
+        <SmallButton onClick={() => { handleReadMoreClick(<FirstProjectModalContent />) }}>read more</SmallButton>
         <SmallButton onClick={() => { handleSeeRepoClick('https://github.com/natimati/Portfolio') }}>see repo</SmallButton>
-         <SmallButton onClick={() => { handleReadMoreClick(<FirstProjectModalContent />) }}>read more</SmallButton>
-         <SmallButton onClick={() => {handleSeeCaseStudyClick('https://www.figma.com/file/Zzj9Cmao5lVfDsrJsqsMEk/portfolio?node-id=157%3A5')}}>see case study</SmallButton>
+        <SmallButton onClick={() => {handleSeeCaseStudyClick('https://www.figma.com/file/Zzj9Cmao5lVfDsrJsqsMEk/portfolio?node-id=157%3A5')}}>see case study</SmallButton>
       </Description>
     )
 }
@@ -67,7 +67,7 @@ const ProjectTile = (props: ProjectTileProps) => {
   
     return (
         <>
-            <ProjectContainer isSlideFirst={true} ref={props.projectTileSectionRef}> 
+            <ProjectContainer id='project_tile' isSlideFirst={true} ref={props.projectTileSectionRef}> 
             <Slideshow images={firstProjectImages} />
               <DescriptionContainer
                 title={'TITLE'}

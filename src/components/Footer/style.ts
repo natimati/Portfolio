@@ -67,8 +67,8 @@ export const Text = styled.p`
 
 export const NormalText = styled.p`
     color: ${(props) => props.theme.colors.white};
-    font-size: 15px;
-    font-weight: 300;
+    font-size: 20px;
     align-self: center;
     font-family: ${(props) => props.theme.fontFamily.secondaryFont};
+    font-style: italic;
 `;

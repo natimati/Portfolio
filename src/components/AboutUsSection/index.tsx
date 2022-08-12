@@ -1,5 +1,5 @@
 import { ReactComponent as GoDownIcon } from "./go_down_icon.svg";
-import { Button, Container, DownButton, TextArea } from "./style";
+import { Container, DownButton, TextArea } from "./style";
 
  interface scrollProps{
         projectTileSectionRef: React.RefObject<HTMLDivElement> 

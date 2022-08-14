@@ -48,11 +48,7 @@ const DescriptionContainer = (data: any) => {
     )
 }
 
-interface ProjectTileProps {
-  projectTileSectionRef: React.RefObject<HTMLDivElement>
-}
-
-const ProjectTile = (props: ProjectTileProps) => {
+const ProjectTile = () => {
  
   const firstProjectImages =
     ['slide_1_1.jpg', 'slide_1_2.jpg', 'slide_1_3.jpg']
@@ -66,33 +62,42 @@ const ProjectTile = (props: ProjectTileProps) => {
   
   
     return (
-        <>
-            <ProjectContainer id='project_tile' isSlideFirst={true} ref={props.projectTileSectionRef}> 
-            <Slideshow images={firstProjectImages} />
-              <DescriptionContainer
-                title={'TITLE'}
-                category={'category'}
-                text={'Praesent efficitur quis odio quis fermentum. Quisque non augue venenatis, luctus neque feugiat, efficitur justo. Donec mattis arcu at ante volutpat consequat. Aliquam erat volutpat. Curabitur interdum aliquet tortor, id fermentum felis lacinia ac. Sed aliquam, arcu vitae tincidunt posuere, est nunc eleifend.'}
-              />
-            </ProjectContainer>
-            <ProjectContainer isSlideFirst={false}> 
-              <Slideshow images={secondProjectImages} />
-              <DescriptionContainer
-                title={'TITLE'}
-                category={'category'}
-                text={'Praesent efficitur quis odio quis fermentum. Quisque non augue venenatis, luctus neque feugiat, efficitur justo. Donec mattis arcu at ante volutpat consequat. Aliquam erat volutpat. Curabitur interdum aliquet tortor, id fermentum felis lacinia ac. Sed aliquam, arcu vitae tincidunt posuere, est nunc eleifend.'}
-              />
-          </ProjectContainer>
-          <ProjectContainer isSlideFirst={true}> 
-              <Slideshow images={thirdProjectImages} />
-              <DescriptionContainer
-                title={'TITLE'}
-                category={'category'}
-                text={'Praesent efficitur quis odio quis fermentum. Quisque non augue venenatis, luctus neque feugiat, efficitur justo. Donec mattis arcu at ante volutpat consequat. Aliquam erat volutpat. Curabitur interdum aliquet tortor, id fermentum felis lacinia ac. Sed aliquam, arcu vitae tincidunt posuere, est nunc eleifend.'}
-              />
-          </ProjectContainer>
-        </>
-    )
+      <div id="projecttilesection">
+        <ProjectContainer
+          id="project_tile"
+          isSlideFirst={true}
+        >
+          <Slideshow images={firstProjectImages} />
+          <DescriptionContainer
+            title={"TITLE"}
+            category={"category"}
+            text={
+              "Praesent efficitur quis odio quis fermentum. Quisque non augue venenatis, luctus neque feugiat, efficitur justo. Donec mattis arcu at ante volutpat consequat. Aliquam erat volutpat. Curabitur interdum aliquet tortor, id fermentum felis lacinia ac. Sed aliquam, arcu vitae tincidunt posuere, est nunc eleifend."
+            }
+          />
+        </ProjectContainer>
+        <ProjectContainer isSlideFirst={false}>
+          <Slideshow images={secondProjectImages} />
+          <DescriptionContainer
+            title={"TITLE"}
+            category={"category"}
+            text={
+              "Praesent efficitur quis odio quis fermentum. Quisque non augue venenatis, luctus neque feugiat, efficitur justo. Donec mattis arcu at ante volutpat consequat. Aliquam erat volutpat. Curabitur interdum aliquet tortor, id fermentum felis lacinia ac. Sed aliquam, arcu vitae tincidunt posuere, est nunc eleifend."
+            }
+          />
+        </ProjectContainer>
+        <ProjectContainer isSlideFirst={true}>
+          <Slideshow images={thirdProjectImages} />
+          <DescriptionContainer
+            title={"TITLE"}
+            category={"category"}
+            text={
+              "Praesent efficitur quis odio quis fermentum. Quisque non augue venenatis, luctus neque feugiat, efficitur justo. Donec mattis arcu at ante volutpat consequat. Aliquam erat volutpat. Curabitur interdum aliquet tortor, id fermentum felis lacinia ac. Sed aliquam, arcu vitae tincidunt posuere, est nunc eleifend."
+            }
+          />
+        </ProjectContainer>
+      </div>
+    );
 }
 
 export default ProjectTile;

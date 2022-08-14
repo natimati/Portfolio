@@ -11,14 +11,17 @@ export const Container = styled.div`
     flex-direction: column;
 `;
 
+export const GoUpButtonContainer = styled.div`
+  position: absolute;
+  align-self: flex-end;
+  margin-right: 50px;
+  margin-bottom: 50px;
+`;
+
 export const GoUpButton = styled.button`
     background: none;
     border: none;
     color: ${(props) => props.theme.colors.white};
-    position: absolute;
-    align-self: flex-end;
-    margin-right: 50px;
-    margin-bottom: 50px;
     text-transform: uppercase;
     font-size: 20px;
     font-weight: 700;

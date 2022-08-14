@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Button, SubtierButton } from "../../styles";
+import { Button, Link, SubtierButton } from "../../styles";
 import { ButtonContainer } from "./style";
 
 interface WhichPageProps {
@@ -8,7 +8,6 @@ interface WhichPageProps {
 }
 
 export const ButtonsSection = (props: WhichPageProps) => {
-  const navigate = useNavigate();
   const [isShown, setIsShown] = useState(false);
   
   const handlePortfolioButtonClick = () => {
@@ -18,10 +17,6 @@ export const ButtonsSection = (props: WhichPageProps) => {
   const handleGithubButtonClick = () => {
     window.open("https://github.com/natimati/Portfolio", "_blank");
   };
-
-  const handleLeftButtonClick = () => {
-    navigate('/');
-  }
 
   if (props.onMainPage) {
     return (
@@ -40,7 +35,9 @@ export const ButtonsSection = (props: WhichPageProps) => {
   }
   return (
     <>
-      <Button onClick={handleLeftButtonClick}>portfolio</Button>
+      <Link smooth to="/#projecttilesection">
+        <Button>portfolio</Button>
+      </Link>
     </>
   );
 };

@@ -8,6 +8,8 @@ flex-direction: column;
 width: 100%;
 max-width: 1000px;
 margin: 0 auto;
+min-height: 600px;
+justify-content: center;
 `;
 
 export const Form = styled.form`

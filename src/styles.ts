@@ -14,6 +14,7 @@ export const GlobalStyle = createGlobalStyle`
         font-size: 45px;
         text-shadow: 4px 4px 5px #9ab0af;
         align-self: center;
+        text-align: center;
         margin-bottom: 5px;
     };
 

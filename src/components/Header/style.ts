@@ -60,7 +60,7 @@ export const BDiv = styled.div`
 
 export const ContactBDiv = styled.div`
   color: ${(props) => props.theme.colors.white};
-  transform: translateX(-300px) translateY(100px);
+  transform: translateX(-200px) translateY(80px);
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -116,6 +116,10 @@ export const ContactNDiv = styled.div`
   flex-direction: column;
   align-items: center;
   align-self: flex-start;
+
+  @media screen and (max-width: 1668px) {
+    transform: translateX(600px) translateY(80px);
+  }
 `;
 
 export const NArrow = styled.img`
@@ -156,6 +160,11 @@ export const Name = styled.h3`
 export const FullName = styled.h4`
   margin-top: 5px;
   margin-bottom: 15px;
+
+  @media screen and (max-width: 1668px) {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
 `;
 
 export const Role = styled.p`
@@ -204,4 +213,10 @@ export const Icon = styled.img`
   height: 50px;
   width: 50px;
   cursor: pointer;
+
+  @media screen and (max-width: 1668px) {
+    margin: 10px;
+    height: 30px;
+    width: 30px;
+  }
 `;

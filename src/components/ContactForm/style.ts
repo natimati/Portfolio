@@ -6,7 +6,7 @@ margin-top: 50px;
 display: flex;
 flex-direction: column;
 width: 100%;
-max-width: 1000px;
+max-width: 630px;
 margin: 0 auto;
 min-height: 600px;
 justify-content: center;
@@ -46,24 +46,28 @@ export const ReCAPTCHAContainer = styled.div`
 export const Label = styled.label`
     font-weight: 500;
     padding: 5px;
+
+    @media screen and (max-width: 1668px) {
+        font-size: 14px;
+    }
 `;
 
 export const FormInput = styled.input`
-    height: 30px;
-    background-color: ${(props) => props.theme.colors.primaryUi};
-    border: 2px solid ${(props) => props.theme.colors.primaryUi};
-    padding: 10px;
-    font-size: 16px;
-    font-weight: 500;
-    font-family: ${(props) => props.theme.fontFamily.primaryFont};
-    
-    &:focus {
-        outline: none;
-        border: 2px solid ${(props) => props.theme.colors.tertiaryUi};
-    }
-    &::placeholder {
-        color: black;
-    }
+  height: 30px;
+  background-color: ${(props) => props.theme.colors.primaryUi};
+  border: 2px solid ${(props) => props.theme.colors.primaryUi};
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: ${(props) => props.theme.fontFamily.primaryFont};
+
+  &:focus {
+    outline: none;
+    border: 2px solid ${(props) => props.theme.colors.tertiaryUi};
+  }
+  &::placeholder {
+    color: black;
+  }
 `;
 
 export const Message = styled.textarea`
@@ -93,6 +97,10 @@ export const InputError = styled.span`
     margin-top: 10px;
     margin-bottom: 25px;
     color: red;
+
+    @media screen and (max-width: 1668px) {
+        font-size: 14px;
+    }
 `;
 
 export const SendButton = styled(Button)`
@@ -102,6 +110,10 @@ export const SendButton = styled(Button)`
 `;
 
 export const RodoInformation = styled.span`
-     text-align: center;
-     margin: 50px;
+     text-align: left;
+     margin: 50px 0;
+
+     @media screen and (max-width: 1668px) {
+        font-size: 12px;
+     }
 `;

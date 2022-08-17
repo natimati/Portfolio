@@ -60,7 +60,7 @@ export const BDiv = styled.div`
 
 export const ContactBDiv = styled.div`
   color: ${(props) => props.theme.colors.white};
-  transform: translateX(-200px) translateY(80px);
+  transform: translateX(-300px) translateY(80px);
   position: absolute;
   display: flex;
   flex-direction: column;

@@ -1,5 +1,4 @@
-
-import React, { useContext } from 'react';
+import React, { useContext } from "react";
 import { Description, EachSlide, ProjectContainer, SlideContainer, Subtitle, Text, Title } from "./style";
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
@@ -8,65 +7,90 @@ import FirstProjectModalContent from './FirstProjectModalContent';
 import { SmallButton } from '../../styles';
 
 interface SlideShowProps {
-images: string[],
+  images: string[]
 }
 
 const Slideshow = (props: SlideShowProps) => {
-
   return (
-      <SlideContainer>
-        <Slide>
-         {props.images.map((slideImage, index)=> (
-            <EachSlide key={index} style={{'backgroundImage': `url(${slideImage})`}} />
-          ))} 
+    <SlideContainer>
+      <Slide>
+        {props.images.map((slideImage, index) => (
+          <EachSlide
+            key={index}
+            style={{ backgroundImage: `url(${slideImage})` }}
+          />
+        ))}
       </Slide>
-      </SlideContainer>
-    )
-  }
+    </SlideContainer>
+  );
+};
 const DescriptionContainer = (data: any) => {
   const modalContextValue = useContext(ModalContext);
-  
+
   const handleSeeRepoClick = (link: string) => {
-      window.open(link, '_blank')
+    window.open(link, "_blank");
   };
   const handleReadMoreClick = (content: React.ReactChild) => {
-    modalContextValue.setDisplayedComponent(content)
+    modalContextValue.setDisplayedComponent(content);
   };
   const handleSeeCaseStudyClick = (link: string) => {
-      window.open(link, '_blank')
+    window.open(link, "_blank");
   };
-  
-     return (
-      <Description>
-        <Title>{data.title}</Title>
-        <Subtitle>{data.category}</Subtitle>
-        <Text>{data.text}</Text>
-        <SmallButton onClick={() => { handleReadMoreClick(<FirstProjectModalContent />) }}>read more</SmallButton>
-        <SmallButton onClick={() => { handleSeeRepoClick('https://github.com/natimati/Portfolio') }}>see repo</SmallButton>
-        <SmallButton onClick={() => {handleSeeCaseStudyClick('https://www.figma.com/file/Zzj9Cmao5lVfDsrJsqsMEk/portfolio?node-id=157%3A5')}}>see case study</SmallButton>
-      </Description>
-    )
-}
+
+  return (
+    <Description>
+      <Title>{data.title}</Title>
+      <Subtitle>{data.category}</Subtitle>
+      <Text>{data.text}</Text>
+      <SmallButton
+        onClick={() => {
+          handleReadMoreClick(<FirstProjectModalContent />);
+        }}
+      >
+        read more
+      </SmallButton>
+      <SmallButton
+        onClick={() => {
+          handleSeeRepoClick("https://github.com/natimati/Portfolio");
+        }}
+      >
+        see repo
+      </SmallButton>
+      <SmallButton
+        onClick={() => {
+          handleSeeCaseStudyClick(
+            "https://www.figma.com/file/Zzj9Cmao5lVfDsrJsqsMEk/portfolio?node-id=157%3A5"
+          );
+        }}
+      >
+        see case study
+      </SmallButton>
+    </Description>
+  );
+};
 
 const ProjectTile = () => {
- 
-  const firstProjectImages =
-    ['slide_1_1.jpg', 'slide_1_2.jpg', 'slide_1_3.jpg']
-      .map(image => process.env.PUBLIC_URL + '/assets/images/' + image);
-  
-  const secondProjectImages =  ['slide_2_1.jpg', 'slide_2_2.jpg', 'slide_2_3.jpg']
-    .map(image => process.env.PUBLIC_URL + '/assets/images/' + image);
-  
-  const thirdProjectImages = ['slide_3_1.jpg', 'slide_3_2.jpg', 'slide_3_3.jpg']
-    .map(image => process.env.PUBLIC_URL + '/assets/images/' + image);
-  
-  
-    return (
-      <div id="projecttilesection">
-        <ProjectContainer
-          id="project_tile"
-          isSlideFirst={true}
-        >
+  const firstProjectImages = [
+    "slide_1_1.jpg",
+    "slide_1_2.jpg",
+    "slide_1_3.jpg",
+  ].map((image) => process.env.PUBLIC_URL + "/assets/images/" + image);
+
+  const secondProjectImages = [
+    "slide_2_1.jpg",
+    "slide_2_2.jpg",
+    "slide_2_3.jpg",
+  ].map((image) => process.env.PUBLIC_URL + "/assets/images/" + image);
+
+  const thirdProjectImages = [
+    "slide_3_1.jpg",
+    "slide_3_2.jpg",
+    "slide_3_3.jpg",
+  ].map((image) => process.env.PUBLIC_URL + "/assets/images/" + image);
+
+  return (
+       <div id="projecttilesection">
+        <ProjectContainer id="project_tile" isSlideFirst={true}>
           <Slideshow images={firstProjectImages} />
           <DescriptionContainer
             title={"TITLE"}
@@ -97,7 +121,7 @@ const ProjectTile = () => {
           />
         </ProjectContainer>
       </div>
-    );
-}
+  );
+};
 
 export default ProjectTile;

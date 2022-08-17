@@ -20,6 +20,11 @@ export const Container = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: space-around;
+
+  @media screen and (max-width: 1668px) {
+    height: 450px;
+    max-width: 1000px;
+  }
 `;
 export const ButtonContainer = styled.div`
   display: flex;
@@ -31,6 +36,10 @@ export const ImageContainer = styled.div`
   align-self: center;
   height: 550px;
   margin-top: 50px;
+
+  @media screen and (max-width: 1668px) {
+    height: 350px;
+  }
 `;
 
 export const Img = styled.img`
@@ -63,6 +72,12 @@ export const BArrow = styled.img`
   height: 70%;
   width: 60%;
   transform: translate(-150px, 50%) rotate(0.05turn);
+
+  @media screen and (max-width: 1668px) {
+    height: 70%;
+    width: 60%;
+    transform: translate(-60px, 50%) rotate(0.05turn);
+  }
 `;
 
 export const BTextArea = styled.div`
@@ -73,6 +88,11 @@ export const BTextArea = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media screen and (max-width: 1668px) {
+    transform: translateX(-200px) translateY(-150px);
+    width: 120px;
+  }
 `;
 
 export const NDiv = styled.div`
@@ -101,6 +121,10 @@ export const ContactNDiv = styled.div`
 export const NArrow = styled.img`
   width: 60%;
   transform: translate(310px, -5%) rotate(0.55turn);
+
+  @media screen and (max-width: 1668px) {
+    transform: translate(180px, -20%) rotate(0.55turn);
+  }
 `;
 
 export const NTextArea = styled.div`
@@ -111,6 +135,11 @@ export const NTextArea = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media screen and (max-width: 1668px) {
+    transform: translateX(280px) translateY(-200px);
+    width: 150px;
+  }
 `;
 
 export const Name = styled.h3`
@@ -118,6 +147,10 @@ export const Name = styled.h3`
   text-transform: uppercase;
   text-shadow: 4px 4px 5px ${(props) => props.theme.colors.tertiaryUi};
   margin: 0;
+
+  @media screen and (max-width: 1668px) {
+    font-size: 26px;
+  }
 `;
 
 export const FullName = styled.h4`
@@ -129,6 +162,10 @@ export const Role = styled.p`
   font-size: 20px;
   font-weight: 200;
   margin: 10px;
+
+  @media screen and (max-width: 1668px) {
+    font-size: 14px;
+  }
 `;
 
 export const SkillsHeather = styled.p<SkillsProps>`
@@ -138,6 +175,12 @@ export const SkillsHeather = styled.p<SkillsProps>`
   font-weight: 400;
   display: flex;
   align-self: ${(props) => (props.isBeti ? "flex-end" : "flex-start")};
+
+  @media screen and (max-width: 1668px) {
+    margin-top: 5px;
+    padding: 5px;
+    font-size: 12px;
+  }
 `;
 
 export const SkillsList = styled.ul<SkillsProps>`
@@ -149,6 +192,11 @@ export const SkillsList = styled.ul<SkillsProps>`
   margin-top: 0;
   font-size: 14px;
   padding: 0;
+
+  @media screen and (max-width: 1668px) {
+    font-size: 9px;
+    line-height: 20px;
+  }
 `;
 
 export const Icon = styled.img`

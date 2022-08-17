@@ -8,6 +8,7 @@ import {
   NormalText,
   GoUpButton,
   GoUpButtonContainer,
+  Background,
 } from "./style";
 
 const Footer = () => {
@@ -19,7 +20,7 @@ const Footer = () => {
   };
 
   return (
-    <>
+    <Background>
       <Container>
         <GoUpButtonContainer>
           <Link smooth to="/#header_section">
@@ -39,7 +40,7 @@ const Footer = () => {
           ©2022 Natalia Mateusiak, Beata Suścicka. All Rights Reserved.
         </NormalText>
       </Container>
-    </>
+    </Background>
   );
 };
 

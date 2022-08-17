@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { SmallButton } from "../../styles";
 
 export const Container = styled.div`
   display: flex;
@@ -16,25 +15,35 @@ export const TextArea = styled.div`
   max-width: 825px;
   text-align: center;
   margin: 0;
-`;
 
-export const Button = styled(SmallButton)`
-  margin: 0;
-  height: 19px;
-  padding-left: 5px;
-`;
+  @media screen and (max-width: 1668px) {
+    max-width: 500px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+ `;
 
-export const DownButoonContainer = styled.div`
+export const DownButonContainer = styled.div`
   position: absolute;
   top: 850px;
   margin-right: 50px;
   margin-bottom: 50px;
   align-self: flex-end;
 
-   &:hover {
+  &:hover {
     margin-right: 40px;
     margin-bottom: 40px;
-   }
+  }
+
+  @media screen and (max-width: 1668px) {
+    top: 600px;
+    margin-right: 75px;
+
+    &:hover {
+      margin-right: 75px;
+      margin-bottom: 40px;
+    }
+  }
 `;
 
 export const DownButton = styled.button`
@@ -49,5 +58,26 @@ export const DownButton = styled.button`
     box-shadow: 4px 4px 5px ${(props) => props.theme.colors.tertiaryUi};
     height: 60px;
     width: 60px;
+  }
+
+  @media screen and (max-width: 1668px) {
+    height: 38px;
+    width: 38px;
+
+    &:hover {
+      height: 45px;
+      width: 45px;
+    }
+  }
+`;
+
+export const GoDownIcon = styled.img`
+  height: 30px;
+  width: 30px;
+
+
+  @media screen and (max-width: 1668px) {
+    height: 25px;
+    width: 25px;
   }
 `;

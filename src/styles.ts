@@ -16,11 +16,19 @@ export const GlobalStyle = createGlobalStyle`
         align-self: center;
         text-align: center;
         margin-bottom: 5px;
+
+        @media screen and (max-width: 1668px) {
+          font-size: 40px;
+         }
     };
 
     h2 {
         font-weight: 700;
         font-size: 25px;
+
+        @media screen and (max-width: 1668px) {
+          font-size: 18px;
+         }
     };
 
     h3 {
@@ -88,6 +96,13 @@ export const Button = styled.button`
       display: block;
     }
   }
+
+  @media screen and (max-width: 1668px) {
+    font-size: 12px;
+    padding: 5px 10px;
+    height: 25px;
+    width: 100px;
+  }
 `;
 export const SubtierButton = styled(Button)`
   background-color: ${(props) => props.theme.colors.secondaryUi};
@@ -114,6 +129,11 @@ export const SmallButton = styled(Button)`
       height: 100%;
       top: 45%;
     }
+  }
+
+  @media screen and (max-width: 1668px) {
+    font-size: 14px;
+    padding: 0;
   }
 `;
 

@@ -1,6 +1,5 @@
 import { Link } from "../../styles";
-import { ReactComponent as GoDownIcon } from "./go_down_icon.svg";
-import { Container, DownButoonContainer, DownButton, TextArea } from "./style";
+import { Container, DownButonContainer, DownButton, GoDownIcon, TextArea } from "./style";
 
 function AboutUs() {
     return (
@@ -18,13 +17,13 @@ function AboutUs() {
             glad that you visit us!
           </p>
         </TextArea>
-        <DownButoonContainer>
-          <Link to="/#projecttilesection">
+        <DownButonContainer>
+          <Link smooth to="/#projecttilesection">
             <DownButton>
-              <GoDownIcon />
+              <GoDownIcon src="assets/go_down_icon.png" alt="down arrow" />
             </DownButton>
           </Link>
-        </DownButoonContainer>
+        </DownButonContainer>
       </Container>
     );
 }

@@ -33,7 +33,7 @@ export const ModalContent = styled.div`
   top: 20px;
   margin-right: 5px;
   margin-left: 15px;
-  overflow-y: scroll; 
+  overflow-y: scroll;
   max-height: 700px;
   min-width: 1000px;
   height: 100%;
@@ -43,15 +43,20 @@ export const ModalContent = styled.div`
     width: 10px;
   }
   &::-webkit-scrollbar-thumb {
-    background: ${(props) => props.theme.colors.secondaryUi};
+    background: ${(props) => props.theme.colors.tertiaryUi};
     border-radius: 5px;
-     }
+  }
   &::-webkit-scrollbar-track {
     margin-top: 100px;
     margin-bottom: 40px;
-    background-color: ${(props) => props.theme.colors.tertiaryUi};
+    background-color: ${(props) => props.theme.colors.secondaryUi};
     border-radius: 5px;
-    }
+  }
+
+  @media screen and (max-width: 1668px) {
+    max-height: 600px;
+    min-width: 800px;
+  }
 `;
 
 export const ModalOverlay = styled.div`

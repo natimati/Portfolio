@@ -2,7 +2,7 @@
 
 ## Introduction:
 
-We are Beata & Natalia, and this is our portfolio web! We’ve been friends since hight school. We’ve always loved creating  projects together. A year ago we discover a new passion - designing mobile apps. That’s how we started our jouney with UX/UI design and coding. We’re glad that you visit us!
+We are Beata & Natalia, and this is our portfolio web! We’ve been friends since hight school. We’ve always loved creating  projects together. A year ago we discover a new passion - designing web apps. That’s how we started our jouney with UX/UI design and coding. We’re glad that you visit us!
 
 ## Used technologies:
 

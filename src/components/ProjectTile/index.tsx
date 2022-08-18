@@ -4,7 +4,6 @@ import {
   EachSlide,
   ProjectContainer,
   SlideContainer,
-  Subtitle,
   Text,
   Title,
 } from "./style";
@@ -49,7 +48,6 @@ const DescriptionContainer = (data: any) => {
   return (
     <Description>
       <Title>{data.title}</Title>
-      <Subtitle>{data.category}</Subtitle>
       <Text>{data.text}</Text>
       <SmallButton
         onClick={() => {
@@ -100,10 +98,9 @@ const ProjectTile = () => {
       <ProjectContainer id="project_tile" isSlideFirst={true}>
         <Slideshow images={firstProjectImages} />
         <DescriptionContainer
-          title={"TITLE"}
-          category={"category"}
+          title={"Portfolio Web Page"}
           text={
-            "Praesent efficitur quis odio quis fermentum. Quisque non augue venenatis, luctus neque feugiat, efficitur justo. Donec mattis arcu at ante volutpat consequat. Aliquam erat volutpat. Curabitur interdum aliquet tortor, id fermentum felis lacinia ac. Sed aliquam, arcu vitae tincidunt posuere, est nunc eleifend."
+            "This is at the same time our first project together and the way to present others apps. We have a lot of fun working on this and we hope you enjoy this. "
           }
           repo_link={"https://github.com/natimati/Portfolio"}
           design_link={
@@ -115,13 +112,12 @@ const ProjectTile = () => {
         <Slideshow images={secondProjectImages} />
         <DescriptionContainer
           title={"TITLE"}
-          category={"category"}
           text={
             "Praesent efficitur quis odio quis fermentum. Quisque non augue venenatis, luctus neque feugiat, efficitur justo. Donec mattis arcu at ante volutpat consequat. Aliquam erat volutpat. Curabitur interdum aliquet tortor, id fermentum felis lacinia ac. Sed aliquam, arcu vitae tincidunt posuere, est nunc eleifend."
           }
           repo_link={"https://github.com/natimati/Portfolio"}
           design_link={
-            "https://www.figma.com/file/Zzj9Cmao5lVfDsrJsqsMEk/portfolio?node-id=157%3A5"
+            "https://www.figma.com/file/aoY6nJXbYO7BcBTYH7ZZga/Fakenews-app?node-id=0%3A1"
           }
         />
       </ProjectContainer>
@@ -129,7 +125,6 @@ const ProjectTile = () => {
         <Slideshow images={thirdProjectImages} />
         <DescriptionContainer
           title={"TITLE"}
-          category={"category"}
           text={
             "Praesent efficitur quis odio quis fermentum. Quisque non augue venenatis, luctus neque feugiat, efficitur justo. Donec mattis arcu at ante volutpat consequat. Aliquam erat volutpat. Curabitur interdum aliquet tortor, id fermentum felis lacinia ac. Sed aliquam, arcu vitae tincidunt posuere, est nunc eleifend."
           }

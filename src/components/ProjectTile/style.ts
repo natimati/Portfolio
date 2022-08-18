@@ -22,15 +22,6 @@ export const Title = styled.h2`
   }
 `;
 
-export const Subtitle = styled.h3`
-  margin: 0;
-  padding-bottom: 15px;
-
-  @media screen and (max-width: 1668px) {
-    padding-bottom: 5px;
-  }
-`;
-
 export const Text = styled.p`
   margin: 0;
   padding-bottom: 10px;
@@ -117,8 +108,8 @@ export const ProjectDetails = styled.div`
 `;
 
 export const Photo = styled.img`
-  max-width: 400px;
-  max-height: 400px;
+  max-width: 300px;
+  max-height: 300px;
 `;
 
 export const Paragraph = styled.p`

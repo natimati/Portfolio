@@ -66,6 +66,10 @@ export const ContactBDiv = styled.div`
   flex-direction: column;
   align-items: center;
   align-self: flex-start;
+
+  @media screen and (max-width: 1668px) {
+    transform: translateX(-200px) translateY(80px);
+  }
 `;
 
 export const BArrow = styled.img`
@@ -110,7 +114,7 @@ export const NDiv = styled.div`
 
 export const ContactNDiv = styled.div`
   color: ${(props) => props.theme.colors.white};
-  transform: translateX(1000px) translateY(100px);
+  transform: translateX(1000px) translateY(80px);
   position: absolute;
   display: flex;
   flex-direction: column;

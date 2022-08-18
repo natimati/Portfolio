@@ -6,10 +6,14 @@ margin-top: 50px;
 display: flex;
 flex-direction: column;
 width: 100%;
-max-width: 630px;
+max-width: 1000px;
 margin: 0 auto;
 min-height: 600px;
 justify-content: center;
+
+@media screen and (max-width: 1668px) {
+    max-width: 630px;
+}
 `;
 
 export const Form = styled.form`

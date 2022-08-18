@@ -34,4 +34,3 @@ For deployment we are using netlify.app .
 ## Setup:
 
 To run application you have to install dependencies and run npm command: `npm start`
-

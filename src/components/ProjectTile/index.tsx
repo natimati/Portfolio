@@ -17,6 +17,13 @@ interface SlideShowProps {
   images: string[];
 }
 
+interface DescriptionData {
+  title: string;
+  text: string;
+  repo_link: string;
+  design_link: string;
+}
+
 const Slideshow = (props: SlideShowProps) => {
   return (
     <SlideContainer>
@@ -32,7 +39,7 @@ const Slideshow = (props: SlideShowProps) => {
   );
 };
 
-const DescriptionContainer = (data: any) => {
+const DescriptionContainer = (data: DescriptionData) => {
   const modalContextValue = useContext(ModalContext);
 
   const handleSeeRepoClick = (link: string) => {

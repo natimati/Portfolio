@@ -2,7 +2,7 @@
 
 ## Introduction:
 
-We are Beata & Natalia, and this is our portfolio web! We’ve been friends since hight school. We’ve always loved creating  projects together. A year ago we discover a new passion - designing web apps. That’s how we started our jouney with UX/UI design and coding. We’re glad that you visit us!
+We are Beata & Natalia, and this is our portfolio web! We’ve been friends since high school. We always loved creating  projects together. A year ago we've discovered a new passion - web apps design. That’s how we started our jouney with UX/UI design and coding. We’re glad that you have visited us!
 
 ## Used technologies:
 
@@ -18,7 +18,7 @@ We are Beata & Natalia, and this is our portfolio web! We’ve been friends sinc
 
 ## Project assumptions:
 
-We love to work together and we always very excited to creating new things. Thats why we came up with the idea to combine business with pleasure and improve our skills in designing and creating web applications. You're looking at our first project, which is also way to present ourselfs and our other (future) projects. 
+We love to work together and we are always very excited about creating new things. That's why we came up with the idea to combine business with pleasure and improve our skills in design and web applications development. You're looking at our first project, which is also a way to present us and our other (future) projects. 
 
 ## Development:
 

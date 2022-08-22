@@ -20,8 +20,8 @@ interface SlideShowProps {
 interface DescriptionData {
   title: string;
   text: string;
-  repo_link: string;
-  design_link: string;
+  repoLink: string;
+  designLink: string;
 }
 
 const Slideshow = (props: SlideShowProps) => {
@@ -65,14 +65,14 @@ const DescriptionContainer = (data: DescriptionData) => {
       </SmallButton>
       <SmallButton
         onClick={() => {
-          handleSeeRepoClick(data.repo_link);
+          handleSeeRepoClick(data.repoLink);
         }}
       >
         see repo
       </SmallButton>
       <SmallButton
         onClick={() => {
-          handleSeeCaseStudyClick(data.design_link);
+          handleSeeCaseStudyClick(data.designLink);
         }}
       >
         see case study
@@ -109,8 +109,8 @@ const ProjectTile = () => {
           text={
             "This is at the same time our first project together and the way to present others apps. We have a lot of fun working on this and we hope you enjoy this. "
           }
-          repo_link={"https://github.com/natimati/Portfolio"}
-          design_link={
+          repoLink={"https://github.com/natimati/Portfolio"}
+          designLink={
             "https://www.figma.com/file/Zzj9Cmao5lVfDsrJsqsMEk/portfolio?node-id=157%3A5"
           }
         />
@@ -122,8 +122,8 @@ const ProjectTile = () => {
           text={
             "Praesent efficitur quis odio quis fermentum. Quisque non augue venenatis, luctus neque feugiat, efficitur justo. Donec mattis arcu at ante volutpat consequat. Aliquam erat volutpat. Curabitur interdum aliquet tortor, id fermentum felis lacinia ac. Sed aliquam, arcu vitae tincidunt posuere, est nunc eleifend."
           }
-          repo_link={"https://github.com/natimati/Portfolio"}
-          design_link={
+          repoLink={"https://github.com/natimati/Portfolio"}
+          designLink={
             "https://www.figma.com/file/aoY6nJXbYO7BcBTYH7ZZga/Fakenews-app?node-id=0%3A1"
           }
         />
@@ -135,8 +135,8 @@ const ProjectTile = () => {
           text={
             "Praesent efficitur quis odio quis fermentum. Quisque non augue venenatis, luctus neque feugiat, efficitur justo. Donec mattis arcu at ante volutpat consequat. Aliquam erat volutpat. Curabitur interdum aliquet tortor, id fermentum felis lacinia ac. Sed aliquam, arcu vitae tincidunt posuere, est nunc eleifend."
           }
-          repo_link={"https://github.com/natimati/Portfolio"}
-          design_link={
+          repoLink={"https://github.com/natimati/Portfolio"}
+          designLink={
             "https://www.figma.com/file/Zzj9Cmao5lVfDsrJsqsMEk/portfolio?node-id=157%3A5"
           }
         />

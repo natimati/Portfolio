@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { Button } from "../../styles";
 
 export const Container = styled.div`
-  margin-top: 50px;
   display: flex;
   flex-direction: column;
   width: 100%;

@@ -7,6 +7,8 @@ export const Container = styled.div`
   align-items: center;
   justify-items: center;
   margin-top: 0;
+  margin-bottom: 40px;
+  position: relative;
 `;
 
 export const TextArea = styled.div`
@@ -25,24 +27,14 @@ export const TextArea = styled.div`
 
 export const DownButonContainer = styled.div`
   position: absolute;
-  top: 850px;
+  top: 150px;
   margin-right: 50px;
   margin-bottom: 50px;
   align-self: flex-end;
 
-  &:hover {
-    margin-right: 40px;
-    margin-bottom: 40px;
-  }
 
   @media screen and (max-width: 1668px) {
-    top: 600px;
     margin-right: 75px;
-
-    &:hover {
-      margin-right: 75px;
-      margin-bottom: 40px;
-    }
   }
 `;
 
@@ -53,8 +45,10 @@ export const DownButton = styled.button`
   border: none;
   background-color: ${(props) => props.theme.colors.mainColor};
   cursor: pointer;
+  transition: all 0.2s ease-out;
 
   &:hover {
+    transition: all 0.2s ease-in;
     box-shadow: 4px 4px 5px ${(props) => props.theme.colors.shadowColor};
     height: 60px;
     width: 60px;

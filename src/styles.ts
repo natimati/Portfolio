@@ -1,6 +1,24 @@
 import styled, { createGlobalStyle } from "styled-components";
 import img from "./highlighter.png";
 
+export const theme = {
+  colors: {
+    white: "#fff",
+    red: "#B81F31",
+    mainColor: "#23362F",
+    inputBackgroundcolor: "#EBEBEB",
+    modalBackground: "rgba(200, 214, 213, .9)",
+    subtierButtonBackground: "rgba(200, 214, 213, .9)",
+    shadowColor: "#9AB0AF",
+    buttonBackgroundColor: "#D9D9D9",
+  },
+
+  fontFamily: {
+    primaryFont: "'Josefin Sans', sans-serif ",
+    secondaryFont: "'Tiro Devanagari Hindi'",
+  },
+};
+
 export const GlobalStyle = createGlobalStyle`
     body {
         font-family: 'Josefin Sans', sans-serif;
@@ -11,7 +29,7 @@ export const GlobalStyle = createGlobalStyle`
     h1 {
         font-weight: 700;
         font-size: 45px;
-        text-shadow: 4px 4px 5px #9ab0af;
+        text-shadow: 4px 4px 5px ${theme.colors.shadowColor};
         align-self: center;
         text-align: center;
         margin-bottom: 5px;
@@ -45,23 +63,6 @@ export const GlobalStyle = createGlobalStyle`
     }
 `;
 
-export const theme = {
-  colors: {
-    white: "#fff",
-    red: "#B81F31",
-    mainColor: "#23362F",
-    inputBackgroundcolor: "#EBEBEB",
-    modalBackground: "rgba(200, 214, 213, .9)",
-    subtierButtonBackground: "rgba(200, 214, 213, .9)",
-    shadowColor: "#9AB0AF",
-    buttonBackgroundColor: "#D9D9D9",
-  },
-
-  fontFamily: {
-    primaryFont: "'Josefin Sans', sans-serif ",
-    secondaryFont: "'Tiro Devanagari Hindi'",
-  },
-};
 export const Button = styled.button`
   display: flex;
   align-items: center;

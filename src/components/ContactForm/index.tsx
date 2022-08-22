@@ -51,7 +51,6 @@ const Contact = () => {
         .send(serviceId, templateId, templateParams, publicKey)
         .then((response) => {
           setEmailSent(true);
-          console.log(response);
           setValue("name", "");
           setValue("email", "");
           setValue("message", "");
@@ -62,7 +61,7 @@ const Contact = () => {
         .catch((error) => console.log(error));
     }
   });
-  const onChange = () => {
+  const handleRecaptchaChange = () => {
     setIsNotRobot(true);
   };
 
@@ -145,7 +144,7 @@ const Contact = () => {
               <ReCAPTCHA
                 sitekey={process.env.REACT_APP_SITE_KEY as string}
                 ref={(ref) => (captchaRef.current = ref)}
-                onChange={onChange}
+                onChange={handleRecaptchaChange}
               />
             </ReCAPTCHAContainer>
             <SendButton type="submit">send</SendButton>

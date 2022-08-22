@@ -21,7 +21,7 @@ export const Container = styled.div`
   align-items: flex-start;
   justify-content: space-around;
 
-  @media screen and (max-width: 1668px) {
+  ${(props) => props.theme.breakpoints.tablet} {
     height: 450px;
     max-width: 1000px;
   }
@@ -37,7 +37,7 @@ export const ImageContainer = styled.div`
   height: 550px;
   margin-top: 50px;
 
-  @media screen and (max-width: 1668px) {
+  ${(props) => props.theme.breakpoints.tablet} {
     height: 350px;
   }
 `;
@@ -67,7 +67,7 @@ export const ContactBDiv = styled.div`
   align-items: center;
   align-self: flex-start;
 
-  @media screen and (max-width: 1668px) {
+  ${(props) => props.theme.breakpoints.tablet} {
     transform: translateX(-200px) translateY(80px);
   }
 `;
@@ -77,7 +77,7 @@ export const BArrow = styled.img`
   width: 60%;
   transform: translate(-150px, 50%) rotate(0.05turn);
 
-  @media screen and (max-width: 1668px) {
+  ${(props) => props.theme.breakpoints.tablet} {
     height: 70%;
     width: 60%;
     transform: translate(-60px, 50%) rotate(0.05turn);
@@ -93,7 +93,7 @@ export const BTextArea = styled.div`
   flex-direction: column;
   align-items: center;
 
-  @media screen and (max-width: 1668px) {
+  ${(props) => props.theme.breakpoints.tablet} {
     transform: translateX(-200px) translateY(-150px);
     width: 120px;
   }
@@ -121,7 +121,7 @@ export const ContactNDiv = styled.div`
   align-items: center;
   align-self: flex-start;
 
-  @media screen and (max-width: 1668px) {
+  ${(props) => props.theme.breakpoints.tablet} {
     transform: translateX(600px) translateY(80px);
   }
 `;
@@ -130,7 +130,7 @@ export const NArrow = styled.img`
   width: 60%;
   transform: translate(310px, -5%) rotate(0.55turn);
 
-  @media screen and (max-width: 1668px) {
+  ${(props) => props.theme.breakpoints.tablet} {
     transform: translate(180px, -20%) rotate(0.55turn);
   }
 `;
@@ -144,7 +144,7 @@ export const NTextArea = styled.div`
   flex-direction: column;
   align-items: center;
 
-  @media screen and (max-width: 1668px) {
+  ${(props) => props.theme.breakpoints.tablet} {
     transform: translateX(280px) translateY(-200px);
     width: 150px;
   }
@@ -156,7 +156,7 @@ export const Name = styled.h3`
   text-shadow: 4px 4px 5px ${(props) => props.theme.colors.shadowColor};
   margin: 0;
 
-  @media screen and (max-width: 1668px) {
+  ${(props) => props.theme.breakpoints.tablet} {
     font-size: 26px;
   }
 `;
@@ -165,7 +165,7 @@ export const FullName = styled.h4`
   margin-top: 5px;
   margin-bottom: 15px;
 
-  @media screen and (max-width: 1668px) {
+  ${(props) => props.theme.breakpoints.tablet} {
     font-size: 14px;
     margin-bottom: 5px;
   }
@@ -176,7 +176,7 @@ export const Role = styled.p`
   font-weight: 200;
   margin: 10px;
 
-  @media screen and (max-width: 1668px) {
+  ${(props) => props.theme.breakpoints.tablet} {
     font-size: 14px;
   }
 `;
@@ -189,7 +189,7 @@ export const SkillsHeather = styled.p<SkillsProps>`
   display: flex;
   align-self: ${(props) => (props.isBeti ? "flex-end" : "flex-start")};
 
-  @media screen and (max-width: 1668px) {
+  ${(props) => props.theme.breakpoints.tablet} {
     margin-top: 5px;
     padding: 5px;
     font-size: 12px;
@@ -206,7 +206,7 @@ export const SkillsList = styled.ul<SkillsProps>`
   font-size: 14px;
   padding: 0;
 
-  @media screen and (max-width: 1668px) {
+  ${(props) => props.theme.breakpoints.tablet} {
     font-size: 9px;
     line-height: 20px;
   }
@@ -218,8 +218,7 @@ export const Icon = styled.img`
   width: 50px;
   cursor: pointer;
 
-
-  @media screen and (max-width: 1668px) {
+  ${(props) => props.theme.breakpoints.tablet} {
     margin: 10px;
     height: 30px;
     width: 30px;

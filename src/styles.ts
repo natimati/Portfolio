@@ -17,6 +17,10 @@ export const theme = {
     primaryFont: "'Josefin Sans', sans-serif ",
     secondaryFont: "'Tiro Devanagari Hindi'",
   },
+
+  breakpoints: {
+    tablet: "@media screen and (max-width: 1668px)",
+  },
 };
 
 export const GlobalStyle = createGlobalStyle`
@@ -34,7 +38,7 @@ export const GlobalStyle = createGlobalStyle`
         text-align: center;
         margin-bottom: 5px;
 
-        @media screen and (max-width: 1668px) {
+        ${theme.breakpoints.tablet} {
           font-size: 40px;
          }
     };
@@ -43,7 +47,7 @@ export const GlobalStyle = createGlobalStyle`
         font-weight: 700;
         font-size: 25px;
 
-        @media screen and (max-width: 1668px) {
+        ${theme.breakpoints.tablet} {
           font-size: 18px;
          }
     };
@@ -102,7 +106,7 @@ export const Button = styled.button`
     }
   }
 
-  @media screen and (max-width: 1668px) {
+  ${(props) => props.theme.breakpoints.tablet} {
     font-size: 12px;
     padding: 5px 10px;
     height: 25px;
@@ -136,7 +140,7 @@ export const SmallButton = styled(Button)`
     }
   }
 
-  @media screen and (max-width: 1668px) {
+  ${(props) => props.theme.breakpoints.tablet} {
     font-size: 14px;
     padding: 0;
   }

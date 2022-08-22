@@ -53,7 +53,7 @@ export const ModalContent = styled.div`
     border-radius: 5px;
   }
 
-  @media screen and (max-width: 1668px) {
+  ${(props) => props.theme.breakpoints.tablet} {
     max-height: 600px;
     min-width: 800px;
   }

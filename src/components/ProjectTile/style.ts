@@ -17,7 +17,7 @@ export const Title = styled.h2`
   margin: 0;
   padding-bottom: 20px;
 
-  @media screen and (max-width: 1668px) {
+  ${(props) => props.theme.breakpoints.tablet} {
     padding-bottom: 10px;
   }
 `;
@@ -26,7 +26,7 @@ export const Text = styled.p`
   margin: 0;
   padding-bottom: 10px;
 
-  @media screen and (max-width: 1668px) {
+  ${(props) => props.theme.breakpoints.tablet} {
     font-size: 14px;
   }
 `;
@@ -44,7 +44,7 @@ export const ProjectContainer = styled.div<ProjectContainerProps>`
     text-align: ${(props) => (props.isSlideFirst ? "start" : "end")};
     align-items: ${(props) => (props.isSlideFirst ? "flex-start" : "flex-end")};
 
-    @media screen and (max-width: 1668px) {
+    ${(props) => props.theme.breakpoints.tablet} {
       align-self: center;
     }
   }
@@ -55,7 +55,7 @@ export const ProjectContainer = styled.div<ProjectContainerProps>`
     height: fit-content;
     padding: 10px;
 
-    @media screen and (max-width: 1668px) {
+    ${(props) => props.theme.breakpoints.tablet} {
       padding: 2px;
     }
 
@@ -66,7 +66,7 @@ export const ProjectContainer = styled.div<ProjectContainerProps>`
     }
   }
 
-  @media screen and (max-width: 1668px) {
+  ${(props) => props.theme.breakpoints.tablet} {
     gap: 30px;
     max-width: 800px;
     padding: 20px 50px;
@@ -77,8 +77,7 @@ export const SlideContainer = styled.div`
   grid-area: slide;
   max-width: 600px;
 
-
-  @media screen and (max-width: 1668px) {
+  ${(props) => props.theme.breakpoints.tablet} {
     max-width: 345px;
   }
 `;

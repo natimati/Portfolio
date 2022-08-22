@@ -8,7 +8,7 @@ export const Container = styled.div`
   max-width: 1000px;
   margin: 0 auto;
 
-  @media screen and (max-width: 1668px) {
+  ${(props) => props.theme.breakpoints.tablet} {
     max-width: 630px;
   }
 `;
@@ -48,7 +48,7 @@ export const Label = styled.label`
   font-weight: 500;
   padding: 5px;
 
-  @media screen and (max-width: 1668px) {
+  ${(props) => props.theme.breakpoints.tablet} {
     font-size: 14px;
   }
 `;
@@ -99,7 +99,7 @@ export const InputError = styled.span`
   margin-bottom: 25px;
   color: ${(props) => props.theme.colors.red};
 
-  @media screen and (max-width: 1668px) {
+  ${(props) => props.theme.breakpoints.tablet} {
     font-size: 14px;
   }
 `;
@@ -114,7 +114,7 @@ export const RodoInformation = styled.span`
   text-align: left;
   margin: 50px 0;
 
-  @media screen and (max-width: 1668px) {
+  ${(props) => props.theme.breakpoints.tablet} {
     font-size: 12px;
   }
 `;

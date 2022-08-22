@@ -14,7 +14,7 @@ export const Container = styled.div`
   margin: 0 auto;
   flex-direction: column;
 
-  @media screen and (max-width: 1668px) {
+  ${(props) => props.theme.breakpoints.tablet} {
     height: 165px;
     padding-top: 20px;
     max-width: 1000px;
@@ -41,7 +41,7 @@ export const GoUpButton = styled.button`
     text-shadow: 4px 4px 5px ${(props) => props.theme.colors.shadowColor};
   }
 
-  @media screen and (max-width: 1668px) {
+  ${(props) => props.theme.breakpoints.tablet} {
     font-size: 14px;
   }
 `;
@@ -53,7 +53,7 @@ export const FindUsText = styled.p`
   font-size: 20px;
   padding-left: 50px;
 
-  @media screen and (max-width: 1668px) {
+  ${(props) => props.theme.breakpoints.tablet} {
     font-size: 14px;
     padding-left: 30px;
   }
@@ -63,7 +63,7 @@ export const InIcon = styled.img`
   height: 50px;
   width: 50px;
 
-  @media screen and (max-width: 1668px) {
+  ${(props) => props.theme.breakpoints.tablet} {
     height: 30px;
     width: 30px;
   }
@@ -86,7 +86,7 @@ export const InButton = styled.a`
     text-shadow: 4px 4px 4px ${(props) => props.theme.colors.shadowColor};
   }
 
-  @media screen and (max-width: 1668px) {
+  ${(props) => props.theme.breakpoints.tablet} {
     gap: 10px;
     padding-bottom: 5px;
     padding-left: 60px;
@@ -98,7 +98,7 @@ export const Text = styled.p`
   font-size: 20px;
   font-weight: 500;
 
-  @media screen and (max-width: 1668px) {
+  ${(props) => props.theme.breakpoints.tablet} {
     font-size: 16px;
     margin: 10px 0;
   }
@@ -111,7 +111,7 @@ export const NormalText = styled.p`
   font-family: ${(props) => props.theme.fontFamily.secondaryFont};
   font-style: italic;
 
-  @media screen and (max-width: 1668px) {
+  ${(props) => props.theme.breakpoints.tablet} {
     font-size: 12px;
   }
 `;

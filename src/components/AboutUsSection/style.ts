@@ -18,7 +18,7 @@ export const TextArea = styled.div`
   text-align: center;
   margin: 0;
 
-  @media screen and (max-width: 1668px) {
+  ${(props) => props.theme.breakpoints.tablet} {
     max-width: 500px;
     font-size: 16px;
     font-weight: 500;
@@ -32,8 +32,7 @@ export const DownButonContainer = styled.div`
   margin-bottom: 50px;
   align-self: flex-end;
 
-
-  @media screen and (max-width: 1668px) {
+  ${(props) => props.theme.breakpoints.tablet} {
     margin-right: 75px;
   }
 `;
@@ -54,7 +53,7 @@ export const DownButton = styled.button`
     width: 60px;
   }
 
-  @media screen and (max-width: 1668px) {
+  ${(props) => props.theme.breakpoints.tablet} {
     height: 38px;
     width: 38px;
 
@@ -69,7 +68,7 @@ export const GoDownIcon = styled.img`
   height: 30px;
   width: 30px;
 
-  @media screen and (max-width: 1668px) {
+  ${(props) => props.theme.breakpoints.tablet} {
     height: 25px;
     width: 25px;
   }

@@ -23,6 +23,10 @@ type FormValues = {
   message: string;
 };
 
+const serviceId = process.env.REACT_APP_SERVICE_ID as string;
+const templateId = process.env.REACT_APP_TEMPLATE_ID as string;
+const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY as string;
+
 const Contact = () => {
   const [emailSent, setEmailSent] = useState(false);
   const [isNotRobot, setIsNotRobot] = useState(false);
@@ -38,9 +42,6 @@ const Contact = () => {
     const { name, email, message } = data;
     console.log(data);
     if (isNotRobot && name && email && message) {
-      const serviceId = process.env.REACT_APP_SERVICE_ID as string;
-      const templateId = process.env.REACT_APP_TEMPLATE_ID as string;
-      const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY as string;
       const templateParams = {
         name,
         email,

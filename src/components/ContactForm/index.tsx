@@ -76,8 +76,9 @@ const Contact = () => {
           <h1>Want to connect? Let's talk!</h1>
           <Form onSubmit={onSubmit}>
             <NameInputContainer>
-              <Label>Name</Label>
+              <Label htmlFor="name">Name</Label>
               <FormInput
+                id="name"
                 type="text"
                 {...register("name", {
                   required: true,
@@ -95,8 +96,9 @@ const Contact = () => {
               </InputError>
             </NameInputContainer>
             <EmailInputContainer>
-              <Label>E-mail</Label>
+              <Label htmlFor="email">E-mail</Label>
               <FormInput
+                id="email"
                 type="email"
                 {...register("email", {
                   required: true,
@@ -119,8 +121,9 @@ const Contact = () => {
               </InputError>
             </EmailInputContainer>
             <MessageInputContainer>
-              <Label>Message</Label>
+              <Label htmlFor="message">Message</Label>
               <Message
+                id="message"
                 {...register("message", {
                   required: true,
                   minLength: 10,

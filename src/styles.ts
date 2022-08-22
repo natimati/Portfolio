@@ -48,12 +48,13 @@ export const GlobalStyle = createGlobalStyle`
 export const theme = {
   colors: {
     white: "#fff",
-    primaryUi: "#EBEBEB",
-    secondaryUi: "rgba(200, 214, 213, .9)",
-    tertiaryUi: "#9AB0AF",
-    fourthUi: "#23362F",
-    fifthUi: "#D9D9D9",
-    sixthUi: "#FAFF05",
+    red: "#B81F31",
+    mainColor: "#23362F",
+    inputBackgroundcolor: "#EBEBEB",
+    modalBackground: "rgba(200, 214, 213, .9)",
+    subtierButtonBackground: "rgba(200, 214, 213, .9)",
+    shadowColor: "#9AB0AF",
+    buttonBackgroundColor: "#D9D9D9",
   },
 
   fontFamily: {
@@ -65,7 +66,7 @@ export const Button = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: ${(props) => props.theme.colors.fifthUi};
+  background-color: ${(props) => props.theme.colors.buttonBackgroundColor};
   font-family: ${(props) => props.theme.fontFamily.primaryFont};
   font-size: 16px;
   font-weight: 700;
@@ -108,7 +109,7 @@ export const Button = styled.button`
   }
 `;
 export const SubtierButton = styled(Button)`
-  background-color: ${(props) => props.theme.colors.secondaryUi};
+  background-color: ${(props) => props.theme.colors.subtierButtonBackground};
   text-transform: capitalize;
 `;
 

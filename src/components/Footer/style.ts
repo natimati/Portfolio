@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Background = styled.div`
-  background-color: ${(props) => props.theme.colors.fourthUi};
+  background-color: ${(props) => props.theme.colors.mainColor};
   width: 100%;
 `;
 
@@ -38,7 +38,7 @@ export const GoUpButton = styled.button`
   cursor: pointer;
 
   &:hover {
-    text-shadow: 4px 4px 5px ${(props) => props.theme.colors.tertiaryUi};
+    text-shadow: 4px 4px 5px ${(props) => props.theme.colors.shadowColor};
   }
 
   @media screen and (max-width: 1668px) {
@@ -76,14 +76,14 @@ export const InButton = styled.a`
   width: fit-content;
   padding-bottom: 10px;
   padding-left: 60px;
-  background-color: ${(props) => props.theme.colors.fourthUi};
+  background-color: ${(props) => props.theme.colors.mainColor};
   border: none;
   cursor: pointer;
   font-family: ${(props) => props.theme.fontFamily.primaryFont};
   text-decoration: none;
 
   &:hover {
-    text-shadow: 4px 4px 4px ${(props) => props.theme.colors.tertiaryUi};
+    text-shadow: 4px 4px 4px ${(props) => props.theme.colors.shadowColor};
   }
 
   @media screen and (max-width: 1668px) {

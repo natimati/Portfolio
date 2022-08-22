@@ -21,11 +21,11 @@ export const StyledModal = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: ${(props) => props.theme.colors.secondaryUi};
+  background-color: ${(props) => props.theme.colors.modalBackground};
   border: 0px;
   animation: ${slideIn} 0.8s both ease-in-out;
   z-index: 98;
-  border: 5px solid ${(props) => props.theme.colors.secondaryUi};
+  border: 5px solid ${(props) => props.theme.colors.modalBackground};
   padding: 5px;
 `;
 
@@ -43,13 +43,13 @@ export const ModalContent = styled.div`
     width: 10px;
   }
   &::-webkit-scrollbar-thumb {
-    background: ${(props) => props.theme.colors.tertiaryUi};
+    background: ${(props) => props.theme.colors.shadowColor};
     border-radius: 5px;
   }
   &::-webkit-scrollbar-track {
     margin-top: 100px;
     margin-bottom: 40px;
-    background-color: ${(props) => props.theme.colors.secondaryUi};
+    background-color: ${(props) => props.theme.colors.modalBackground};
     border-radius: 5px;
   }
 
@@ -67,17 +67,6 @@ export const ModalOverlay = styled.div`
   left: 0;
   backdrop-filter: blur(2px);
   z-index: 2;
-`;
-
-export const Header = styled.h1`
-display: flex;
-justify-content: center;
-text-align: center;
-margin: 25px;
-font-family: ${(props) => props.theme.fontFamily.primaryFont};
-font-size: 24px;
-font-weight: 1000;
-color: ${(props) => props.theme.colors.secondaryUi};
 `;
 
 export const CloseButton = styled.button`
@@ -98,10 +87,4 @@ export const CloseButton = styled.button`
   &:hover {
     opacity: 0.5;
   }
-`;
-
-export const ModalLabel = styled.p`
-color: ${(props) => props.theme.colors.secondaryUi};
-font-size: 15px;
-font-weight: 1000;
 `;

@@ -21,7 +21,7 @@ export const TextArea = styled.div`
     font-size: 16px;
     font-weight: 500;
   }
- `;
+`;
 
 export const DownButonContainer = styled.div`
   position: absolute;
@@ -51,11 +51,11 @@ export const DownButton = styled.button`
   width: 50px;
   border-radius: 35px;
   border: none;
-  background-color: ${(props) => props.theme.colors.fourthUi};
+  background-color: ${(props) => props.theme.colors.mainColor};
   cursor: pointer;
 
   &:hover {
-    box-shadow: 4px 4px 5px ${(props) => props.theme.colors.tertiaryUi};
+    box-shadow: 4px 4px 5px ${(props) => props.theme.colors.shadowColor};
     height: 60px;
     width: 60px;
   }
@@ -74,7 +74,6 @@ export const DownButton = styled.button`
 export const GoDownIcon = styled.img`
   height: 30px;
   width: 30px;
-
 
   @media screen and (max-width: 1668px) {
     height: 25px;

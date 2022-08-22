@@ -5,7 +5,7 @@ interface SkillsProps {
 }
 
 export const Background = styled.div`
-  background-color: ${(props) => props.theme.colors.fourthUi};
+  background-color: ${(props) => props.theme.colors.mainColor};
   width: 100%;
   display: flex;
   justify-content: center;
@@ -153,7 +153,7 @@ export const NTextArea = styled.div`
 export const Name = styled.h3`
   font-size: 40px;
   text-transform: uppercase;
-  text-shadow: 4px 4px 5px ${(props) => props.theme.colors.tertiaryUi};
+  text-shadow: 4px 4px 5px ${(props) => props.theme.colors.shadowColor};
   margin: 0;
 
   @media screen and (max-width: 1668px) {
@@ -218,9 +218,6 @@ export const Icon = styled.img`
   width: 50px;
   cursor: pointer;
 
-  $:hover {
-    
-  }
 
   @media screen and (max-width: 1668px) {
     margin: 10px;

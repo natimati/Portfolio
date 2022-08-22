@@ -1,5 +1,4 @@
 import styled, { createGlobalStyle } from "styled-components";
-import { HashLink } from "react-router-hash-link";
 import img from "./highlighter.png";
 
 export const GlobalStyle = createGlobalStyle`
@@ -39,6 +38,10 @@ export const GlobalStyle = createGlobalStyle`
     h4 {
         font-weight: 400;
         font-size: 20px;
+    }
+
+    a {
+      text-decoration: none;
     }
 `;
 
@@ -135,8 +138,4 @@ export const SmallButton = styled(Button)`
     font-size: 14px;
     padding: 0;
   }
-`;
-
-export const Link = styled(HashLink)`
-  text-decoration: none;
 `;

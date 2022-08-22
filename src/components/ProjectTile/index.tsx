@@ -42,14 +42,8 @@ const Slideshow = (props: SlideShowProps) => {
 const DescriptionContainer = (data: DescriptionData) => {
   const modalContextValue = useContext(ModalContext);
 
-  const handleSeeRepoClick = (link: string) => {
-    window.open(link, "_blank");
-  };
   const handleReadMoreClick = (content: React.ReactChild) => {
     modalContextValue.setDisplayedComponent(content);
-  };
-  const handleSeeCaseStudyClick = (link: string) => {
-    window.open(link, "_blank");
   };
 
   return (
@@ -63,20 +57,12 @@ const DescriptionContainer = (data: DescriptionData) => {
       >
         read more
       </SmallButton>
-      <SmallButton
-        onClick={() => {
-          handleSeeRepoClick(data.repoLink);
-        }}
-      >
-        see repo
-      </SmallButton>
-      <SmallButton
-        onClick={() => {
-          handleSeeCaseStudyClick(data.designLink);
-        }}
-      >
-        see case study
-      </SmallButton>
+      <a href={data.repoLink} target="_blank" rel="noreferrer">
+        <SmallButton>see repo</SmallButton>
+      </a>
+      <a href={data.designLink} target="_blank" rel="noreferrer">
+        <SmallButton>see case study</SmallButton>
+      </a>
     </Description>
   );
 };

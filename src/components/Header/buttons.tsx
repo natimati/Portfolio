@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { Button, Link, SubtierButton } from "../../styles";
+import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
+import { Button, SubtierButton } from "../../styles";
 import { ButtonContainer } from "./style";
 
 interface WhichPageProps {
@@ -9,13 +10,9 @@ interface WhichPageProps {
 
 export const ButtonsSection = (props: WhichPageProps) => {
   const [isShown, setIsShown] = useState(false);
-  
+
   const handlePortfolioButtonClick = () => {
     setIsShown((current) => !current);
-  };
-
-  const handleGithubButtonClick = () => {
-    window.open("https://github.com/natimati/Portfolio", "_blank");
   };
 
   if (props.onMainPage) {
@@ -25,9 +22,13 @@ export const ButtonsSection = (props: WhichPageProps) => {
         {isShown && (
           <>
             <SubtierButton>Case study</SubtierButton>
-            <SubtierButton onClick={handleGithubButtonClick}>
-              github
-            </SubtierButton>
+            <a
+              href="https://github.com/natimati"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <SubtierButton>github</SubtierButton>
+            </a>
           </>
         )}
       </ButtonContainer>
@@ -35,25 +36,24 @@ export const ButtonsSection = (props: WhichPageProps) => {
   }
   return (
     <>
-      <Link smooth to="/#projecttilesection">
+      <HashLink smooth to="/#projecttilesection">
         <Button>portfolio</Button>
-      </Link>
+      </HashLink>
     </>
   );
 };
 
 export const RightButton = (props: WhichPageProps) => {
-  const navigate = useNavigate();
-  const handleContactUsButtonClick = () => {
-    navigate("/contact");
-  };
-  const handleGoBackButtonClick = () => {
-    navigate("/");
-  };
-  
-
   if (!props.onMainPage) {
-    return <Button onClick={handleGoBackButtonClick}>go back</Button>;
+    return (
+      <Link to="/">
+        <Button>go back</Button>
+      </Link>
+    );
   }
-  return <Button onClick={handleContactUsButtonClick}>Contact us</Button>;
+  return (
+    <Link to="/contact">
+      <Button>Contact us</Button>
+    </Link>
+  );
 };

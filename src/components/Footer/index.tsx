@@ -1,4 +1,4 @@
-import { Link } from "../../styles";
+import { HashLink } from "react-router-hash-link";
 import {
   InButton,
   Container,
@@ -16,9 +16,9 @@ const Footer = () => {
     <Background>
       <Container>
         <GoUpButtonContainer>
-          <Link smooth to="/#header_section">
+          <HashLink smooth to="/#header_section">
             <GoUpButton>go up!</GoUpButton>
-          </Link>
+          </HashLink>
         </GoUpButtonContainer>
         <FindUsText>Find us</FindUsText>
         <InButton

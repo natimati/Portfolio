@@ -69,7 +69,7 @@ export const InIcon = styled.img`
   }
 `;
 
-export const InButton = styled.button`
+export const InButton = styled.a`
   display: flex;
   flex-direction: row;
   gap: 15px;
@@ -80,6 +80,7 @@ export const InButton = styled.button`
   border: none;
   cursor: pointer;
   font-family: ${(props) => props.theme.fontFamily.primaryFont};
+  text-decoration: none;
 
   &:hover {
     text-shadow: 4px 4px 4px ${(props) => props.theme.colors.tertiaryUi};

@@ -218,6 +218,10 @@ export const Icon = styled.img`
   width: 50px;
   cursor: pointer;
 
+  $:hover {
+    
+  }
+
   @media screen and (max-width: 1668px) {
     margin: 10px;
     height: 30px;

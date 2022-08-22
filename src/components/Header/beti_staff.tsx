@@ -5,12 +5,6 @@ interface WhichPageProps {
 }
 
 export const BetiInformation = (props: WhichPageProps) => {
-  const handleInIconClick = () => {
-    window.open("https://www.linkedin.com/in/beatasuscicka/", "_blank");
-  };
-  const handleBeIconClick = () => {
-    window.open("https://www.linkedin.com/in/beatasuscicka/", "_blank");
-    };
     
     const BSkills = () => {
       return (
@@ -32,16 +26,23 @@ export const BetiInformation = (props: WhichPageProps) => {
         <Name>Beti</Name>
         <FullName>Beata Suścicka</FullName>
         <Role>UX/UI designer</Role>
-        <Icon
-          src="assets/in_icon.png"
-          alt="linkedlin logo"
-          onClick={handleInIconClick}
-        />
-        <Icon
-          src="assets/be_icon.png"
-          alt="behance logo"
-          onClick={handleBeIconClick}
-        />
+        <a
+          href="https://www.linkedin.com/in/beatasuscicka/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Icon
+            src="assets/in_icon.png"
+            alt="linkedlin logo"
+          />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/beatasuscicka/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Icon src="assets/be_icon.png" alt="behance logo" />
+        </a>
       </ContactBDiv>
     );
   }

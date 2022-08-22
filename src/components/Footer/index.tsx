@@ -12,13 +12,6 @@ import {
 } from "./style";
 
 const Footer = () => {
-  const handleInBeataClick = () => {
-    window.open("https://www.linkedin.com/in/beatasuscicka/", "_blank");
-  };
-  const handleInNataliaClick = () => {
-    window.open("https://www.linkedin.com/in/natalia-mateusiak/", "_blank");
-  };
-
   return (
     <Background>
       <Container>
@@ -28,11 +21,19 @@ const Footer = () => {
           </Link>
         </GoUpButtonContainer>
         <FindUsText>Find us</FindUsText>
-        <InButton onClick={handleInBeataClick}>
+        <InButton
+          href="https://www.linkedin.com/in/beatasuscicka/"
+          target="_blank"
+          rel="noreferrer"
+        >
           <InIcon src="assets/in_icon.png" alt="linkedlin logo" />
           <Text>Beata Suścicka</Text>
         </InButton>
-        <InButton onClick={handleInNataliaClick}>
+        <InButton
+          href="https://www.linkedin.com/in/natalia-mateusiak/"
+          target="_blank"
+          rel="noreferrer"
+        >
           <InIcon src="assets/in_icon.png" alt="linkedlin logo" />
           <Text>Natalia Mateusiak</Text>
         </InButton>

@@ -8,7 +8,6 @@ export const Background = styled.div`
 export const Container = styled.div`
   max-width: 1800px;
   max-height: 100%;
-  height: 250px;
   padding-top: 35px;
   display: flex;
   margin: 0 auto;

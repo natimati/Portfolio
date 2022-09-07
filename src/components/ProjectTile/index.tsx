@@ -97,7 +97,7 @@ const ProjectTile = () => {
           }
           repoLink={"https://github.com/natimati/Portfolio"}
           designLink={
-            "https://www.figma.com/file/Zzj9Cmao5lVfDsrJsqsMEk/portfolio?node-id=157%3A5"
+            "https://www.figma.com/file/LLdqqeDVn3xN5Rdv1BC68A/po?node-id=1%3A2"
           }
         />
       </ProjectContainer>

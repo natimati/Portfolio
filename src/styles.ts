@@ -16,6 +16,7 @@ export const theme = {
   fontFamily: {
     primaryFont: "'Josefin Sans', sans-serif ",
     secondaryFont: "'Tiro Devanagari Hindi'",
+    skillsFont: "'Karla', sans-serif ",
   },
 
   breakpoints: {
@@ -73,12 +74,12 @@ export const Button = styled.button`
   justify-content: center;
   background-color: ${(props) => props.theme.colors.buttonBackgroundColor};
   font-family: ${(props) => props.theme.fontFamily.primaryFont};
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 700;
   text-transform: uppercase;
   border: 0px;
   margin-top: 20px;
-  padding: 10px 50px;
+  padding: 10px 0;
   height: 50px;
   width: 210px;
   cursor: pointer;
@@ -116,6 +117,14 @@ export const Button = styled.button`
 export const SubtierButton = styled(Button)`
   background-color: ${(props) => props.theme.colors.subtierButtonBackground};
   text-transform: capitalize;
+  height: 35px;
+
+  :before {
+    top: 50%;
+    left: 49%;
+    width: 115%;
+    height: 95%;
+  }
 `;
 
 export const SmallButton = styled(Button)`

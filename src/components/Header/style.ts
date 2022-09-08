@@ -8,11 +8,11 @@ export const Background = styled.div`
   background-color: ${(props) => props.theme.colors.mainColor};
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 `;
 
 export const Container = styled.div`
-  max-width: 1800px;
+  max-width: 1600px;
   width: 100%;
   max-height: 100%;
   height: 700px;
@@ -35,7 +35,7 @@ export const ImageContainer = styled.div`
   position: relative;
   align-self: center;
   height: 550px;
-  margin-top: 50px;
+  margin-top: 40px;
 
   ${(props) => props.theme.breakpoints.tablet} {
     height: 350px;
@@ -64,8 +64,6 @@ export const ContactBDiv = styled.div`
   position: absolute;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  align-self: flex-start;
 
   ${(props) => props.theme.breakpoints.tablet} {
     transform: translateX(-200px) translateY(80px);
@@ -73,9 +71,9 @@ export const ContactBDiv = styled.div`
 `;
 
 export const BArrow = styled.img`
-  height: 70%;
-  width: 60%;
-  transform: translate(-150px, 50%) rotate(0.05turn);
+  height: 55%;
+  width: 45%;
+  transform: translate(-50px, 100%) rotate(0.05turn);
 
   ${(props) => props.theme.breakpoints.tablet} {
     height: 70%;
@@ -85,13 +83,13 @@ export const BArrow = styled.img`
 `;
 
 export const BTextArea = styled.div`
-  transform: translateX(-350px) translateY(-200px);
+  transform: translateX(-350px) translateY(-90px);
   color: ${(props) => props.theme.colors.white};
-  width: 180px;
+  width: 250px;
   margin-right: 50px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
 
   ${(props) => props.theme.breakpoints.tablet} {
     transform: translateX(-200px) translateY(-150px);
@@ -127,8 +125,8 @@ export const ContactNDiv = styled.div`
 `;
 
 export const NArrow = styled.img`
-  width: 60%;
-  transform: translate(310px, -5%) rotate(0.55turn);
+  width: 50%;
+  transform: translate(300px, 100%) rotate(0.75turn);
 
   ${(props) => props.theme.breakpoints.tablet} {
     transform: translate(180px, -20%) rotate(0.55turn);
@@ -136,13 +134,13 @@ export const NArrow = styled.img`
 `;
 
 export const NTextArea = styled.div`
-  transform: translateX(530px) translateY(-280px);
+  transform: translateX(480px) translateY(-90px);
   color: ${(props) => props.theme.colors.white};
-  width: 200px;
+  width: 250px;
   margin-left: 50px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 
   ${(props) => props.theme.breakpoints.tablet} {
     transform: translateX(280px) translateY(-200px);
@@ -151,9 +149,7 @@ export const NTextArea = styled.div`
 `;
 
 export const Name = styled.h3`
-  font-size: 40px;
-  text-transform: uppercase;
-  text-shadow: 4px 4px 5px ${(props) => props.theme.colors.shadowColor};
+  font-size: 50px;
   margin: 0;
 
   ${(props) => props.theme.breakpoints.tablet} {
@@ -172,9 +168,9 @@ export const FullName = styled.h4`
 `;
 
 export const Role = styled.p`
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 200;
-  margin: 10px;
+  margin-top: 10px;
 
   ${(props) => props.theme.breakpoints.tablet} {
     font-size: 14px;
@@ -182,9 +178,10 @@ export const Role = styled.p`
 `;
 
 export const SkillsHeather = styled.p<SkillsProps>`
-  margin-top: 20px;
+  margin-top: 0;
   margin-bottom: 0;
-  padding: 15px;
+  font-size: 20px;
+  padding: 15px 0;
   font-weight: 400;
   display: flex;
   align-self: ${(props) => (props.isBeti ? "flex-end" : "flex-start")};
@@ -197,13 +194,15 @@ export const SkillsHeather = styled.p<SkillsProps>`
 `;
 
 export const SkillsList = styled.ul<SkillsProps>`
-  list-style: circle inside;
   display: flex;
   flex-direction: column;
+   list-style-position: inside;
   align-items: ${(props) => (props.isBeti ? "flex-end" : "flex-start")};
+  font-family: ${(props) => props.theme.fontFamily.skillsFont};
+  font-size: 12px;
   line-height: 30px;
   margin-top: 0;
-  font-size: 14px;
+  font-size: 18px;
   padding: 0;
 
   ${(props) => props.theme.breakpoints.tablet} {

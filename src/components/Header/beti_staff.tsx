@@ -15,7 +15,6 @@ export const BetiInformation = (props: WhichPageProps) => {
           <li>Graphic design</li>
           <li>Testing and iteration</li>
           <li>Presentation Skills</li>
-          <li>Creativity</li>
         </SkillsList>
       );
     };

@@ -11,6 +11,21 @@ export const Background = styled.div`
   justify-content: space-around;
 `;
 
+export const WiderBackgroundImage = styled.div`
+  background: url("assets/girls.jpg");
+  background-size: cover;
+  background-position: center;
+  max-width: 1000px;
+  width: 100%;
+  max-height: 100%;
+  margin: 0 auto;
+  height: 480px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0 40px;
+`;
+
 export const Container = styled.div`
   max-width: 1600px;
   width: 100%;

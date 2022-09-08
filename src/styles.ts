@@ -1,6 +1,7 @@
 import styled, { createGlobalStyle } from "styled-components";
 import img from "./highlighter.png";
 
+export const tabletWidth = 1668;
 export const theme = {
   colors: {
     white: "#fff",
@@ -20,7 +21,7 @@ export const theme = {
   },
 
   breakpoints: {
-    tablet: "@media screen and (max-width: 1668px)",
+    tablet: `@media screen and (max-width: ${tabletWidth}px)`,
   },
 };
 
@@ -108,10 +109,11 @@ export const Button = styled.button`
   }
 
   ${(props) => props.theme.breakpoints.tablet} {
-    font-size: 12px;
-    padding: 5px 10px;
-    height: 25px;
+    font-size: 15px;
+    padding: 5px 0px;
+    height: 30px;
     width: 100px;
+    text-transform: none;
   }
 `;
 export const SubtierButton = styled(Button)`
@@ -124,6 +126,14 @@ export const SubtierButton = styled(Button)`
     left: 49%;
     width: 115%;
     height: 95%;
+  }
+
+  ${(props) => props.theme.breakpoints.tablet} {
+    height: 25px;
+
+    :before {
+      top: 53%;
+    }
   }
 `;
 

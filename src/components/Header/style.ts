@@ -64,6 +64,7 @@ export const ContactBDiv = styled.div`
   position: absolute;
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   ${(props) => props.theme.breakpoints.tablet} {
     transform: translateX(-200px) translateY(80px);
@@ -112,7 +113,7 @@ export const NDiv = styled.div`
 
 export const ContactNDiv = styled.div`
   color: ${(props) => props.theme.colors.white};
-  transform: translateX(1000px) translateY(80px);
+  transform: translateX(950px) translateY(80px);
   position: absolute;
   display: flex;
   flex-direction: column;

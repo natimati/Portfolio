@@ -16,6 +16,7 @@ export const TextArea = styled.div`
   flex-direction: column;
   max-width: 825px;
   text-align: center;
+  font-weight: 400;
   margin: 0;
 
   ${(props) => props.theme.breakpoints.tablet} {

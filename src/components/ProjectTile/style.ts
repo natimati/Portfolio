@@ -10,7 +10,7 @@ export const Description = styled.div`
   display: flex;
   flex-direction: column;
   place-self: start;
-  max-width: 600px;
+  max-width: 800px;
 `;
 
 export const Title = styled.h2`
@@ -34,10 +34,11 @@ export const Text = styled.p`
 export const ProjectContainer = styled.div<ProjectContainerProps>`
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 20px;
   grid-template-areas: ${(props) =>
     props.isSlideFirst === true ? "'slide text'" : "'text slide'"};
   padding: 50px 120px;
-  max-width: 1300px;
+  max-width: 1600px;
   margin: 0 auto;
 
   ${Description} {

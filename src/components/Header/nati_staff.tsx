@@ -15,8 +15,7 @@ interface WhichPageProps {
   onMainPage: boolean;
 }
 
-export const NatiInformation = (props: WhichPageProps) => {
-  const NSkills = () => {
+const NSkills = () => {
     return (
       <SkillsList isBeti={false}>
         <li>HTML</li>
@@ -28,8 +27,9 @@ export const NatiInformation = (props: WhichPageProps) => {
         <li>GitHub</li>
       </SkillsList>
     );
-  };
-
+};
+  
+export const NatiInformation = (props: WhichPageProps) => {
   if (!props.onMainPage) {
     return (
       <ContactNDiv>

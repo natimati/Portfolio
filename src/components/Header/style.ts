@@ -184,7 +184,7 @@ export const NTextArea = styled.div`
   align-items: flex-start;
 
   ${(props) => props.theme.breakpoints.tablet} {
-    transform: translateX(150px) translateY(80px);
+    transform: translateX(230px) translateY(80px);
     align-items: flex-end;
     margin: 0;
     width: fit-content;

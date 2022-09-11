@@ -6,6 +6,7 @@ export const theme = {
   colors: {
     white: "#fff",
     red: "#B81F31",
+    black: "#000",
     mainColor: "#23362F",
     inputBackgroundcolor: "#EBEBEB",
     modalBackground: "rgba(200, 214, 213, .9)",
@@ -77,6 +78,7 @@ export const Button = styled.button`
   font-family: ${(props) => props.theme.fontFamily.primaryFont};
   font-size: 20px;
   font-weight: 700;
+  color: ${(props) => props.theme.colors.black};
   text-transform: uppercase;
   border: 0px;
   margin-top: 20px;

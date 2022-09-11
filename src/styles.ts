@@ -109,10 +109,10 @@ export const Button = styled.button`
   }
 
   ${(props) => props.theme.breakpoints.tablet} {
-    font-size: 15px;
+    font-size: 20px;
     padding: 5px 0px;
-    height: 30px;
-    width: 100px;
+    height: 45px;
+    width: 150px;
     text-transform: none;
   }
 `;
@@ -129,10 +129,10 @@ export const SubtierButton = styled(Button)`
   }
 
   ${(props) => props.theme.breakpoints.tablet} {
-    height: 25px;
+    height: 35px;
 
     :before {
-      top: 53%;
+      top: 50%;
     }
   }
 `;

@@ -37,7 +37,7 @@ export const ButtonsSection = (props: WhichPageProps) => {
   return (
     <>
       <HashLink smooth to="/#projecttilesection">
-        <Button>portfolio</Button>
+        <Button>Portfolio</Button>
       </HashLink>
     </>
   );
@@ -47,7 +47,7 @@ export const RightButton = (props: WhichPageProps) => {
   if (!props.onMainPage) {
     return (
       <Link to="/">
-        <Button>go back</Button>
+        <Button>Go Back</Button>
       </Link>
     );
   }

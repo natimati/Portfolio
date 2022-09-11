@@ -1,8 +1,12 @@
 import { useState, useEffect } from "react";
 
-function useBannerState() {
+function useBannerState(enabled: boolean) {
     const [highlightedArea, setHighlightedArea] = useState<null | 'Nati' | 'Beti'>(null);
     useEffect(() => {
+        if (!enabled) {
+            return;
+        }
+
         const intervalId = setInterval(() => {
             if (highlightedArea === null) {
                 setHighlightedArea("Nati"); 
@@ -11,10 +15,10 @@ function useBannerState() {
             } else {
                 setHighlightedArea(null);
             }
-        }, 5000);
+        }, 7000);
 
         return () => clearInterval(intervalId);
-    }, [highlightedArea])
+    }, [highlightedArea, enabled])
     return highlightedArea;
 }
 

@@ -2,6 +2,7 @@ import {
   ContactNDiv,
   FullName,
   Icon,
+  IconsContainer,
   Name,
   NArrow,
   NDiv,
@@ -36,16 +37,22 @@ export const NatiInformation = (props: WhichPageProps) => {
         <Name>Naśka</Name>
         <FullName>Natalia Mateusiak</FullName>
         <Role>frontend developer</Role>
-        <a
-          href="https://www.linkedin.com/in/natalia-mateusiak/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <Icon src="assets/in_icon.png" alt="linkedlin logo" />
-        </a>
-        <a href="https://github.com/natimati" target="_blank" rel="noreferrer">
-          <Icon src="assets/git_icon.png" alt="github logo" />
-        </a>
+        <IconsContainer>
+          <a
+            href="https://www.linkedin.com/in/natalia-mateusiak/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Icon src="assets/in_icon.png" alt="linkedlin logo" />
+          </a>
+          <a
+            href="https://github.com/natimati"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Icon src="assets/git_icon.png" alt="github logo" />
+          </a>
+        </IconsContainer>
       </ContactNDiv>
     );
   }

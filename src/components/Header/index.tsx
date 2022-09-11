@@ -17,7 +17,7 @@ interface HeaderProps {
 
 const Header = (props: HeaderProps) => {
   const width = useWindowWidth();
-  const bannerState = useBannerState();
+  const bannerState = useBannerState(props.onMainPage);
 
   if (width >= tabletWidth) {
     return (
@@ -36,13 +36,13 @@ const Header = (props: HeaderProps) => {
   }
   return (
     <Background>
-      <WiderBackgroundImage>
+      <WiderBackgroundImage onMainPage={props.onMainPage} >
         <ButtonsSection onMainPage={props.onMainPage} />
         <RightButton onMainPage={props.onMainPage} />
-        {bannerState === "Beti" && (
+        {(!props.onMainPage || bannerState === "Beti") && (
           <BetiInformation onMainPage={props.onMainPage} />
         )}
-        {bannerState === "Nati" && (
+        {(!props.onMainPage || bannerState === "Nati") && (
           <NatiInformation onMainPage={props.onMainPage} />
         )}
       </WiderBackgroundImage>

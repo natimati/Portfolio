@@ -4,6 +4,10 @@ interface SkillsProps {
   isBeti: boolean;
 }
 
+interface PageProps {
+  onMainPage: boolean;
+}
+
 export const Background = styled.div`
   background-color: ${(props) => props.theme.colors.mainColor};
   width: 100%;
@@ -11,9 +15,12 @@ export const Background = styled.div`
   justify-content: space-around;
 `;
 
-export const WiderBackgroundImage = styled.div`
+export const WiderBackgroundImage = styled.div<PageProps>`
   position: relative;
-  background: url("assets/girls.jpg");
+  background: ${(props) =>
+    props.onMainPage
+      ? "url('assets/girls.jpg')"
+      : "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/girls.jpg') "};
   background-size: cover;
   background-position: center;
   max-width: 1000px;
@@ -95,7 +102,7 @@ export const ContactBDiv = styled.div`
   align-items: center;
 
   ${(props) => props.theme.breakpoints.tablet} {
-    transform: translateX(-200px) translateY(80px);
+    transform: translateX(150px) translateY(238px);
   }
 `;
 
@@ -138,18 +145,17 @@ export const NDiv = styled.div`
     opacity: 100%;
   }
 
-   ${(props) => props.theme.breakpoints.tablet} {
+  ${(props) => props.theme.breakpoints.tablet} {
     background-color: black;
     opacity: 0.7;
     right: initial;
-    left: 0; 
-
+    left: 0;
 
     &:hover {
       opacity: 0.7;
     }
   }
-  `;
+`;
 
 export const ContactNDiv = styled.div`
   color: ${(props) => props.theme.colors.white};
@@ -161,7 +167,7 @@ export const ContactNDiv = styled.div`
   align-self: flex-start;
 
   ${(props) => props.theme.breakpoints.tablet} {
-    transform: translateX(600px) translateY(80px);
+    transform: translateX(650px) translateY(240px);
   }
 `;
 
@@ -243,6 +249,16 @@ export const SkillsList = styled.ul<SkillsProps>`
   }
 `;
 
+export const IconsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  ${(props) => props.theme.breakpoints.tablet} {
+    flex-direction: row;
+    gap: 20px;
+  }
+`;
+
 export const Icon = styled.img`
   margin: 20px;
   height: 50px;
@@ -250,8 +266,6 @@ export const Icon = styled.img`
   cursor: pointer;
 
   ${(props) => props.theme.breakpoints.tablet} {
-    margin: 10px;
-    height: 30px;
-    width: 30px;
+    margin: 0;
   }
 `;

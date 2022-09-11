@@ -55,12 +55,14 @@ export const DownButton = styled.button`
   }
 
   ${(props) => props.theme.breakpoints.tablet} {
-    height: 38px;
-    width: 38px;
+    height: 50px;
+    width: 50px;
+    box-shadow: 4px 4px 5px ${(props) => props.theme.colors.shadowColor};
 
     &:hover {
-      height: 45px;
-      width: 45px;
+      transition: none;
+      height: 50px;
+      width: 50px;
     }
   }
 `;

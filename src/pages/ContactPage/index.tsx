@@ -4,12 +4,12 @@ import Header from "../../components/Header";
 
 function ContactPage() {
     return (
-        <>
-            <Header onMainPage={false} />
-            <Contact />
-            <Footer />
-       </>
-    )
+      <>
+        <Header onMainPage={false} />
+        <Contact />
+        <Footer onMainPage={false} />
+      </>
+    );
 };
 
 export default ContactPage; 

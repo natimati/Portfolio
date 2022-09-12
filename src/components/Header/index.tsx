@@ -22,7 +22,7 @@ const Header = (props: HeaderProps) => {
   if (width >= tabletWidth) {
     return (
       <Background>
-        <Container id="header_section">
+        <Container id="top">
           <ButtonsSection onMainPage={props.onMainPage} />
           <ImageContainer>
             <BetiInformation onMainPage={props.onMainPage} />
@@ -35,7 +35,7 @@ const Header = (props: HeaderProps) => {
     );
   }
   return (
-    <Background>
+    <Background id="top">
       <WiderBackgroundImage $onMainPage={props.onMainPage}>
         <ButtonsSection onMainPage={props.onMainPage} />
         <RightButton onMainPage={props.onMainPage} />

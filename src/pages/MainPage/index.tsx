@@ -6,13 +6,13 @@ import ProjectTile from "../../components/ProjectTile";
 
 function MainPage() {
     return (
-        <>
-            <Header onMainPage/>
-            <AboutUs />
-            <ProjectTile />
-            <Footer />
-        </>
-    )
+      <>
+        <Header onMainPage />
+        <AboutUs />
+        <ProjectTile />
+        <Footer onMainPage />
+      </>
+    );
 };
 
 export default MainPage;

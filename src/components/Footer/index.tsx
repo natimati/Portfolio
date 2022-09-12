@@ -1,3 +1,4 @@
+import { useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import {
   InButton,
@@ -11,12 +12,18 @@ import {
   Background,
 } from "./style";
 
-const Footer = () => {
+interface FooterProps {
+  onMainPage: boolean;
+}
+
+const Footer = (props: FooterProps) => {
+  const location = useLocation();
+
   return (
     <Background>
       <Container>
         <GoUpButtonContainer>
-          <HashLink smooth to="/#header_section">
+          <HashLink smooth to={`${location.pathname}#top`}>
             <GoUpButton>go up!</GoUpButton>
           </HashLink>
         </GoUpButtonContainer>

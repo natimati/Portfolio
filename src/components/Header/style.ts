@@ -81,7 +81,7 @@ export const BDiv = styled.div`
   }
 
   ${(props) => props.theme.breakpoints.tablet} {
-    background-color: black;
+    background-color: ${(props) => props.theme.colors.black};
     opacity: 0.7;
     left: initial;
     right: 0;
@@ -145,7 +145,7 @@ export const NDiv = styled.div`
   }
 
   ${(props) => props.theme.breakpoints.tablet} {
-    background-color: black;
+    background-color: ${(props) => props.theme.colors.black};
     opacity: 0.7;
     right: initial;
     left: 0;

@@ -67,7 +67,7 @@ export const FormInput = styled.input`
     border: 2px solid ${(props) => props.theme.colors.shadowColor};
   }
   &::placeholder {
-    color: black;
+    color: ${(props) => props.theme.colors.black};
   }
 `;
 
@@ -89,7 +89,7 @@ export const Message = styled.textarea`
   }
 
   &::placeholder {
-    color: black;
+    ${(props) => props.theme.colors.black};
   }
 `;
 

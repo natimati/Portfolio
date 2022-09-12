@@ -4,11 +4,11 @@ import { HashLink } from "react-router-hash-link";
 import { Button, SubtierButton } from "../../styles";
 import { ButtonContainer } from "./style";
 
-interface WhichPageProps {
+interface PageProps {
   onMainPage: boolean;
 }
 
-export const ButtonsSection = (props: WhichPageProps) => {
+export const ButtonsSection = (props: PageProps) => {
   const [isShown, setIsShown] = useState(false);
 
   const handlePortfolioButtonClick = () => {
@@ -43,7 +43,7 @@ export const ButtonsSection = (props: WhichPageProps) => {
   );
 };
 
-export const RightButton = (props: WhichPageProps) => {
+export const RightButton = (props: PageProps) => {
   if (!props.onMainPage) {
     return (
       <Link to="/">

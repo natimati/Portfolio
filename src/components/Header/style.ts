@@ -3,9 +3,8 @@ import styled from "styled-components";
 interface SkillsProps {
   isBeti: boolean;
 }
-
 interface PageProps {
-  onMainPage: boolean;
+  $onMainPage: boolean;
 }
 
 export const Background = styled.div`
@@ -18,7 +17,7 @@ export const Background = styled.div`
 export const WiderBackgroundImage = styled.div<PageProps>`
   position: relative;
   background: ${(props) =>
-    props.onMainPage
+    props.$onMainPage
       ? "url('assets/girls.jpg')"
       : "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/girls.jpg') "};
   background-size: cover;

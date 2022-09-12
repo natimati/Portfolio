@@ -36,7 +36,7 @@ const Header = (props: HeaderProps) => {
   }
   return (
     <Background>
-      <WiderBackgroundImage onMainPage={props.onMainPage} >
+      <WiderBackgroundImage $onMainPage={props.onMainPage}>
         <ButtonsSection onMainPage={props.onMainPage} />
         <RightButton onMainPage={props.onMainPage} />
         {(!props.onMainPage || bannerState === "Beti") && (

@@ -41,7 +41,7 @@ export const GoUpButton = styled.button`
   }
 
   ${(props) => props.theme.breakpoints.tablet} {
-    font-size: 14px;
+    font-size: 20px;
   }
 `;
 

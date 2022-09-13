@@ -52,7 +52,14 @@ const Header = (props: HeaderProps) => {
   return (
     <Background>
       <WiderBackgroundImage $onMainPage={props.onMainPage}>
-        
+        <BetiInformation onMainPage={props.onMainPage} />
+        <NatiInformation onMainPage={props.onMainPage} />
+        {/* {(!props.onMainPage || bannerState === "Beti") && (
+          <BetiInformation onMainPage={props.onMainPage} />
+        )}
+        {(!props.onMainPage || bannerState === "Nati") && (
+          <NatiInformation onMainPage={props.onMainPage} />
+        )} */}
       </WiderBackgroundImage>
     </Background>
   );

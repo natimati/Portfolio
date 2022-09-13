@@ -19,9 +19,9 @@ export const WiderBackgroundImage = styled.div<PageProps>`
   background: ${(props) =>
     props.$onMainPage
       ? "url('assets/girls.jpg')"
-      : "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/girls.jpg') "};
+      : "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/girls.jpg')"};
   background-size: cover;
-  background-position: center;
+  background-position: 60% 50%;
   max-width: 1000px;
   width: 100%;
   max-height: 100%;
@@ -130,6 +130,13 @@ export const BTextArea = styled.div`
     align-items: flex-start;
     width: fit-content;
   }
+
+  ${(props) => props.theme.breakpoints.mobile} {
+    transform: translateX(45px) translateY(178px);
+    margin: 0;
+    align-items: flex-start;
+    width: fit-content;
+  }
 `;
 
 export const NDiv = styled.div`
@@ -194,6 +201,13 @@ export const NTextArea = styled.div`
     margin: 0;
     width: fit-content;
   }
+
+  ${(props) => props.theme.breakpoints.mobile} {
+    transform: translateX(40px) translateY(175px);
+    align-items: flex-end;
+    margin: 0;
+    width: fit-content;
+  }
 `;
 
 export const Name = styled.h3`
@@ -215,6 +229,10 @@ export const Role = styled.p`
   font-size: 25px;
   font-weight: 200;
   margin-top: 10px;
+
+  ${(props) => props.theme.breakpoints.mobile} {
+    margin-bottom: 0;
+  }
 `;
 
 export const SkillsHeather = styled.p<SkillsProps>`
@@ -229,6 +247,9 @@ export const SkillsHeather = styled.p<SkillsProps>`
   ${(props) => props.theme.breakpoints.tablet} {
     align-self: ${(props) => (props.isBeti ? "flex-start" : "flex-end")};
   }
+  ${(props) => props.theme.breakpoints.tablet} {
+    font-size: 16px;
+  }
 `;
 
 export const SkillsList = styled.ul<SkillsProps>`
@@ -237,7 +258,6 @@ export const SkillsList = styled.ul<SkillsProps>`
   list-style-position: inside;
   align-items: ${(props) => (props.isBeti ? "flex-end" : "flex-start")};
   font-family: ${(props) => props.theme.fontFamily.skillsFont};
-  font-size: 12px;
   line-height: 30px;
   margin-top: 0;
   font-size: 18px;
@@ -245,6 +265,11 @@ export const SkillsList = styled.ul<SkillsProps>`
 
   ${(props) => props.theme.breakpoints.tablet} {
     align-items: ${(props) => (props.isBeti ? "flex-start" : "flex-end")};
+  }
+
+  ${(props) => props.theme.breakpoints.mobile} {
+    font-size: 12px;
+    line-height: 20px;
   }
 `;
 

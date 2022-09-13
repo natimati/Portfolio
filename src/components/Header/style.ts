@@ -21,7 +21,7 @@ export const WiderBackgroundImage = styled.div<PageProps>`
       ? "url('assets/girls.jpg')"
       : "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/girls.jpg')"};
   background-size: cover;
-  background-position: 60% 50%;
+  background-position: 55% 50%;
   max-width: 1000px;
   width: 100%;
   max-height: 100%;
@@ -125,18 +125,15 @@ export const BTextArea = styled.div`
   align-items: flex-end;
 
   ${(props) => props.theme.breakpoints.tablet} {
-    transform: translateX(50px) translateY(85px);
+    transform: translateX(20px) translateY(170px);
     margin: 0;
     align-items: flex-start;
     width: fit-content;
   }
 
   ${(props) => props.theme.breakpoints.mobile} {
-    transform: translateX(45px) translateY(178px);
-    margin: 0;
-    align-items: flex-start;
-    width: fit-content;
-  }
+    transform: translateX(20px) translateY(162px);
+   }
 `;
 
 export const NDiv = styled.div`
@@ -201,18 +198,21 @@ export const NTextArea = styled.div`
     margin: 0;
     width: fit-content;
   }
-
   ${(props) => props.theme.breakpoints.mobile} {
-    transform: translateX(40px) translateY(175px);
-    align-items: flex-end;
-    margin: 0;
-    width: fit-content;
+    position: absolute;
+    top: 80px;
+    right: 250px;
+    width: 200px;
   }
 `;
 
 export const Name = styled.h3`
   font-size: 50px;
   margin: 0;
+
+  ${(props) => props.theme.breakpoints.mobile} {
+    font-size: 40px;
+  }
 `;
 
 export const FullName = styled.h4`
@@ -226,12 +226,13 @@ export const FullName = styled.h4`
 `;
 
 export const Role = styled.p`
-  font-size: 25px;
+  font-size: 15px;
   font-weight: 200;
   margin-top: 10px;
 
   ${(props) => props.theme.breakpoints.mobile} {
     margin-bottom: 0;
+    font-size: 20px;
   }
 `;
 

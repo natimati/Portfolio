@@ -114,7 +114,7 @@ export const Button = styled.button`
     &::before {
       display: block;
     }
-  }
+    }
 
   ${(props) => props.theme.breakpoints.tablet} {
     font-size: 20px;

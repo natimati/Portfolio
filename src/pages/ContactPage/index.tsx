@@ -7,7 +7,7 @@ function ContactPage() {
       <>
         <Header onMainPage={false} />
         <Contact />
-        <Footer onMainPage={false} />
+        <Footer />
       </>
     );
 };

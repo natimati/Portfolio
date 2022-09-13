@@ -10,7 +10,7 @@ function MainPage() {
         <Header onMainPage />
         <AboutUs />
         <ProjectTile />
-        <Footer onMainPage />
+        <Footer />
       </>
     );
 };

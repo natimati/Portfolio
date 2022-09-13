@@ -6,6 +6,7 @@ export const Background = styled.div`
 `;
 
 export const Container = styled.div`
+  position: relative;
   max-width: 1800px;
   max-height: 100%;
   padding-top: 35px;
@@ -14,9 +15,13 @@ export const Container = styled.div`
   flex-direction: column;
 
   ${(props) => props.theme.breakpoints.tablet} {
-    height: 165px;
+    height: fit-content;
     padding-top: 20px;
     max-width: 1000px;
+  }
+  
+  ${(props) => props.theme.breakpoints.mobile} {
+    align-items: center;
   }
 `;
 
@@ -25,6 +30,16 @@ export const GoUpButtonContainer = styled.div`
   align-self: flex-end;
   margin-right: 50px;
   margin-bottom: 50px;
+
+  ${(props) => props.theme.breakpoints.mobile} {
+    width: 50px;
+    height: 50px;
+    background-color: ${(props) => props.theme.colors.subtierButtonBackground};
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 export const GoUpButton = styled.button`
@@ -45,6 +60,12 @@ export const GoUpButton = styled.button`
   }
 `;
 
+export const GoUpIcon = styled.img`
+  transform: rotate(180deg);
+  width: 30px;
+  height: 30px;
+`;
+
 export const FindUsText = styled.p`
   color: ${(props) => props.theme.colors.white};
   text-transform: uppercase;
@@ -55,6 +76,11 @@ export const FindUsText = styled.p`
   ${(props) => props.theme.breakpoints.tablet} {
     font-size: 14px;
     padding-left: 30px;
+  }
+
+  ${(props) => props.theme.breakpoints.mobile} {
+    padding-left: 0;
+    font-size: 16px;
   }
 `;
 
@@ -90,6 +116,9 @@ export const InButton = styled.a`
     padding-bottom: 5px;
     padding-left: 60px;
   }
+  ${(props) => props.theme.breakpoints.mobile} {
+    padding-left: 0;
+  }
 `;
 
 export const Text = styled.p`
@@ -100,6 +129,10 @@ export const Text = styled.p`
   ${(props) => props.theme.breakpoints.tablet} {
     font-size: 16px;
     margin: 10px 0;
+  }
+
+  ${(props) => props.theme.breakpoints.tablet} {
+    font-size: 12px;
   }
 `;
 
@@ -112,5 +145,9 @@ export const NormalText = styled.p`
 
   ${(props) => props.theme.breakpoints.tablet} {
     font-size: 12px;
+  }
+
+  ${(props) => props.theme.breakpoints.tablet} {
+    margin-top: 40px;
   }
 `;

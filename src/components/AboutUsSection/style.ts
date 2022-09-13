@@ -51,7 +51,7 @@ export const DownButonContainer = styled.div`
 export const DownButton = styled.button`
   height: 50px;
   width: 50px;
-  border-radius: 35px;
+  border-radius: 25px;
   border: none;
   background-color: ${(props) => props.theme.colors.mainColor};
   cursor: pointer;

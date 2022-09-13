@@ -1,6 +1,6 @@
 import useBannerState from "../../hooks/useBannerState";
 import useWindowWidth from "../../hooks/useWidowWidth";
-import { tabletWidth } from "../../styles";
+import { mobileWidth, tabletWidth } from "../../styles";
 import { BetiInformation } from "./beti_staff";
 import { ButtonsSection, RightButton } from "./buttons";
 import { NatiInformation } from "./nati_staff";
@@ -33,18 +33,26 @@ const Header = (props: HeaderProps) => {
         </Container>
       </Background>
     );
+  } else if (width <= tabletWidth && width >= mobileWidth) {
+    return (
+      <Background id="top">
+        <WiderBackgroundImage $onMainPage={props.onMainPage}>
+          <ButtonsSection onMainPage={props.onMainPage} />
+          <RightButton onMainPage={props.onMainPage} />
+          {(!props.onMainPage || bannerState === "Beti") && (
+            <BetiInformation onMainPage={props.onMainPage} />
+          )}
+          {(!props.onMainPage || bannerState === "Nati") && (
+            <NatiInformation onMainPage={props.onMainPage} />
+          )}
+        </WiderBackgroundImage>
+      </Background>
+    );
   }
   return (
-    <Background id="top">
+    <Background>
       <WiderBackgroundImage $onMainPage={props.onMainPage}>
-        <ButtonsSection onMainPage={props.onMainPage} />
-        <RightButton onMainPage={props.onMainPage} />
-        {(!props.onMainPage || bannerState === "Beti") && (
-          <BetiInformation onMainPage={props.onMainPage} />
-        )}
-        {(!props.onMainPage || bannerState === "Nati") && (
-          <NatiInformation onMainPage={props.onMainPage} />
-        )}
+        
       </WiderBackgroundImage>
     </Background>
   );

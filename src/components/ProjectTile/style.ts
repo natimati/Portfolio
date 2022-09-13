@@ -29,6 +29,10 @@ export const Text = styled.p`
   ${(props) => props.theme.breakpoints.tablet} {
     font-size: 14px;
   }
+
+  ${(props) => props.theme.breakpoints.mobile} {
+    font-size: 12px;
+  }
 `;
 
 export const ProjectContainer = styled.div<ProjectContainerProps>`
@@ -47,6 +51,16 @@ export const ProjectContainer = styled.div<ProjectContainerProps>`
 
     ${(props) => props.theme.breakpoints.tablet} {
       align-self: center;
+      padding: 0px;
+    }
+
+    ${(props) => props.theme.breakpoints.mobile} {
+      display: flex;
+      max-width: 450px;
+      margin: 0 auto;
+      padding-bottom: 20px;
+      align-items: flex-start;
+      text-align: start;
     }
   }
 
@@ -72,6 +86,27 @@ export const ProjectContainer = styled.div<ProjectContainerProps>`
     max-width: 800px;
     padding: 20px 50px;
   }
+
+  ${(props) => props.theme.breakpoints.mobile} {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    max-width: 100%;
+  }
+`;
+
+export const SmallButtonContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  ${(props) => props.theme.breakpoints.mobile} {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
 `;
 
 export const SlideContainer = styled.div`
@@ -80,6 +115,10 @@ export const SlideContainer = styled.div`
 
   ${(props) => props.theme.breakpoints.tablet} {
     max-width: 345px;
+  }
+
+  ${(props) => props.theme.breakpoints.mobile} {
+    max-width: 100%;
   }
 `;
 

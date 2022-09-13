@@ -4,6 +4,7 @@ import {
   EachSlide,
   ProjectContainer,
   SlideContainer,
+  SmallButtonContainer,
   Text,
   Title,
 } from "./style";
@@ -50,19 +51,21 @@ const DescriptionContainer = (data: DescriptionData) => {
     <Description>
       <Title>{data.title}</Title>
       <Text>{data.text}</Text>
-      <SmallButton
-        onClick={() => {
-          handleReadMoreClick(<FirstProjectModalContent />);
-        }}
-      >
-        read more
-      </SmallButton>
-      <a href={data.repoLink} target="_blank" rel="noreferrer">
-        <SmallButton>see repo</SmallButton>
-      </a>
-      <a href={data.designLink} target="_blank" rel="noreferrer">
-        <SmallButton>see case study</SmallButton>
-      </a>
+      <SmallButtonContainer>
+        <SmallButton
+          onClick={() => {
+            handleReadMoreClick(<FirstProjectModalContent />);
+          }}
+        >
+          read more
+        </SmallButton>
+        <a href={data.repoLink} target="_blank" rel="noreferrer">
+          <SmallButton>see repo</SmallButton>
+        </a>
+        <a href={data.designLink} target="_blank" rel="noreferrer">
+          <SmallButton>see case study</SmallButton>
+        </a>
+      </SmallButtonContainer>
     </Description>
   );
 };

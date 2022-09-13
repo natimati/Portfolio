@@ -2,6 +2,8 @@ import styled, { createGlobalStyle } from "styled-components";
 import img from "./highlighter.png";
 
 export const tabletWidth = 1668;
+export const mobileWidth = 1000;
+
 export const theme = {
   colors: {
     white: "#fff",
@@ -23,6 +25,7 @@ export const theme = {
 
   breakpoints: {
     tablet: `@media screen and (max-width: ${tabletWidth}px)`,
+    mobile: `@media screen and (max-width: ${mobileWidth}px)`,
   },
 };
 
@@ -43,6 +46,9 @@ export const GlobalStyle = createGlobalStyle`
 
         ${theme.breakpoints.tablet} {
           font-size: 40px;
+         }
+         ${theme.breakpoints.mobile} {
+          font-size: 25px;
          }
     };
 
@@ -140,7 +146,6 @@ export const SubtierButton = styled(Button)`
 `;
 
 export const SmallButton = styled(Button)`
-  justify-content: flex-start;
   background-color: white;
   font-size: 15px;
   font-weight: 500;

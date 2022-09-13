@@ -24,6 +24,12 @@ export const TextArea = styled.div`
     font-size: 16px;
     font-weight: 500;
   }
+  ${(props) => props.theme.breakpoints.mobile} {
+    max-width: 100%;
+    font-size: 12px;
+    font-weight: 500;
+    margin: 0 20px;
+  }
 `;
 
 export const DownButonContainer = styled.div`
@@ -35,6 +41,10 @@ export const DownButonContainer = styled.div`
 
   ${(props) => props.theme.breakpoints.tablet} {
     margin-right: 75px;
+  }
+
+  ${(props) => props.theme.breakpoints.mobile} {
+    display: none;
   }
 `;
 

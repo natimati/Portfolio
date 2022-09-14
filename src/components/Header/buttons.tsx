@@ -54,7 +54,6 @@ export const ButtonsSection = (props: PageProps) => {
           onClick={handlePortfolioButtonClick}
         />
         {isShown && (
-          <ButtonContainer>
             <MobileMenu>
               <MenuContainer>
                 <Link to="/contact">
@@ -76,15 +75,44 @@ export const ButtonsSection = (props: PageProps) => {
                 </a>
               </MenuContainer>
             </MobileMenu>
-          </ButtonContainer>
         )}
       </>
     );
   }
   return (
-      <>
-        <MenuIcon src="assets/menu_icon.svg" alt="menu" />
-      </>
+    <>
+      <MenuIcon
+        src="assets/menu_icon.svg"
+        alt="menu"
+        onClick={handlePortfolioButtonClick}
+      />
+      {isShown && (
+        <MobileMenu>
+          <MenuContainer>
+            <HashLink smooth to="/#projecttilesection">
+              <MenuButton>Portfolio</MenuButton>
+            </HashLink>
+            <a
+              href="https://github.com/natimati"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <MenuButton>Case Study</MenuButton>
+            </a>
+            <a
+              href="https://github.com/natimati"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <MenuButton>GitHub</MenuButton>
+            </a>
+            <Link to="/">
+              <MenuButton>Go Back</MenuButton>
+            </Link>
+          </MenuContainer>
+        </MobileMenu>
+      )}
+    </>
   );
 };
 

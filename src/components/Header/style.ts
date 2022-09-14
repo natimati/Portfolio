@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Button } from "../../styles";
 
 interface SkillsProps {
   isBeti: boolean;
@@ -53,11 +54,54 @@ export const ButtonContainer = styled.div`
   flex-direction: column;
 `;
 
+export const MobileMenu = styled.div`
+  position: absolute;
+  left: 0;
+  background-color: ${(props) => props.theme.colors.mainColor};
+  opacity: 0.9;
+  width: 65%;
+  height: 100%;
+  z-index: 98;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const MenuIcon = styled.img`
+  margin-top: 20px;
+  cursor: pointer;
+  z-index: 99;
+  margin-bottom: 30px;
+`;
+
+export const MenuContainer = styled.div`
+  margin-top: 100px;
+  margin-left: 40px;
+`;
+
+export const MenuButton = styled(Button)`
+  background-color: transparent;
+  color: ${(props) => props.theme.colors.white};
+  border-bottom: solid 1px ${(props) => props.theme.colors.white};
+  width: 100%;
+  justify-content: flex-start;
+  padding-left: 20px;
+  margin: 0;
+  margin-bottom: 5px;
+
+  &:hover {
+    background-color: ${(props) => props.theme.colors.white};
+    color: ${(props) => props.theme.colors.black};
+
+    &::before {
+      display: none;
+    }
+  }
+`;
+
 export const ImageContainer = styled.div`
   position: relative;
   align-self: center;
   height: 550px;
-  margin-top: 40px;
 
   ${(props) => props.theme.breakpoints.tablet} {
     height: 350px;
@@ -133,7 +177,7 @@ export const BTextArea = styled.div`
 
   ${(props) => props.theme.breakpoints.mobile} {
     transform: translateX(20px) translateY(162px);
-   }
+  }
 `;
 
 export const NDiv = styled.div`

@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
-import { Button, SubtierButton } from "../../styles";
-import { ButtonContainer } from "./style";
+import useWindowWidth from "../../hooks/useWidowWidth";
+import { Button, mobileWidth, SubtierButton } from "../../styles";
+import { ButtonContainer, MenuButton, MenuContainer, MenuIcon, MobileMenu } from "./style";
 
 interface PageProps {
   onMainPage: boolean;
@@ -10,12 +11,15 @@ interface PageProps {
 
 export const ButtonsSection = (props: PageProps) => {
   const [isShown, setIsShown] = useState(false);
+  
 
   const handlePortfolioButtonClick = () => {
     setIsShown((current) => !current);
   };
 
-  if (props.onMainPage) {
+  const width = useWindowWidth();
+
+  if (props.onMainPage && width >= mobileWidth) {
     return (
       <ButtonContainer>
         <Button onClick={handlePortfolioButtonClick}>Portfolio</Button>
@@ -33,13 +37,54 @@ export const ButtonsSection = (props: PageProps) => {
         )}
       </ButtonContainer>
     );
+  } else if (!props.onMainPage && width >= mobileWidth) {
+    return (
+      <>
+        <HashLink smooth to="/#projecttilesection">
+          <Button>Portfolio</Button>
+        </HashLink>
+      </>
+    );
+  } else if (props.onMainPage && width <= mobileWidth) {
+    return (
+      <>
+        <MenuIcon
+          src="assets/menu_icon.svg"
+          alt="menu"
+          onClick={handlePortfolioButtonClick}
+        />
+        {isShown && (
+          <ButtonContainer>
+            <MobileMenu>
+              <MenuContainer>
+                <Link to="/contact">
+                  <MenuButton>Contact</MenuButton>
+                </Link>
+                <a
+                  href="https://github.com/natimati"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <MenuButton>Case Study</MenuButton>
+                </a>
+                <a
+                  href="https://github.com/natimati"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <MenuButton>GitHub</MenuButton>
+                </a>
+              </MenuContainer>
+            </MobileMenu>
+          </ButtonContainer>
+        )}
+      </>
+    );
   }
   return (
-    <>
-      <HashLink smooth to="/#projecttilesection">
-        <Button>Portfolio</Button>
-      </HashLink>
-    </>
+      <>
+        <MenuIcon src="assets/menu_icon.svg" alt="menu" />
+      </>
   );
 };
 

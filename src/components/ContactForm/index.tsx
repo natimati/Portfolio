@@ -73,7 +73,8 @@ const Contact = () => {
         </h1>
       ) : (
         <>
-          <h1>Want to connect? Let's talk!</h1>
+            <h1>Want to connect? Let's talk!
+            </h1>
           <Form onSubmit={onSubmit}>
             <NameInputContainer>
               <Label htmlFor="name">Name</Label>

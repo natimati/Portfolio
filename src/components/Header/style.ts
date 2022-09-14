@@ -145,7 +145,15 @@ export const ContactBDiv = styled.div`
   align-items: center;
 
   ${(props) => props.theme.breakpoints.tablet} {
-    transform: translateX(150px) translateY(238px);
+    transform: translateX(-200%);
+    left: 50%;
+    bottom: 40px;
+  }
+
+  ${(props) => props.theme.breakpoints.mobile} {
+    transform: translateX(-130%);
+    left: 50%;
+    bottom: 40px;
   }
 `;
 
@@ -169,7 +177,7 @@ export const BTextArea = styled.div`
   align-items: flex-end;
 
   ${(props) => props.theme.breakpoints.tablet} {
-    transform: translateX(20px) translateY(170px);
+    transform: translateX(60px) translateY(100px);
     margin: 0;
     align-items: flex-start;
     width: fit-content;
@@ -214,7 +222,14 @@ export const ContactNDiv = styled.div`
   align-self: flex-start;
 
   ${(props) => props.theme.breakpoints.tablet} {
-    transform: translateX(650px) translateY(240px);
+    transform: translateX(260px);
+    right: 50%;
+    bottom: 40px;
+  }
+  ${(props) => props.theme.breakpoints.mobile} {
+    transform: translateX(170px);
+    right: 50%;
+    bottom: 40px;
   }
 `;
 
@@ -336,5 +351,9 @@ export const Icon = styled.img`
 
   ${(props) => props.theme.breakpoints.tablet} {
     margin: 0;
+  }
+
+  ${(props) => props.theme.breakpoints.mobile} {
+    padding-top: 15px;
   }
 `;

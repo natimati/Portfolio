@@ -4,16 +4,21 @@ import { Button } from "../../styles";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
-  max-width: 1000px;
+  align-items: center;
   margin: 0 auto;
 
   ${(props) => props.theme.breakpoints.tablet} {
     max-width: 630px;
   }
+
+  ${(props) => props.theme.breakpoints.mobile} {
+    margin: 15px;
+  }
 `;
 
 export const Form = styled.form`
+  max-width: 1000px;
+  width: 100%;
   margin-top: 50px;
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -25,6 +30,24 @@ export const Form = styled.form`
     "messageError messageError"
     "notARobot notARobot"
     "sendButton sendButton";
+
+  ${(props) => props.theme.breakpoints.tablet} {
+    max-width: 630px;
+  }
+
+  ${(props) => props.theme.breakpoints.mobile} {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "name"
+      "nameError"
+      "email "
+      "emailError"
+      "message"
+      "messageError"
+      "notARobot"
+      "sendButton";
+    max-width: 100%;
+  }
 `;
 export const NameInputContainer = styled.div`
   grid-area: name;
@@ -112,7 +135,10 @@ export const SendButton = styled(Button)`
 
 export const RodoInformation = styled.span`
   text-align: left;
-  margin: 50px 0;
+  margin: 0 auto;
+  width: 1000px;
+  max-width: 100%;
+  padding: 50px 0;
 
   ${(props) => props.theme.breakpoints.tablet} {
     font-size: 12px;

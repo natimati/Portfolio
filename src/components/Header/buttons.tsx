@@ -1,19 +1,25 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+import { MenuContext } from "../../context/MenuContext";
 import useWindowWidth from "../../hooks/useWidowWidth";
 import { Button, mobileWidth, SubtierButton } from "../../styles";
-import { ButtonContainer, MenuButton, MenuContainer, MenuIcon, MobileMenu } from "./style";
+import {
+  ButtonContainer,
+  MenuButton,
+  MenuContainer,
+  MenuIcon,
+  MobileMenu,
+} from "./style";
 
 interface PageProps {
   onMainPage: boolean;
 }
 
 export const ButtonsSection = (props: PageProps) => {
-  const [isShown, setIsShown] = useState(false);
-  
+  const { isShown, setIsShown } = useContext(MenuContext);
 
-  const handlePortfolioButtonClick = () => {
+  const handlePortfolioButtonClick: () => void = () => {
     setIsShown((current) => !current);
   };
 
@@ -54,27 +60,27 @@ export const ButtonsSection = (props: PageProps) => {
           onClick={handlePortfolioButtonClick}
         />
         {isShown && (
-            <MobileMenu>
-              <MenuContainer>
-                <Link to="/contact">
-                  <MenuButton>Contact</MenuButton>
-                </Link>
-                <a
-                  href="https://github.com/natimati"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <MenuButton>Case Study</MenuButton>
-                </a>
-                <a
-                  href="https://github.com/natimati"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <MenuButton>GitHub</MenuButton>
-                </a>
-              </MenuContainer>
-            </MobileMenu>
+          <MobileMenu>
+            <MenuContainer>
+              <Link to="/contact">
+                <MenuButton>Contact</MenuButton>
+              </Link>
+              <a
+                href="https://github.com/natimati"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <MenuButton>Case Study</MenuButton>
+              </a>
+              <a
+                href="https://github.com/natimati"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <MenuButton>GitHub</MenuButton>
+              </a>
+            </MenuContainer>
+          </MobileMenu>
         )}
       </>
     );

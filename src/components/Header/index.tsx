@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { MenuContext } from "../../context/MenuContext";
 import useBannerState from "../../hooks/useBannerState";
 import useWindowWidth from "../../hooks/useWidowWidth";
 import { mobileWidth, tabletWidth } from "../../styles";
@@ -18,6 +20,7 @@ interface HeaderProps {
 const Header = (props: HeaderProps) => {
   const width = useWindowWidth();
   const bannerState = useBannerState(props.onMainPage);
+  const { isShown: isMenuShown } = useContext(MenuContext);
 
   if (width >= tabletWidth) {
     return (
@@ -53,10 +56,10 @@ const Header = (props: HeaderProps) => {
     <Background>
       <WiderBackgroundImage $onMainPage={props.onMainPage}>
         <ButtonsSection onMainPage={props.onMainPage} />
-        {(!props.onMainPage || bannerState === "Beti") && (
+        {(!props.onMainPage || (!isMenuShown && bannerState === "Beti")) && (
           <BetiInformation onMainPage={props.onMainPage} />
         )}
-        {(!props.onMainPage || bannerState === "Nati") && (
+        {(!props.onMainPage || (!isMenuShown && bannerState === "Nati")) && (
           <NatiInformation onMainPage={props.onMainPage} />
         )}
       </WiderBackgroundImage>

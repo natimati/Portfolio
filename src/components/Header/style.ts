@@ -13,16 +13,17 @@ export const Background = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-around;
+  max-height: 650px;
 `;
 
 export const WiderBackgroundImage = styled.div<PageProps>`
   position: relative;
   background: ${(props) =>
     props.$onMainPage
-      ? "url('assets/girls.jpg')"
-      : "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/girls.jpg')"};
+      ? "url('assets/girls2.jpg')"
+      : "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/girls2.jpg')"};
   background-size: cover;
-  background-position: 55% 50%;
+  background-position: 45%;
   max-width: 1000px;
   width: 100%;
   max-height: 100%;

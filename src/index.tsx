@@ -8,6 +8,7 @@ import { ThemeProvider } from 'styled-components';
 import { GlobalStyle, theme } from "./styles";
 import { ModalContextProvider } from './context/ModalContextProvider';
 import Modal from './components/Modal';
+import { MenuContextProvider } from './context/MenuContext';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -15,13 +16,15 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <ModalContextProvider>
-        <GlobalStyle />
-        <BrowserRouter>
-        <App />
-          <Modal />
-        </BrowserRouter>
-      </ModalContextProvider>
+      <MenuContextProvider>
+        <ModalContextProvider>
+          <GlobalStyle />
+          <BrowserRouter>
+            <App />
+            <Modal />
+          </BrowserRouter>
+        </ModalContextProvider>
+      </MenuContextProvider>
     </ThemeProvider>
   </React.StrictMode>
 );

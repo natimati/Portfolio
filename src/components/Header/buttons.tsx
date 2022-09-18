@@ -24,6 +24,7 @@ export const ButtonsSection = (props: PageProps) => {
   };
 
   const width = useWindowWidth();
+  const handleMenuButtonClick = () => setIsShown(false)
 
   if (props.onMainPage && width >= mobileWidth) {
     return (
@@ -60,8 +61,8 @@ export const ButtonsSection = (props: PageProps) => {
           onClick={handlePortfolioButtonClick}
         />
         {isShown && (
-          <MobileMenu>
-            <MenuContainer>
+          <MobileMenu >
+            <MenuContainer onClick={handleMenuButtonClick}>
               <Link to="/contact">
                 <MenuButton>Contact</MenuButton>
               </Link>
@@ -94,7 +95,7 @@ export const ButtonsSection = (props: PageProps) => {
       />
       {isShown && (
         <MobileMenu>
-          <MenuContainer>
+          <MenuContainer onClick={handleMenuButtonClick}>
             <HashLink smooth to="/#projecttilesection">
               <MenuButton>Portfolio</MenuButton>
             </HashLink>

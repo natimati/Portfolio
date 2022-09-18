@@ -1,8 +1,8 @@
 import styled, { createGlobalStyle } from "styled-components";
 import img from "./highlighter.png";
 
-export const tabletWidth = 1668;
-export const mobileWidth = 1000;
+export const tabletWidth = 1550;
+export const mobileWidth = 800;
 
 export const theme = {
   colors: {
@@ -42,6 +42,7 @@ export const GlobalStyle = createGlobalStyle`
         text-shadow: 4px 4px 5px ${theme.colors.shadowColor};
         align-self: center;
         text-align: center;
+        margin-top: 50px;
         margin-bottom: 5px;
 
         ${theme.breakpoints.tablet} {

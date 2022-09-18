@@ -36,7 +36,7 @@ const Header = (props: HeaderProps) => {
         </Container>
       </Background>
     );
-  } else if (width <= tabletWidth && width >= mobileWidth) {
+  } else if (width < tabletWidth && width >= mobileWidth) {
     return (
       <Background id="top">
         <WiderBackgroundImage $onMainPage={props.onMainPage}>
@@ -54,7 +54,7 @@ const Header = (props: HeaderProps) => {
   }
   return (
     <Background>
-      <WiderBackgroundImage $onMainPage={props.onMainPage}>
+      <WiderBackgroundImage $onMainPage={props.onMainPage} isDark={isMenuShown}>
         <ButtonsSection onMainPage={props.onMainPage} />
         {(!props.onMainPage || (!isMenuShown && bannerState === "Beti")) && (
           <BetiInformation onMainPage={props.onMainPage} />

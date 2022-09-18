@@ -6,6 +6,7 @@ interface SkillsProps {
 }
 interface PageProps {
   $onMainPage: boolean;
+  isDark?: boolean;
 }
 
 export const Background = styled.div`
@@ -14,12 +15,19 @@ export const Background = styled.div`
   display: flex;
   justify-content: space-around;
   max-height: 650px;
+
+  ${(props) => props.theme.breakpoints.tablet} {
+    max-height: 800px;
+  }
+  ${(props) => props.theme.breakpoints.tablet} {
+    max-height: 500px;
+  }
 `;
 
 export const WiderBackgroundImage = styled.div<PageProps>`
   position: relative;
   background: ${(props) =>
-    props.$onMainPage
+    props.$onMainPage && !props.isDark
       ? "url('assets/girls2.jpg')"
       : "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/girls2.jpg')"};
   background-size: cover;
@@ -28,7 +36,8 @@ export const WiderBackgroundImage = styled.div<PageProps>`
   width: 100%;
   max-height: 100%;
   margin: 0 auto;
-  height: 480px;
+  max-height: 100%;
+  min-height: 480px;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -107,6 +116,9 @@ export const ImageContainer = styled.div`
   ${(props) => props.theme.breakpoints.tablet} {
     height: 350px;
   }
+  ${(props) => props.theme.breakpoints.mobile} {
+    height: 250px;
+  }
 `;
 
 export const Img = styled.img`
@@ -178,14 +190,17 @@ export const BTextArea = styled.div`
   align-items: flex-end;
 
   ${(props) => props.theme.breakpoints.tablet} {
-    transform: translateX(60px) translateY(100px);
-    margin: 0;
+    position: absolute;
+    transform: initial;
+    left: 50px;
+    top: 20%;
     align-items: flex-start;
-    width: fit-content;
+    margin: 0;
   }
 
   ${(props) => props.theme.breakpoints.mobile} {
-    transform: translateX(20px) translateY(162px);
+    left: 30px;
+    width: fit-content;
   }
 `;
 
@@ -247,22 +262,22 @@ export const NTextArea = styled.div`
   transform: translateX(480px) translateY(-90px);
   color: ${(props) => props.theme.colors.white};
   width: 250px;
-  margin-left: 50px;
+  margin-left: 30px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 
   ${(props) => props.theme.breakpoints.tablet} {
-    transform: translateX(230px) translateY(80px);
-    align-items: flex-end;
-    margin: 0;
-    width: fit-content;
-  }
-  ${(props) => props.theme.breakpoints.mobile} {
     position: absolute;
-    top: 80px;
-    right: 250px;
-    width: 200px;
+    transform: initial;
+    right: 50px;
+    top: 20%;
+    align-items: flex-end;
+  }
+
+  ${(props) => props.theme.breakpoints.mobile} {
+    right: 30px;
+    width: fit-content;
   }
 `;
 
@@ -270,9 +285,6 @@ export const Name = styled.h3`
   font-size: 50px;
   margin: 0;
 
-  ${(props) => props.theme.breakpoints.mobile} {
-    font-size: 40px;
-  }
 `;
 
 export const FullName = styled.h4`
@@ -293,6 +305,7 @@ export const Role = styled.p`
   ${(props) => props.theme.breakpoints.mobile} {
     margin-bottom: 0;
     font-size: 20px;
+    text-align: end;
   }
 `;
 
@@ -308,8 +321,8 @@ export const SkillsHeather = styled.p<SkillsProps>`
   ${(props) => props.theme.breakpoints.tablet} {
     align-self: ${(props) => (props.isBeti ? "flex-start" : "flex-end")};
   }
-  ${(props) => props.theme.breakpoints.tablet} {
-    font-size: 16px;
+  ${(props) => props.theme.breakpoints.mobile} {
+    font-size: 20px;
   }
 `;
 
@@ -331,6 +344,7 @@ export const SkillsList = styled.ul<SkillsProps>`
   ${(props) => props.theme.breakpoints.mobile} {
     font-size: 12px;
     line-height: 20px;
+    text-align: end;
   }
 `;
 

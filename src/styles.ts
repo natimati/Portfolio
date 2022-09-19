@@ -154,7 +154,7 @@ export const SmallButton = styled(Button)`
   margin-top: 0;
   padding: 0;
   border: none;
-  width: initial;
+  width: fit-content;
 
   &:hover {
     background-color: white;

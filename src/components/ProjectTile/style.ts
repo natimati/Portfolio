@@ -35,6 +35,17 @@ export const Text = styled.p`
   }
 `;
 
+export const SmallButtonContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  ${(props) => props.theme.breakpoints.mobile} {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+`;
+
 export const ProjectContainer = styled.div<ProjectContainerProps>`
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -62,6 +73,10 @@ export const ProjectContainer = styled.div<ProjectContainerProps>`
       align-items: flex-start;
       text-align: start;
     }
+  }
+
+  ${SmallButtonContainer} {
+    align-items: ${(props) => (props.isSlideFirst ? "flex-start" : "flex-end")};
   }
 
   ${SmallButton} {
@@ -95,17 +110,6 @@ export const ProjectContainer = styled.div<ProjectContainerProps>`
     margin-left: 20px;
     margin-right: 20px;
     max-width: 100%;
-  }
-`;
-
-export const SmallButtonContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  ${(props) => props.theme.breakpoints.mobile} {
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
   }
 `;
 

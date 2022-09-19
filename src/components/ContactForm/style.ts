@@ -12,7 +12,7 @@ export const Container = styled.div`
   }
 
   ${(props) => props.theme.breakpoints.mobile} {
-    margin: 15px;
+    padding: 15px;
   }
 `;
 

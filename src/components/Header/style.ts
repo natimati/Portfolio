@@ -356,6 +356,11 @@ export const IconsContainer = styled.div`
     flex-direction: row;
     gap: 20px;
   }
+
+  ${(props) => props.theme.breakpoints.mobile} {
+    flex-direction: column;
+    gap: 20px;
+  }
 `;
 
 export const Icon = styled.img`

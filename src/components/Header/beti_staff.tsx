@@ -46,11 +46,11 @@ export const BetiInformation = (props: WhichPageProps) => {
             <Icon src="assets/in_icon.png" alt="linkedlin logo" />
           </a>
           <a
-            href="https://www.linkedin.com/in/beatasuscicka/"
+            href="https://dribbble.com/beatasuscicka"
             target="_blank"
             rel="noreferrer"
           >
-            <Icon src="assets/be_icon.png" alt="behance logo" />
+            <Icon src="assets/dribble_icon.png" alt="dribble logo" />
           </a>
         </IconsContainer>
       </ContactBDiv>

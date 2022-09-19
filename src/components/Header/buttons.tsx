@@ -32,7 +32,13 @@ export const ButtonsSection = (props: PageProps) => {
         <Button onClick={handlePortfolioButtonClick}>Portfolio</Button>
         {isShown && (
           <>
-            <SubtierButton>Case study</SubtierButton>
+            <a
+              href="https://dribbble.com/beatasuscicka"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <SubtierButton>Case study</SubtierButton>
+            </a>
             <a
               href="https://github.com/natimati"
               target="_blank"

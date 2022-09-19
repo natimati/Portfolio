@@ -67,13 +67,13 @@ export const ButtonsSection = (props: PageProps) => {
           onClick={handlePortfolioButtonClick}
         />
         {isShown && (
-          <MobileMenu >
+          <MobileMenu>
             <MenuContainer onClick={handleMenuButtonClick}>
               <Link to="/contact">
                 <MenuButton>Contact</MenuButton>
               </Link>
               <a
-                href="https://github.com/natimati"
+                href="https://dribbble.com/beatasuscicka"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -106,7 +106,7 @@ export const ButtonsSection = (props: PageProps) => {
               <MenuButton>Portfolio</MenuButton>
             </HashLink>
             <a
-              href="https://github.com/natimati"
+              href="https://dribbble.com/beatasuscicka"
               target="_blank"
               rel="noreferrer"
             >

@@ -17,7 +17,7 @@ interface HeaderProps {
   onMainPage: boolean;
 }
 
-const Header = (props: HeaderProps) => {
+function Header(props: HeaderProps) {
   const width = useWindowWidth();
   const bannerState = useBannerState(props.onMainPage);
   const { isShown: isMenuShown } = useContext(MenuContext);

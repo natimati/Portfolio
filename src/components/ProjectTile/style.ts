@@ -132,29 +132,3 @@ export const EachSlide = styled.div`
   background-position: center;
   height: 300px;
 `;
-
-export const Container = styled.div`
-  max-width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-export const ProjectDetails = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  margin-right: 20px;
-  gap: 50px;
-`;
-
-export const Photo = styled.img`
-  max-width: 300px;
-  max-height: 300px;
-`;
-
-export const Paragraph = styled.p`
-  margin-top: 0;
-`;

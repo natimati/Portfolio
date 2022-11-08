@@ -1,74 +1,8 @@
-import React, { useContext } from "react";
-import {
-  Description,
-  EachSlide,
-  ProjectContainer,
-  SlideContainer,
-  SmallButtonContainer,
-  Text,
-  Title,
-} from "./style";
-import { Slide } from "react-slideshow-image";
+import {  ProjectContainer } from "./style";
 import "react-slideshow-image/dist/styles.css";
-import { ModalContext } from "../../context/ModalContextProvider";
-import FirstProjectModalContent from "./FirstProjectModalContent";
-import { SmallButton } from "../../styles";
+import Slideshow from "./Slideshow";
+import DescriptionContainer from "./DescriptionContainer";
 
-interface SlideShowProps {
-  images: string[];
-}
-
-interface DescriptionData {
-  title: string;
-  text: string;
-  repoLink: string;
-  designLink: string;
-}
-
-const Slideshow = (props: SlideShowProps) => {
-  return (
-    <SlideContainer>
-      <Slide>
-        {props.images.map((slideImage, index) => (
-          <EachSlide
-            key={index}
-            style={{ backgroundImage: `url(${slideImage})` }}
-          />
-        ))}
-      </Slide>
-    </SlideContainer>
-  );
-};
-
-const DescriptionContainer = (data: DescriptionData) => {
-  const modalContextValue = useContext(ModalContext);
-
-  const handleReadMoreClick = (content: React.ReactChild) => {
-    modalContextValue.setDisplayedComponent(content);
-  };
-
-  return (
-    <Description>
-      <Title>{data.title}</Title>
-      <Text>{data.text}</Text>
-      <SmallButtonContainer>
-        <SmallButton
-          onClick={() => {
-            handleReadMoreClick(<FirstProjectModalContent />);
-          }}
-        >
-          read more
-        </SmallButton>
-        <a href={data.repoLink} target="_blank" rel="noreferrer">
-          <SmallButton>see repo</SmallButton>
-        </a>
-        <a href={data.designLink} target="_blank" rel="noreferrer">
-          <SmallButton>see case study</SmallButton>
-        </a>
-      </SmallButtonContainer>
-    </Description>
-  );
-};
 
 const ProjectTile = () => {
   const firstProjectImages = [
@@ -91,7 +25,7 @@ const ProjectTile = () => {
 
   return (
     <div id="projecttilesection">
-      <ProjectContainer id="project_tile" isSlideFirst={true}>
+      <ProjectContainer id="first-project" isSlideFirst={true}>
         <Slideshow images={firstProjectImages} />
         <DescriptionContainer
           title={"Portfolio Web Page"}
@@ -104,7 +38,7 @@ const ProjectTile = () => {
           }
         />
       </ProjectContainer>
-      <ProjectContainer isSlideFirst={false}>
+      <ProjectContainer id="second-project"  isSlideFirst={false}>
         <Slideshow images={secondProjectImages} />
         <DescriptionContainer
           title={"TITLE"}
@@ -117,7 +51,7 @@ const ProjectTile = () => {
           }
         />
       </ProjectContainer>
-      <ProjectContainer isSlideFirst={true}>
+      <ProjectContainer id="third-project" isSlideFirst={true}>
         <Slideshow images={thirdProjectImages} />
         <DescriptionContainer
           title={"TITLE"}

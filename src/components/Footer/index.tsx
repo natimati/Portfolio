@@ -6,7 +6,7 @@ import {
   Background,
 } from "./style";
 
-const Footer = () => {
+function Footer() {
   
 
   return (

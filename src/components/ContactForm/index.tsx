@@ -27,7 +27,7 @@ const serviceId = process.env.REACT_APP_SERVICE_ID as string;
 const templateId = process.env.REACT_APP_TEMPLATE_ID as string;
 const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY as string;
 
-const Contact = () => {
+function Contact() {
   const [emailSent, setEmailSent] = useState(false);
   const [isNotRobot, setIsNotRobot] = useState(false);
   const captchaRef = useRef<ReCAPTCHA | null>(null);

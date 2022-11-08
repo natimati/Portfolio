@@ -3,7 +3,7 @@ import { ModalContext } from "../../context/ModalContextProvider";
 import { CloseButton, ModalContent, ModalOverlay, StyledModal } from "./style";
 
 
-const Modal = () => {
+function Modal() {
   const modalContext = useContext(ModalContext);
   
   useEffect(() => {

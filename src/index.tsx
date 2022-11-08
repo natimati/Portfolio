@@ -3,13 +3,29 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from "react-router-dom";
+import { ThemeProvider } from 'styled-components';
+import { GlobalStyle, theme } from "./styles";
+import { ModalContextProvider } from './context/ModalContextProvider';
+import Modal from './components/Modal';
+import { MenuContextProvider } from './context/MenuContext';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={theme}>
+      <MenuContextProvider>
+        <ModalContextProvider>
+          <GlobalStyle />
+          <BrowserRouter>
+            <App />
+            <Modal />
+          </BrowserRouter>
+        </ModalContextProvider>
+      </MenuContextProvider>
+    </ThemeProvider>
   </React.StrictMode>
 );
 

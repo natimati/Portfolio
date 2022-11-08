@@ -1,0 +1,7 @@
+export const header = "Portfolio web page";
+export const part_1 = "We started with creating a website where we could practice and present our skills. We made decisions together about the most essential elements of our portfolio page. Then Beata set to prepare designs sing figma.";
+export const part_2 = "When the first designs were ready, Natalia started coding using the react app. For styling we used styled components. For presenting project photos on the main page we're using react slideshow image library. Contact form is based on react hook form which checks correctness of filled inputs and shows possible errors. In our portfolio we don't have a backend - the messages are sent thanks to library EmailJS. Interesting case was also adding";
+export const part_3 = "Labore est adipisicing commodo proident. Exercitation mollit duis enim in excepteur ea deserunt ea. Proident veniam amet officia adipisicing pariatur dolore labore. Ad nisi dolore proident sit pariatur adipisicing ipsum sit pariatur. Incididunt tempor cupidatat aliquip minim quis sunt aliquip aliquip dolor. Aliqua anim pariatur ad dolore et sunt mollit in qui velit irure. Labore dolor nulla labore laboris magna labore amet culpa. Aute enim cillum duis ea cillum.";
+export const photo_url_1 = "/assets/images/slide_1_1.jpg";
+export const photo_url_2 = "/assets/images/slide_1_2.jpg";
+export const redirect_to = "/#first-project";

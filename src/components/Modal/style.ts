@@ -55,7 +55,7 @@ export const ModalContent = styled.div`
 
   ${(props) => props.theme.breakpoints.tablet} {
     max-height: 600px;
-    min-width: 800px;
+    min-width: 700px;
   }
 `;
 
